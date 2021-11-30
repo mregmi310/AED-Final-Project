@@ -5,6 +5,11 @@
  */
 package com.stockops.Business;
 
+import com.stockops.Market.CommodityMarket;
+import com.stockops.Market.EquityMarket;
+import com.stockops.Market.Market;
+
+
 /**
  *
  * @author mridulregmi
@@ -14,6 +19,11 @@ public class ConfigureASystem {
     public static EcoSystem configure(){
         
         EcoSystem system = new EcoSystem();
+        
+        Market market = new Market();
+        
+        EquityMarket equityMarket = new EquityMarket();
+        CommodityMarket commodityMarket = new CommodityMarket();
         
         //Create a network
         //create an enterprise
