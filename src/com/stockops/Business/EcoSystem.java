@@ -5,10 +5,70 @@
  */
 package com.stockops.Business;
 
+import com.stockops.Brokerage.Brokerage;
+import com.stockops.Establishments.Establishment;
+import com.stockops.Investor.Investor;
+import com.stockops.Market.Market;
+import com.stockops.Users.UserAccount;
+import java.util.ArrayList;
+
 /**
  *
  * @author mridulregmi
  */
 public class EcoSystem {
+    private ArrayList<UserAccount> userDirectory;
+    private Market market;
+    private Brokerage brokerage;
+    private Establishment establishment;
+    private Investor investor;
+    
+    public EcoSystem(){
+        userDirectory = new ArrayList<>();
+        market = new Market();
+        brokerage=new Brokerage();
+        establishment=new Establishment();
+        investor = new Investor();
+    }
+
+    public ArrayList<UserAccount> getUserDirectory() {
+        return userDirectory;
+    }
+
+    public void setUserDirectory(ArrayList<UserAccount> userDirectory) {
+        this.userDirectory = userDirectory;
+    }
+
+    public Market getMarket() {
+        return market;
+    }
+
+    public void setMarket(Market market) {
+        this.market = market;
+    }
+
+    public Brokerage getBrokerage() {
+        return brokerage;
+    }
+
+    public void setBrokerage(Brokerage brokerage) {
+        this.brokerage = brokerage;
+    }
+
+    public Establishment getEstablishment() {
+        return establishment;
+    }
+
+    public void setEstablishment(Establishment establishment) {
+        this.establishment = establishment;
+    }
+
+    public Investor getInvestor() {
+        return investor;
+    }
+
+    public void setInvestor(Investor investor) {
+        this.investor = investor;
+    }
     
 }
