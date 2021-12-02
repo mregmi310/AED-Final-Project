@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.stockops.Investor;
+package com.stockops.Establishments;
+
+import com.stockops.Users.AppUser;
 
 /**
  *
  * @author mridulregmi
  */
-class RetailInvestor extends InvestorAbstract{
-    
-    public RetailInvestor(String name) {
-        super(name);
-    }
+public class InvestmentManager extends AppUser{
     
 }

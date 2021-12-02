@@ -9,6 +9,10 @@ package com.stockops.Investor;
  *
  * @author mridulregmi
  */
-class DayTrader implements InvestorInterface{
+class DayTrader extends InvestorAbstract{
+    
+    public DayTrader(String name) {
+        super(name);
+    }
     
 }

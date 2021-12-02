@@ -10,5 +10,26 @@ package com.stockops.Market;
  * @author mridulregmi
  */
 public class Market {
+    private CommodityMarket commodityMarket;
+    private EquityMarket equityMarket;
+    public Market(){
+        
+    }
+
+    public CommodityMarket getCommodityMarket() {
+        return commodityMarket;
+    }
+
+    public void setCommodityMarket(CommodityMarket commodityMarket) {
+        this.commodityMarket = commodityMarket;
+    }
+
+    public EquityMarket getEquityMarket() {
+        return equityMarket;
+    }
+
+    public void setEquityMarket(EquityMarket equityMarket) {
+        this.equityMarket = equityMarket;
+    }
     
 }
