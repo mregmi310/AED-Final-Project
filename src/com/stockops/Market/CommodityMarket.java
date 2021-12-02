@@ -14,4 +14,17 @@ import java.util.ArrayList;
 public class CommodityMarket {
    private ArrayList<Commodity> commodityList;
    private CommodityMarketModerator commodityMarketModerator;
+   public CommodityMarket(){
+       commodityList = new ArrayList<>();
+   }
+
+    public CommodityMarketModerator getCommodityMarketModerator() {
+        return commodityMarketModerator;
+    }
+
+    public void setCommodityMarketModerator(CommodityMarketModerator commodityMarketModerator) {
+        this.commodityMarketModerator = commodityMarketModerator;
+    }
+   
+   
 }

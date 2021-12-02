@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.stockops.Market;
+package com.stockops.Brokerage;
 
 import com.stockops.Users.AppUser;
 
@@ -11,9 +11,10 @@ import com.stockops.Users.AppUser;
  *
  * @author mridulregmi
  */
-public class CommodityMarketModerator extends AppUser{
-    private CommodityMarket marketAssigned;
-    public CommodityMarketModerator(){
+public class BrokerageModerator extends AppUser{
+    private Brokerage brokerage;
+    
+    public BrokerageModerator(){
         
     }
 
@@ -33,12 +34,12 @@ public class CommodityMarketModerator extends AppUser{
         this.name = name;
     }
 
-    public CommodityMarket getMarketAssigned() {
-        return marketAssigned;
+    public Brokerage getBrokerage() {
+        return brokerage;
     }
 
-    public void setMarketAssigned(CommodityMarket marketAssigned) {
-        this.marketAssigned = marketAssigned;
+    public void setBrokerage(Brokerage brokerage) {
+        this.brokerage = brokerage;
     }
     
 }
