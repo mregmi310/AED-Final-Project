@@ -9,33 +9,32 @@ import com.stockops.Brokerage.Brokerage;
 import com.stockops.Establishments.Establishment;
 import com.stockops.Investor.Investor;
 import com.stockops.Market.Market;
-import com.stockops.Users.UserAccount;
-import java.util.ArrayList;
+import com.stockops.Users.UserAccountDirectory;
 
 /**
  *
  * @author mridulregmi
  */
 public class EcoSystem {
-    private ArrayList<UserAccount> userDirectory;
+    private UserAccountDirectory userDirectory;
     private Market market;
     private Brokerage brokerage;
     private Establishment establishment;
     private Investor investor;
     
     public EcoSystem(){
-        userDirectory = new ArrayList<>();
+        userDirectory = new UserAccountDirectory();
         market = new Market();
         brokerage=new Brokerage();
         establishment=new Establishment();
         investor = new Investor();
     }
 
-    public ArrayList<UserAccount> getUserDirectory() {
+    public UserAccountDirectory getUserDirectory() {
         return userDirectory;
     }
 
-    public void setUserDirectory(ArrayList<UserAccount> userDirectory) {
+    public void setUserDirectory(UserAccountDirectory userDirectory) {
         this.userDirectory = userDirectory;
     }
 
