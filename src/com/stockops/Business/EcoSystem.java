@@ -21,6 +21,7 @@ public class EcoSystem {
     private Brokerage brokerage;
     private Establishment establishment;
     private Investor investor;
+    private int userCount=0;
     
     public EcoSystem(){
         userDirectory = new UserAccountDirectory();
@@ -68,6 +69,14 @@ public class EcoSystem {
 
     public void setInvestor(Investor investor) {
         this.investor = investor;
+    }
+
+    public int getUserCount() {
+        return userCount;
+    }
+
+    public void setUserCount(int userCount) {
+        this.userCount = userCount;
     }
     
 }

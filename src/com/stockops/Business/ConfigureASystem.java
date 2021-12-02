@@ -15,6 +15,10 @@ import com.stockops.Market.CommodityMarketModerator;
 import com.stockops.Market.EquityMarket;
 import com.stockops.Market.EquityMarketModerator;
 import com.stockops.Market.Market;
+import com.stockops.Roles.BrokerageModeratorRole;
+import com.stockops.Roles.CommodityMarketModeratorRole;
+import com.stockops.Roles.EquityMarketModeratorRole;
+import com.stockops.Roles.EstablishmentsModeratorRole;
 
 
 /**
@@ -34,7 +38,16 @@ public class ConfigureASystem {
         CommodityMarket commodityMarket = new CommodityMarket();
         
         CommodityMarketModerator commodityMarketModerator = new CommodityMarketModerator();
+        
+        commodityMarketModerator.setName("Commodity Futures Trading Commission");
+        commodityMarketModerator.setUserId(getUserCount(system));
+        
+        system.getUserDirectory().createUserAccount("ctc", "ctc123", commodityMarketModerator, new CommodityMarketModeratorRole());
+        
         EquityMarketModerator equityMarketModerator = new EquityMarketModerator();
+        system.getUserDirectory().createUserAccount("sebi", "sebi123", equityMarketModerator, new EquityMarketModeratorRole());
+        equityMarketModerator.setName("Securities Exchange Board");
+        equityMarketModerator.setUserId(getUserCount(system));
         
         equityMarketModerator.setAssignedMarket(equityMarket);
         commodityMarketModerator.setMarketAssigned(commodityMarket);
@@ -52,6 +65,9 @@ public class ConfigureASystem {
         Brokerage brokerage = new Brokerage();
         
         BrokerageModerator brokerageModerator = new BrokerageModerator();
+        brokerageModerator.setName("Brokerage Commission");
+        brokerageModerator.setUserId(getUserCount(system));
+        system.getUserDirectory().createUserAccount("brokeradmin", "brokeradmin", brokerageModerator, new BrokerageModeratorRole());
         
         brokerage.setBrokerageModerator(brokerageModerator);
         brokerageModerator.setBrokerage(brokerage);
@@ -66,15 +82,21 @@ public class ConfigureASystem {
         Establishment establishment = new Establishment();
         
         EstablishmentsModerator establishmentsModerator = new EstablishmentsModerator();
+        establishmentsModerator.setName("Lisencing Commission");
+        establishmentsModerator.setUserId(getUserCount(system));
+        system.getUserDirectory().createUserAccount("llclicencing", "llclicencing", establishmentsModerator, new EstablishmentsModeratorRole());
         
         establishment.setEstablishmentsModerator(establishmentsModerator);
         establishmentsModerator.setEstablishment(establishment);
         
         system.setEstablishment(establishment);
-   
-//        UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
-
+        
         return system;
+    }
+
+    private static int getUserCount(EcoSystem system) {
+        system.setUserCount(system.getUserCount()+1);
+        return(system.getUserCount());
     }
     
 }

@@ -15,16 +15,16 @@ import javax.swing.JPanel;
  */
 public abstract class Role {
     public enum RoleType{
-        BrokerageModerator("BrokerageModerator"),
+        BrokerageModerator("BrokerageModerator"), //this
         CommodityBroker("CommodityBroker"),
         EquityBroker("EquityBroker"),
-        EstablishmentsModerator("EstablishmentsModerator"),
+        EstablishmentsModerator("EstablishmentsModerator"), //this
         CompanyManager("CompanyManager"),
         InvestmentManager("InvestmentManager"),
         DayTrader("DayTrader"),
         RetailInvestor("RetailInvestor"),
-        CommodityMarketModerator("CommodityMarketModerator"),
-        EquityMarketModerator("EquityMarketModerator");
+        CommodityMarketModerator("CommodityMarketModerator"), //this
+        EquityMarketModerator("EquityMarketModerator"); //this
         
         
         private String value;
