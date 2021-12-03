@@ -9,8 +9,11 @@ import com.stockops.Brokerage.CommodityBuyRequest;
 import com.stockops.Brokerage.CommoditySellRequest;
 import com.stockops.Brokerage.EquityBuyRequest;
 import com.stockops.Brokerage.EquitySellRequest;
+import com.stockops.Market.Equity;
 import com.stockops.Users.AppUser;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -22,12 +25,15 @@ public abstract class InvestorAbstract extends AppUser{
     private ArrayList<CommodityBuyRequest> commodityBuyRequests;
     private ArrayList<EquitySellRequest> equitySellRequests;
     private ArrayList<CommoditySellRequest> commoditySellRequests;
+    private Map<Equity,Integer> holdings;
+    
     public InvestorAbstract(String name){
         this.name=name;
         equityBuyRequests=new ArrayList<>();
         commodityBuyRequests=new ArrayList<>();
         commoditySellRequests=new ArrayList<>();
         equitySellRequests=new ArrayList<>();
+        holdings= new HashMap<>();
     }
 
     public String getName() {
