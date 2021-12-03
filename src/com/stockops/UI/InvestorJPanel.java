@@ -9,12 +9,12 @@ package com.stockops.UI;
  *
  * @author knd18
  */
-public class CompanyManagerJPanel extends javax.swing.JPanel {
+public class InvestorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CompanyManagerJPanel
      */
-    public CompanyManagerJPanel() {
+    public InvestorJPanel() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 582, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
