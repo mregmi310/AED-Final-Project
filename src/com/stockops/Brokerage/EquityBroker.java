@@ -3,18 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.stockops.Market;
+package com.stockops.Brokerage;
 
 import com.stockops.Users.AppUser;
+import java.util.ArrayList;
 
 /**
  *
  * @author mridulregmi
  */
-public class CommodityMarketModerator extends AppUser{
-    private CommodityMarket marketAssigned;
-    public CommodityMarketModerator(){
-        
+public class EquityBroker extends AppUser{
+    private float rating;
+    private ArrayList<EquityBuyRequest> buyRequests;
+    private ArrayList<EquitySellRequest> sellRequests;
+    public EquityBroker(){
+        buyRequests= new ArrayList<>();
+        sellRequests= new ArrayList<>();
     }
 
     public int getUserId() {
@@ -33,12 +37,12 @@ public class CommodityMarketModerator extends AppUser{
         this.name = name;
     }
 
-    public CommodityMarket getMarketAssigned() {
-        return marketAssigned;
+    public float getRating() {
+        return rating;
     }
 
-    public void setMarketAssigned(CommodityMarket marketAssigned) {
-        this.marketAssigned = marketAssigned;
+    public void setRating(float rating) {
+        this.rating = rating;
     }
     
 }

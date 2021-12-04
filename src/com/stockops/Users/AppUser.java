@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.stockops.Investor;
+package com.stockops.Users;
 
 /**
  *
  * @author mridulregmi
  */
-public interface InvestorInterface {
-    
+public class AppUser {
+    protected int UserId;
+    protected String name;
 }

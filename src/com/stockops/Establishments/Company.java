@@ -5,12 +5,21 @@
  */
 package com.stockops.Establishments;
 
-import com.stockops.Investor.InvestorInterface;
+import com.stockops.Investor.InvestorAbstract;
 
 /**
  *
  * @author mridulregmi
  */
-public class Company implements InvestorInterface{
+public class Company extends InvestorAbstract{
+    
+    private double captial;
+    private double revenue;
+    private double liabilities;
+    private CompanyManager companyManager;
+    private InvestmentManager investmentManager;
+    public Company(String name) {
+        super(name);
+    }
     
 }

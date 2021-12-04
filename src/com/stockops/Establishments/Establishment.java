@@ -13,5 +13,25 @@ import java.util.ArrayList;
  */
 public class Establishment {
     private ArrayList<Company> companyDirectory;
+    private EstablishmentsModerator establishmentsModerator;
+    public Establishment(){
+        companyDirectory = new ArrayList<>();
+    }
+
+    public ArrayList<Company> getCompanyDirectory() {
+        return companyDirectory;
+    }
+
+    public void setCompanyDirectory(ArrayList<Company> companyDirectory) {
+        this.companyDirectory = companyDirectory;
+    }
+
+    public EstablishmentsModerator getEstablishmentsModerator() {
+        return establishmentsModerator;
+    }
+
+    public void setEstablishmentsModerator(EstablishmentsModerator establishmentsModerator) {
+        this.establishmentsModerator = establishmentsModerator;
+    }
     
 }

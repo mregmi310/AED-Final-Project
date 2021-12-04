@@ -16,4 +16,11 @@ public class Investor {
     private ArrayList<RetailInvestor> retailInvestorDirectory;
     private ArrayList<DayTrader> dayTraderDirectory;
     private ArrayList<Company> organizationalInvestorDirectory;
+
+    public Investor() {
+        this.retailInvestorDirectory= new ArrayList<>();
+        this.dayTraderDirectory = new ArrayList<>();
+        this.organizationalInvestorDirectory = new ArrayList<>();
+    }
+    
 }

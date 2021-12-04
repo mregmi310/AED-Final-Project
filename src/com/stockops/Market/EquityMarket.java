@@ -14,4 +14,16 @@ import java.util.ArrayList;
 public class EquityMarket {
     private ArrayList<Equity> equityList;
     private EquityMarketModerator equityMarketModerator;
+    public EquityMarket(){
+        equityList= new ArrayList<>();
+    }
+
+    public EquityMarketModerator getEquityMarketModerator() {
+        return equityMarketModerator;
+    }
+
+    public void setEquityMarketModerator(EquityMarketModerator equityMarketModerator) {
+        this.equityMarketModerator = equityMarketModerator;
+    }
+    
 }
