@@ -5,8 +5,17 @@
  */
 package com.stockops.UI;
 
+import com.stockops.Brokerage.BrokerageModerator;
+import com.stockops.Brokerage.CommodityBroker;
+import com.stockops.Brokerage.EquityBroker;
 import com.stockops.Business.EcoSystem;
 import com.stockops.DB4OUtil.DB4OUtil;
+import com.stockops.Establishments.CompanyManager;
+import com.stockops.Establishments.EstablishmentsModerator;
+import com.stockops.Establishments.InvestmentManager;
+import com.stockops.Investor.DayTrader;
+import com.stockops.Investor.RetailInvestor;
+import com.stockops.Market.CommodityMarketModerator;
 import com.stockops.Roles.BrokerageModeratorRole;
 import com.stockops.Roles.CommodityBrokerRole;
 import com.stockops.Roles.CommodityMarketModeratorRole;
@@ -18,6 +27,9 @@ import com.stockops.Roles.EstablishmentsModeratorRole;
 import com.stockops.Roles.InvestmentManagerRoler;
 import com.stockops.Roles.RetailInvestorRole;
 import com.stockops.Roles.Role;
+import com.stockops.Users.AppUser;
+import com.stockops.Users.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -32,6 +44,8 @@ public class MainJFrame extends javax.swing.JFrame {
     
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    AppUser selectedUser;
+    Role role;
     
     public MainJFrame() {
         initComponents();
@@ -235,8 +249,18 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel8.setText("Confirm Password:");
 
         jButton1.setText("Sign In");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Sign Up");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         txtTitle.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
         txtTitle.setText("PORTAL");
@@ -347,6 +371,11 @@ public class MainJFrame extends javax.swing.JFrame {
         txtTitle2.setText("PORTAL");
 
         jButton3.setText("Sign In");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout signInJPanelLayout = new javax.swing.GroupLayout(signInJPanel);
         signInJPanel.setLayout(signInJPanelLayout);
@@ -437,44 +466,106 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCommodityBrokerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommodityBrokerActionPerformed
-        setRightPanalSignInUp(new CommodityBrokerRole(), "Commodity Broker");
+        this.selectedUser=new CommodityBroker();
+        this.role = new CommodityBrokerRole();
+        setRightPanalSignInUp(this.role, "Commodity Broker");
     }//GEN-LAST:event_btnCommodityBrokerActionPerformed
 
     private void btnDayTraderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDayTraderActionPerformed
-        setRightPanalSignInUp(new DayTraderRole(), "Day Trader");
+        this.selectedUser=new DayTrader();
+        this.role=new DayTraderRole();
+        setRightPanalSignInUp(this.role, "Day Trader");
     }//GEN-LAST:event_btnDayTraderActionPerformed
 
     private void btnCommodityMarketModeratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommodityMarketModeratorActionPerformed
-        setRightPanalSignIn(new CommodityMarketModeratorRole(), "Commodity Futures Trading Commission");
+        this.selectedUser=new CommodityMarketModerator();
+        this.role=new CommodityMarketModeratorRole();
+        setRightPanalSignIn(this.role, "Commodity Futures Trading Commission");
     }//GEN-LAST:event_btnCommodityMarketModeratorActionPerformed
 
     private void btnEquityBrokerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquityBrokerActionPerformed
-        setRightPanalSignInUp(new EquityBrokerRole(), "Equity Broker");
+        this.selectedUser=new EquityBroker();
+        this.role=new EquityBrokerRole();
+        setRightPanalSignInUp(this.role, "Equity Broker");
     }//GEN-LAST:event_btnEquityBrokerActionPerformed
 
     private void btnEquityMarketModeratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquityMarketModeratorActionPerformed
-        setRightPanalSignIn(new CompanyManagerRole(), "Securities and Exchange Board");
+        this.selectedUser=new CompanyManager();
+        this.role=new EquityMarketModeratorRole();
+        setRightPanalSignIn(this.role, "Securities and Exchange Board");
     }//GEN-LAST:event_btnEquityMarketModeratorActionPerformed
 
     private void btnBrokersCommissionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrokersCommissionAdminActionPerformed
-        setRightPanalSignIn(new BrokerageModeratorRole(), "Brokers Commmission Admin");
+        this.selectedUser=new BrokerageModerator();
+        this.role=new BrokerageModeratorRole();
+        setRightPanalSignIn(this.role, "Brokers Commmission Admin");
     }//GEN-LAST:event_btnBrokersCommissionAdminActionPerformed
 
     private void btnLicensingCommissionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLicensingCommissionAdminActionPerformed
-        setRightPanalSignIn(new EstablishmentsModeratorRole(), "Licensing Commission Admin");
+        this.selectedUser=new EstablishmentsModerator();
+        this.role=new EstablishmentsModeratorRole();
+        setRightPanalSignIn(this.role, "Licensing Commission Admin");
     }//GEN-LAST:event_btnLicensingCommissionAdminActionPerformed
 
     private void btnCompanyManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompanyManagerActionPerformed
-        setRightPanalSignInUp(new CompanyManagerRole(), "Company Manager");
+        this.selectedUser=new CompanyManager();
+        this.role=new CompanyManagerRole();
+        setRightPanalSignInUp(this.role, "Company Manager");
     }//GEN-LAST:event_btnCompanyManagerActionPerformed
 
     private void btnInvestmentsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvestmentsManagerActionPerformed
-        setRightPanalSignInUp(new InvestmentManagerRoler(), "Investment Manager");
+        this.selectedUser=new InvestmentManager();
+        this.role=new InvestmentManagerRoler();
+        setRightPanalSignInUp(this.role, "Investment Manager");
     }//GEN-LAST:event_btnInvestmentsManagerActionPerformed
 
     private void btnRetailInvestorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetailInvestorActionPerformed
-        setRightPanalSignInUp(new RetailInvestorRole(), "Retail Investor");
+        this.selectedUser=new RetailInvestor();
+        this.role=new RetailInvestorRole();
+        setRightPanalSignInUp(this.role, "Retail Investor");
     }//GEN-LAST:event_btnRetailInvestorActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        char[] password=jPasswordField4.getPassword();
+        String passwordString = new String(password);
+        UserAccount user=system.getUserDirectory().authenticateUser(jTextField5.getText(), passwordString);
+        if(user!=null){
+            setContainer(user.getRole().createWorkArea(container, user, system));
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Invalid Username or Password!");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        char[] password=jPasswordField1.getPassword();
+        String passwordString = new String(password);
+        UserAccount user=system.getUserDirectory().authenticateUser(jTextField2.getText(), passwordString);
+        if(user!=null){
+            setContainer(user.getRole().createWorkArea(container, user, system));
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Invalid Username or Password!");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        char[] password=jPasswordField2.getPassword();
+        String passwordString = new String(password);
+        char[] confirmPassword=jPasswordField3.getPassword();
+        String confirmPasswordString = new String(confirmPassword);
+        if(!passwordString.equals(confirmPasswordString)){
+            JOptionPane.showMessageDialog(this, "Passwords Do Not Match");
+        }
+        else{
+            selectedUser.setName(jTextField3.getText());
+            selectedUser.setUserId(system.getUserCount());
+            system.setUserCount(system.getUserCount()+1);
+            UserAccount user=this.system.getUserDirectory().createUserAccount(jTextField4.getText(), passwordString, selectedUser, role);
+            JOptionPane.showMessageDialog(this, "User Signed In Successfully");
+            setContainer(user.getRole().createWorkArea(container, user, system));
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

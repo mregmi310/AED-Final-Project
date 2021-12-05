@@ -4,8 +4,30 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Business/ConfigureASystem.java</file>
-            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Business/EcoSystem.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/CommodityBrokerRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Users/UserAccountDirectory.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/UI/CompanyManger/CompanyManagerHomePageJPanel.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Market/EquityMarketModerator.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/UI/InvestorJPanel.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Market/Equity.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/InvestmentManagerRoler.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/Role.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/DayTraderRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Market/Market.java</file>
             <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/DB4OUtil/DB4OUtil.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/EstablishmentsModeratorRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/EquityMarketModeratorRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/BrokerageModeratorRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/CompanyManagerRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Investor/Investor.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/UI/MainJFrame.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Investor/InvestorAbstract.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/UI/Investor/InvestorProfile.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/CommodityMarketModeratorRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Establishments/EstablishmentsModerator.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Business/EcoSystem.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Roles/EquityBrokerRole.java</file>
+            <file>file:/Users/mridulregmi/Desktop/AED-Final-Project/src/com/stockops/Users/UserAccount.java</file>
         </group>
     </open-files>
 </project-private>

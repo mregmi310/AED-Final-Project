@@ -18,8 +18,8 @@ public class Company extends InvestorAbstract{
     private double liabilities;
     private CompanyManager companyManager;
     private InvestmentManager investmentManager;
-    public Company(String name) {
-        super(name);
+    public Company() {
+        super();
     }
     
 }
