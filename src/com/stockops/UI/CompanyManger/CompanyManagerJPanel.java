@@ -451,21 +451,26 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
             Company company = new Company();
-            company.setName(txtCompanyName.getText());
-            Double assets = Double.parseDouble(txtAsset.getText());
-            Double liab = Double.parseDouble(txtLiab.getText());
-            company.setLiabilities(liab);
-            company.setAssets(assets);
-            company.setLiscenceStatus("Pending");
-            company.setListingRequestStatus("Not Initiated");
-            company.setCaptial(assets-liab);
-            company.setBalance(assets-liab);
-            company.setCompanyManager(manager);
-            this.manager.getCompanyList().add(company);
-            this.business.getEstablishment().getEstablishmentsModerator().getCompanyList().add(company);
-            populateRegisterTable();
-            JOptionPane.showMessageDialog(this, "Company "+company.getName() +" successfully registered! \n"+"    Market Cap:"+String.valueOf(assets-liab));
-            setComponent(homepage);
+            if(this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(txtCompanyName.getText())!=null){
+                JOptionPane.showMessageDialog(this, "Company With the Given Name Already Exists!");
+            }
+            else{
+                company.setName(txtCompanyName.getText());
+                Double assets = Double.parseDouble(txtAsset.getText());
+                Double liab = Double.parseDouble(txtLiab.getText());
+                company.setLiabilities(liab);
+                company.setAssets(assets);
+                company.setLiscenceStatus("Pending");
+                company.setListingRequestStatus("Not Initiated");
+                company.setCaptial(assets-liab);
+                company.setBalance(assets-liab);
+                company.setCompanyManager(manager);
+                this.manager.getCompanyList().add(company);
+                this.business.getEstablishment().getEstablishmentsModerator().getCompanyList().add(company);
+                populateRegisterTable();
+                JOptionPane.showMessageDialog(this, "Company "+company.getName() +" successfully registered! \n"+"    Market Cap:"+String.valueOf(assets-liab));
+                setComponent(homepage);
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Assets and Liabilities Should Be Numbers!");
@@ -476,8 +481,13 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         String selectedCompanyName=String.valueOf(tableRegisterComp.getValueAt(tableRegisterComp.getSelectedRow(), 0));
         Company selectedCompanyForListing = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(selectedCompanyName);
         if(selectedCompanyForListing.getLiscenceStatus().equals("Approved")){
-            this.selectedCompany = selectedCompanyForListing;
-            setComponent(requestListing);
+            if(selectedCompanyForListing.getListingRequestStatus().equals("Approved")){
+                JOptionPane.showMessageDialog(this, "This company is already listed");
+            }
+            else{
+                this.selectedCompany = selectedCompanyForListing;
+                setComponent(requestListing);
+            }
         }
         else{
             JOptionPane.showMessageDialog(this, "This company does not have a lisence to run a business");
@@ -498,12 +508,18 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
             Double pricePerShare = selectedCompany.getCaptial()/numberOfShares;
             ListingRequest listingRequest = new ListingRequest(this.selectedCompany, pricePerShare, numberOfShares);
             this.selectedCompany.setListingRequestStatus("Pending");
+            for(ListingRequest listReq: this.business.getMarket().getEquityMarket().getEquityMarketModerator().getListingRequestList()){
+                if(listReq.getCompany().getName().equals(selectedCompany.getName())){
+                    this.business.getMarket().getEquityMarket().getEquityMarketModerator().getListingRequestList().remove(listReq);
+                }
+            }
             this.business.getMarket().getEquityMarket().getEquityMarketModerator().getListingRequestList().add(listingRequest);
             int requestCount =this.business.getMarket().getEquityMarket().getEquityMarketModerator().getRequestCount();
             listingRequest.setRequestId(requestCount);
             this.business.getMarket().getEquityMarket().getEquityMarketModerator().setRequestCount(requestCount+1);
             txtPricePerShare.setText(String.valueOf(pricePerShare));
             JOptionPane.showMessageDialog(this, "Request Sent!");
+            populateListingTable();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Number of shares should be an integer!");
@@ -552,6 +568,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
             selectedCompany.getJobRequest().remove(selectedCompany.getJobRequest().get(tblApplications.getSelectedRow()));
             populateJobRequestTable();
             populateListingTable();
+            populateListingRequestTable();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Something went wrong");
@@ -688,11 +705,13 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblApplications.getModel();
         model.setRowCount(0);
         for(JobRequest jobRequest: selectedCompany.getJobRequest()){
-            Object[] row= new Object[3];
-            row[0]=jobRequest.getApplicant().getName();
-            row[1]=jobRequest.getExperience();
-            row[2]=jobRequest.getSalaryRequest();
-            model.addRow(row);
+            if(jobRequest.getApplicant().getAssignedCompany()==null){
+                Object[] row= new Object[3];
+                row[0]=jobRequest.getApplicant().getName();
+                row[1]=jobRequest.getExperience();
+                row[2]=jobRequest.getSalaryRequest();
+                model.addRow(row);
+            }
         }
     }
 }

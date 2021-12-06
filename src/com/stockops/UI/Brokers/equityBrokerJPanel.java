@@ -37,7 +37,6 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
         this.account=account;
         this.equityBroker=(EquityBroker)account.getUser();
         initComponents();
-        this.equityBroker.setAssignedMarket(this.business.getMarket().getEquityMarket().getMarketList().get(1));
         if(this.equityBroker.getAssignedMarket()==null){
             changeScreen(marketNotAssigned);
             jLabel6.setText(this.equityBroker.getName());
