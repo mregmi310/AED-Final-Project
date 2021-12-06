@@ -10,6 +10,7 @@ import com.stockops.UI.CompanyManger.CompanyManagerHomePageJPanel;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author mridulregmi
@@ -18,7 +19,7 @@ public class CompanyManagerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new CompanyManagerHomePageJPanel(); //To change body of generated methods, choose Tools | Templates.
+        return new CompanyManagerHomePageJPanel(userProcessContainer, account, business); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

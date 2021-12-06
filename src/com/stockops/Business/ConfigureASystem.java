@@ -84,7 +84,7 @@ public class ConfigureASystem {
         EstablishmentsModerator establishmentsModerator = new EstablishmentsModerator();
         establishmentsModerator.setName("Lisencing Commission");
         establishmentsModerator.setUserId(getUserCount(system));
-        system.getUserDirectory().createUserAccount("llclicencing", "llclicencing", establishmentsModerator, new EstablishmentsModeratorRole());
+        system.getUserDirectory().createUserAccount("llc", "llc", establishmentsModerator, new EstablishmentsModeratorRole());
         
         establishment.setEstablishmentsModerator(establishmentsModerator);
         establishmentsModerator.setEstablishment(establishment);
