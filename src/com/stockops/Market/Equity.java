@@ -14,7 +14,8 @@ import com.stockops.Establishments.Company;
 public class Equity {
     private Company company;
     private String symbol;
-    private int price;
+    private double price;
+    private int stockQuantity;
     public Equity(){
         
     }
@@ -40,12 +41,20 @@ public class Equity {
         this.symbol = symbol;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
     }
     
 }

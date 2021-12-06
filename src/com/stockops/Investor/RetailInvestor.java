@@ -9,10 +9,10 @@ package com.stockops.Investor;
  *
  * @author mridulregmi
  */
-class RetailInvestor extends InvestorAbstract{
+public class RetailInvestor extends InvestorAbstract{
     
-    public RetailInvestor(String name) {
-        super(name);
+    public RetailInvestor() {
+        super();
     }
     
 }

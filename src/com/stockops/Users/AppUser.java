@@ -12,4 +12,24 @@ package com.stockops.Users;
 public class AppUser {
     protected int UserId;
     protected String name;
+    public AppUser(){
+        
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int UserId) {
+        this.UserId = UserId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 }

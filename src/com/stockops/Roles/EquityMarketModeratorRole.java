@@ -8,6 +8,7 @@ package com.stockops.Roles;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
+import userinterfaceSEBI.MarketManagementJPanel;
 
 /**
  *
@@ -17,7 +18,7 @@ public class EquityMarketModeratorRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new MarketManagementJPanel(userProcessContainer, account, business);
     }
     
 }

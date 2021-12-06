@@ -6,6 +6,7 @@
 package com.stockops.Establishments;
 
 import com.stockops.Users.AppUser;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,8 +14,10 @@ import com.stockops.Users.AppUser;
  */
 public class EstablishmentsModerator extends AppUser{
     private Establishment establishment;
+    private ArrayList<Company> companyList;
     public EstablishmentsModerator(){
-        
+        super();
+        companyList = new ArrayList<>();
     }
 
     public int getUserId() {
@@ -39,6 +42,23 @@ public class EstablishmentsModerator extends AppUser{
 
     public void setEstablishment(Establishment establishment) {
         this.establishment = establishment;
+    }
+
+    public ArrayList<Company> getCompanyList() {
+        return companyList;
+    }
+
+    public void setCompanyList(ArrayList<Company> companyList) {
+        this.companyList = companyList;
+    }
+    
+    public Company getCompanyByName(String name){
+        for(Company company: this.companyList){
+            if(company.getName().equals(name)){
+                return company;
+            }
+        }
+        return null;
     }
     
 }

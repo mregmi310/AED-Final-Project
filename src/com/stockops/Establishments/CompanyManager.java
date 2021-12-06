@@ -6,11 +6,26 @@
 package com.stockops.Establishments;
 
 import com.stockops.Users.AppUser;
+import java.util.ArrayList;
 
 /**
  *
  * @author mridulregmi
  */
 public class CompanyManager extends AppUser{
+    private ArrayList<Company> companyList;
+    public CompanyManager(){
+        super();
+        this.companyList=new ArrayList<>();
+    }
+
+    public ArrayList<Company> getCompanyList() {
+        return companyList;
+    }
+
+    public void setCompanyList(ArrayList<Company> companyList) {
+        this.companyList = companyList;
+    }
+    
     
 }

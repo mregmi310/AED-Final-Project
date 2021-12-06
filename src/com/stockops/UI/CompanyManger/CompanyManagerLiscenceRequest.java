@@ -5,6 +5,14 @@
  */
 package com.stockops.UI.CompanyManger;
 
+import com.stockops.Business.EcoSystem;
+import com.stockops.Establishments.Company;
+import com.stockops.Establishments.EstablishmentsModerator;
+import com.stockops.Roles.EstablishmentsModeratorRole;
+import com.stockops.Users.UserAccount;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author knd18
@@ -14,8 +22,15 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
     /**
      * Creates new form CompanyManagerLiscenceRequest
      */
-    public CompanyManagerLiscenceRequest() {
+    UserAccount account;
+    EcoSystem business;
+    EstablishmentsModerator establishmentsModerator;
+    public CompanyManagerLiscenceRequest(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         initComponents();
+        this.business=business;
+        this.account=account;
+        this.establishmentsModerator=(EstablishmentsModerator)account.getUser();
+        populateLiscensingTable();
     }
 
     /**
@@ -28,29 +43,16 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableRegisterComp = new javax.swing.JTable();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setPreferredSize(new java.awt.Dimension(1000, 1000));
         setRequestFocusEnabled(false);
 
         jLabel1.setText("Compay Manager Liscence Request");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Company Name", "Total Number of Shares", "Value of Share", "Market Cap", "Liscence Request", "Listing Request", "Investment Manager"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Approve");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,14 +63,23 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
 
         jButton2.setText("Reject");
 
+        tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Company Name", "Assets", "Liabilities", "Market Cap", "Investment Manager", "Liscence Request"
+            }
+        ));
+        jScrollPane1.setViewportView(tableRegisterComp);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -78,26 +89,32 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
                         .addGap(221, 221, 221)
                         .addComponent(jButton1)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(710, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String selectedCompanyName=String.valueOf(tableRegisterComp.getValueAt(tableRegisterComp.getSelectedRow(), 0));
+        Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(selectedCompanyName);
+        selectedCompany.setLiscenceStatus("Approved");
+        populateLiscensingTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -106,6 +123,27 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableRegisterComp;
     // End of variables declaration//GEN-END:variables
+
+    private void populateLiscensingTable() {
+        DefaultTableModel model = (DefaultTableModel) tableRegisterComp.getModel();
+        model.setRowCount(0);
+        for(Company company: this.establishmentsModerator.getCompanyList()){
+            Object[] row= new Object[6];
+            row[0]=company.getName();
+            row[1]=company.getAssets();
+            row[2]=company.getLiabilities();
+            row[3]=company.getCaptial();
+            if(company.getInvestmentManager()==null){
+                row[4]="Not Assigned";
+            }
+            else{
+                row[4]=company.getInvestmentManager().getName();
+            }
+            row[5]=company.getLiscenceStatus();
+            model.addRow(row);
+        }
+    }
+
 }

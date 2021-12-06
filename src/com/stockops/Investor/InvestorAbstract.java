@@ -27,8 +27,7 @@ public abstract class InvestorAbstract extends AppUser{
     private ArrayList<CommoditySellRequest> commoditySellRequests;
     private Map<Equity,Integer> holdings;
     
-    public InvestorAbstract(String name){
-        this.name=name;
+    public InvestorAbstract(){
         equityBuyRequests=new ArrayList<>();
         commodityBuyRequests=new ArrayList<>();
         commoditySellRequests=new ArrayList<>();

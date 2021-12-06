@@ -34,4 +34,5 @@ public class Establishment {
         this.establishmentsModerator = establishmentsModerator;
     }
     
+    
 }

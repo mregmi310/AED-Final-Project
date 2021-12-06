@@ -8,12 +8,12 @@ package userinterfaceSEBI;
  *
  * @author manju
  */
-public class Listinguserinterface extends javax.swing.JPanel {
+public class ListingRequest extends javax.swing.JPanel {
 
     /**
      * Creates new form userinterface
      */
-    public Listinguserinterface() {
+    public ListingRequest() {
         initComponents();
     }
 

@@ -6,8 +6,10 @@
 package com.stockops.Roles;
 
 import com.stockops.Business.EcoSystem;
+import com.stockops.UI.CompanyManger.CompanyManagerHomePageJPanel;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
+
 
 /**
  *
@@ -17,7 +19,7 @@ public class CompanyManagerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new CompanyManagerHomePageJPanel(userProcessContainer, account, business); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
