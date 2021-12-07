@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class EstablishmentsModerator extends AppUser{
     private Establishment establishment;
     private ArrayList<Company> companyList;
+    private ArrayList<CompanyManager> companyManagerDirectory;
+    private ArrayList<InvestmentManager> investmentManagerDirectory;
     public EstablishmentsModerator(){
         super();
         companyList = new ArrayList<>();
@@ -60,5 +62,22 @@ public class EstablishmentsModerator extends AppUser{
         }
         return null;
     }
+
+    public ArrayList<CompanyManager> getCompanyManagerDirectory() {
+        return companyManagerDirectory;
+    }
+
+    public void setCompanyManagerDirectory(ArrayList<CompanyManager> companyManagerDirectory) {
+        this.companyManagerDirectory = companyManagerDirectory;
+    }
+
+    public ArrayList<InvestmentManager> getInvestmentManagerDirectory() {
+        return investmentManagerDirectory;
+    }
+
+    public void setInvestmentManagerDirectory(ArrayList<InvestmentManager> investmentManagerDirectory) {
+        this.investmentManagerDirectory = investmentManagerDirectory;
+    }
+    
     
 }

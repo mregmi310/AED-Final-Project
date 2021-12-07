@@ -24,7 +24,7 @@ import com.stockops.Roles.DayTraderRole;
 import com.stockops.Roles.EquityBrokerRole;
 import com.stockops.Roles.EquityMarketModeratorRole;
 import com.stockops.Roles.EstablishmentsModeratorRole;
-import com.stockops.Roles.InvestmentManagerRoler;
+import com.stockops.Roles.InvestmentManagerRole;
 import com.stockops.Roles.RetailInvestorRole;
 import com.stockops.Roles.Role;
 import com.stockops.Users.AppUser;
@@ -222,7 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCompanyManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnInvestmentsManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jSplitPane2.setLeftComponent(rolesPanal);
@@ -515,7 +515,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnInvestmentsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvestmentsManagerActionPerformed
         this.selectedUser=new InvestmentManager();
-        this.role=new InvestmentManagerRoler();
+        this.role=new InvestmentManagerRole();
         setRightPanalSignInUp(this.role, "Investment Manager");
     }//GEN-LAST:event_btnInvestmentsManagerActionPerformed
 
@@ -562,6 +562,24 @@ public class MainJFrame extends javax.swing.JFrame {
             selectedUser.setUserId(system.getUserCount());
             system.setUserCount(system.getUserCount()+1);
             UserAccount user=this.system.getUserDirectory().createUserAccount(jTextField4.getText(), passwordString, selectedUser, role);
+            if(role instanceof CommodityBrokerRole){
+                this.system.getBrokerage().getCommodityBrokersDirectory().add((CommodityBroker)selectedUser);
+            }
+            else if(role instanceof EquityBrokerRole){
+                this.system.getBrokerage().getEquityBrokersDirectory().add((EquityBroker)selectedUser);
+            }
+            else if(role instanceof RetailInvestorRole){
+                this.system.getInvestor().getRetailInvestorDirectory().add((RetailInvestor)selectedUser);
+            }
+            else if(role instanceof InvestmentManagerRole){
+                this.system.getEstablishment().getEstablishmentsModerator().getInvestmentManagerDirectory().add((InvestmentManager)selectedUser);
+            }
+            else if(role instanceof CompanyManagerRole){
+                this.system.getEstablishment().getEstablishmentsModerator().getCompanyManagerDirectory().add((CompanyManager)selectedUser);
+            }
+            else{
+                this.system.getInvestor().getDayTraderDirectory().add((DayTrader)selectedUser);
+            }
             JOptionPane.showMessageDialog(this, "User Signed In Successfully");
             setContainer(user.getRole().createWorkArea(container, user, system));
         }

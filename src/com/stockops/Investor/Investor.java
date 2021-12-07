@@ -22,5 +22,30 @@ public class Investor {
         this.dayTraderDirectory = new ArrayList<>();
         this.organizationalInvestorDirectory = new ArrayList<>();
     }
+
+    public ArrayList<RetailInvestor> getRetailInvestorDirectory() {
+        return retailInvestorDirectory;
+    }
+
+    public void setRetailInvestorDirectory(ArrayList<RetailInvestor> retailInvestorDirectory) {
+        this.retailInvestorDirectory = retailInvestorDirectory;
+    }
+
+    public ArrayList<DayTrader> getDayTraderDirectory() {
+        return dayTraderDirectory;
+    }
+
+    public void setDayTraderDirectory(ArrayList<DayTrader> dayTraderDirectory) {
+        this.dayTraderDirectory = dayTraderDirectory;
+    }
+
+    public ArrayList<Company> getOrganizationalInvestorDirectory() {
+        return organizationalInvestorDirectory;
+    }
+
+    public void setOrganizationalInvestorDirectory(ArrayList<Company> organizationalInvestorDirectory) {
+        this.organizationalInvestorDirectory = organizationalInvestorDirectory;
+    }
+    
     
 }

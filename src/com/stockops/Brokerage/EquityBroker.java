@@ -44,5 +44,22 @@ public class EquityBroker extends AppUser{
     public void setRating(float rating) {
         this.rating = rating;
     }
+
+    public ArrayList<EquityBuyRequest> getBuyRequests() {
+        return buyRequests;
+    }
+
+    public void setBuyRequests(ArrayList<EquityBuyRequest> buyRequests) {
+        this.buyRequests = buyRequests;
+    }
+
+    public ArrayList<EquitySellRequest> getSellRequests() {
+        return sellRequests;
+    }
+
+    public void setSellRequests(ArrayList<EquitySellRequest> sellRequests) {
+        this.sellRequests = sellRequests;
+    }
+    
     
 }

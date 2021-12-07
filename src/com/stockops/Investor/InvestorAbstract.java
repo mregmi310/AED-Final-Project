@@ -20,7 +20,7 @@ import java.util.Map;
  * @author mridulregmi
  */
 public abstract class InvestorAbstract extends AppUser{
-    private float balance;
+    private double balance;
     private ArrayList<EquityBuyRequest> equityBuyRequests;
     private ArrayList<CommodityBuyRequest> commodityBuyRequests;
     private ArrayList<EquitySellRequest> equitySellRequests;
@@ -33,6 +33,7 @@ public abstract class InvestorAbstract extends AppUser{
         commoditySellRequests=new ArrayList<>();
         equitySellRequests=new ArrayList<>();
         holdings= new HashMap<>();
+        balance=0;
     }
 
     public String getName() {
@@ -43,11 +44,11 @@ public abstract class InvestorAbstract extends AppUser{
         this.name = name;
     }
 
-    public float getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

@@ -28,5 +28,29 @@ public class Brokerage {
     public void setBrokerageModerator(BrokerageModerator brokerageModerator) {
         this.brokerageModerator = brokerageModerator;
     }
+
+    public ArrayList<EquityBroker> getEquityBrokersDirectory() {
+        return equityBrokersDirectory;
+    }
+
+    public void setEquityBrokersDirectory(ArrayList<EquityBroker> equityBrokersDirectory) {
+        this.equityBrokersDirectory = equityBrokersDirectory;
+    }
+
+    public ArrayList<CommodityBroker> getCommodityBrokersDirectory() {
+        return commodityBrokersDirectory;
+    }
+
+    public void setCommodityBrokersDirectory(ArrayList<CommodityBroker> commodityBrokersDirectory) {
+        this.commodityBrokersDirectory = commodityBrokersDirectory;
+    }
     
+    public EquityBroker getBrokerByName(String name){
+        for(EquityBroker equityBroker: this.equityBrokersDirectory){
+            if(equityBroker.getName().equals(name)){
+                return equityBroker;
+            }
+        }
+        return null;
+    }
 }
