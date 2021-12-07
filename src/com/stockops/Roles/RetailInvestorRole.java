@@ -6,6 +6,7 @@
 package com.stockops.Roles;
 
 import com.stockops.Business.EcoSystem;
+import com.stockops.UI.Investor.InvestorProfile;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
 
@@ -17,7 +18,7 @@ public class RetailInvestorRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return null; //To change body of generated methods, choose Tools | Templates.
+        return new InvestorProfile(userProcessContainer,account,business);
     }
     
 }

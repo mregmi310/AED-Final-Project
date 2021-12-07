@@ -43,4 +43,13 @@ public class EquityMarket {
         this.marketName = market;
     }
     
+    public Equity getEquityByName(String name){
+        for(Equity equity: this.equityList){
+            if(equity.getCompany().getName().equals(name)){
+                return equity;
+            }
+        }
+        return null;
+    }
+    
 }

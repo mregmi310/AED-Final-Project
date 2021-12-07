@@ -292,6 +292,7 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
         company.setLiscenceStatus("Pending");
         company.setListingRequestStatus("Not Initiated");
         company.setCaptial(assets-liab);
+        company.setCompanyManager(manager);
         txtMarkCap.setText(String.valueOf(assets-liab));
         this.manager.getCompanyList().add(company);
         this.business.getEstablishment().getEstablishmentsModerator().getCompanyList().add(company);

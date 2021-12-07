@@ -6,6 +6,7 @@
 package com.stockops.Brokerage;
 
 import com.stockops.Investor.Investor;
+import com.stockops.Investor.InvestorAbstract;
 import com.stockops.Market.Equity;
 
 /**
@@ -13,34 +14,35 @@ import com.stockops.Market.Equity;
  * @author mridulregmi
  */
 public class EquityBuyRequest {
-    private Investor seller;
-    private Investor buyer;
+    private InvestorAbstract seller;
+    private InvestorAbstract buyer;
     private Equity equity;
     private int quantity;
 
     public EquityBuyRequest() {
+        seller=null;
     }
 
-    public EquityBuyRequest(Investor seller, Investor buyer, Equity equity, int quantity) {
+    public EquityBuyRequest(InvestorAbstract seller, InvestorAbstract buyer, Equity equity, int quantity) {
         this.seller = seller;
         this.buyer = buyer;
         this.equity = equity;
         this.quantity = quantity;
     }
 
-    public Investor getSeller() {
+    public InvestorAbstract getSeller() {
         return seller;
     }
 
-    public void setSeller(Investor seller) {
+    public void setSeller(InvestorAbstract seller) {
         this.seller = seller;
     }
 
-    public Investor getBuyer() {
+    public InvestorAbstract getBuyer() {
         return buyer;
     }
 
-    public void setBuyer(Investor buyer) {
+    public void setBuyer(InvestorAbstract buyer) {
         this.buyer = buyer;
     }
 

@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  *
  * @author mridulregmi
  */
-public class InvestmentManagerRoler extends Role{
+public class InvestmentManagerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
