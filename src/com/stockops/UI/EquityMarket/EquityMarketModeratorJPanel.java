@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterfaceSEBI;
+package com.stockops.UI.EquityMarket;
 
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author manju
  */
-public class MarketManagementJPanel extends javax.swing.JPanel {
+public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form MarketManagementJPanel
@@ -27,7 +27,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
     UserAccount account;
     EcoSystem business;
     EquityMarketModerator equityMarketModerator;
-    public MarketManagementJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public EquityMarketModeratorJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         this.userProcessContainer=userProcessContainer;
         this.account=account;
         this.business=business;
@@ -164,7 +164,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                     .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                     .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +186,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                                 .addComponent(jTxtCompany)
                                 .addComponent(txtname)
                                 .addComponent(jtxtprice, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addContainerGap(677, Short.MAX_VALUE)))
+                    .addContainerGap(434, Short.MAX_VALUE)))
         );
         MarketModeratorHomepageLayout.setVerticalGroup(
             MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +198,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                     .addComponent(jBtnupdate)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                     .addContainerGap()
@@ -223,7 +223,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                     .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTxtmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(125, Short.MAX_VALUE)))
+                    .addContainerGap(47, Short.MAX_VALUE)))
         );
 
         add(MarketModeratorHomepage, "card2");
@@ -289,7 +289,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                     .addGroup(ListingRequestJPanelLayout.createSequentialGroup()
                         .addGap(399, 399, 399)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ListingRequestJPanelLayout.setVerticalGroup(
             ListingRequestJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +302,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                 .addGroup(ListingRequestJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtndecline)
                     .addComponent(jBtnapprove))
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         add(ListingRequestJPanel, "card3");
@@ -362,7 +362,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                         .addGap(73, 73, 73)
                         .addComponent(jbtndecline1))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         DelistingRequestLayout.setVerticalGroup(
             DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,7 +375,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
                 .addGroup(DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtndecline1)
                     .addComponent(jBtnapprove1))
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         add(DelistingRequest, "card4");
@@ -400,6 +400,7 @@ public class MarketManagementJPanel extends javax.swing.JPanel {
         selectedRequest.setStatus("Listed");
         equity.setPrice(selectedRequest.getPricePerShare());
         equity.setStockQuantity(selectedRequest.getTotalShares());
+        equity.setAvailableQuantity(selectedRequest.getTotalShares());
         this.business.getMarket().getEquityMarket().getEquityList().add(equity);
         populateListingTable();;
     }//GEN-LAST:event_jBtnapproveActionPerformed

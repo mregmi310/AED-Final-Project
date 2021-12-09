@@ -20,6 +20,9 @@ public class EstablishmentsModerator extends AppUser{
     public EstablishmentsModerator(){
         super();
         companyList = new ArrayList<>();
+        companyManagerDirectory=new ArrayList<>();
+        investmentManagerDirectory=new ArrayList<>();
+        
     }
 
     public int getUserId() {
