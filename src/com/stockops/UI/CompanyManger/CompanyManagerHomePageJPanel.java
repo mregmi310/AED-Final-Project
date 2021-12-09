@@ -75,6 +75,25 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         txtPricePerShare = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        InvestmentManager = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jComboCompanyName = new javax.swing.JComboBox<>();
+        jComboManager = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        lblAssets = new javax.swing.JLabel();
+        lblLiibli = new javax.swing.JLabel();
+        lblMarkcap = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        lblExperince = new javax.swing.JLabel();
+        lblsalary = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setLayout(new java.awt.CardLayout());
@@ -255,6 +274,127 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
         );
 
         add(requestListing, "card4");
+
+        jLabel11.setText("Select Company");
+
+        jLabel12.setText("Select Manager");
+
+        jComboCompanyName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboManager.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel13.setText("Asset");
+
+        jLabel14.setText("Liabilities");
+
+        jLabel15.setText("Market Cap");
+
+        jLabel16.setText("Company Details");
+
+        jLabel17.setText("Years of Experience");
+
+        jLabel18.setText("Salary");
+
+        jLabel20.setText("I nvestment Manager Details");
+
+        jButton4.setText("Assign Investment Mangaer");
+
+        jLabel19.setText("Assigning Investment Manager");
+
+        javax.swing.GroupLayout InvestmentManagerLayout = new javax.swing.GroupLayout(InvestmentManager);
+        InvestmentManager.setLayout(InvestmentManagerLayout);
+        InvestmentManagerLayout.setHorizontalGroup(
+            InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboCompanyName, 0, 93, Short.MAX_VALUE)
+                            .addComponent(jComboManager, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14))
+                                .addGap(34, 34, 34)
+                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblAssets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblMarkcap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblLiibli, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(60, 60, 60)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18))
+                                .addGap(34, 34, 34)
+                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblExperince, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblsalary, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jButton4))
+                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(364, Short.MAX_VALUE))
+        );
+        InvestmentManagerLayout.setVerticalGroup(
+            InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel19)
+                .addGap(39, 39, 39)
+                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jComboCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jComboManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59)
+                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(lblAssets, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(11, 11, 11)
+                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(lblMarkcap, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblLiibli, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InvestmentManagerLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(lblExperince, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(lblsalary, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)))
+                .addComponent(jButton4)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+
+        add(InvestmentManager, "card5");
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterNewComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterNewComActionPerformed
@@ -333,6 +473,7 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel InvestmentManager;
     private javax.swing.JButton btnListingReq;
     private javax.swing.JButton btnNewIM;
     private javax.swing.JButton btnRegisterNewCom;
@@ -341,9 +482,22 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jComboCompanyName;
+    private javax.swing.JComboBox<String> jComboManager;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -352,6 +506,11 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAssets;
+    private javax.swing.JLabel lblExperince;
+    private javax.swing.JLabel lblLiibli;
+    private javax.swing.JLabel lblMarkcap;
+    private javax.swing.JLabel lblsalary;
     private javax.swing.JComboBox<String> marketSelectionBox;
     private javax.swing.JPanel registerNew;
     private javax.swing.JPanel requestListing;
