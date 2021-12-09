@@ -240,7 +240,9 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
                     addNewFlag=false;
                 }
             }
+            double price = ((holdingToAdd.getBuyingPrice()*holdingToAdd.getQuantity())+(buyRequest.getQuantity()*buyRequest.getEquity().getPrice()))/(holdingToAdd.getQuantity()+buyRequest.getQuantity());
             holdingToAdd.setQuantity(holdingToAdd.getQuantity()+buyRequest.getQuantity());
+            holdingToAdd.setBuyingPrice(price);
             buyRequest.getEquity().setAvailableQuantity(buyRequest.getEquity().getAvailableQuantity()-buyRequest.getQuantity());
             if(addNewFlag){
                 holdingToAdd.setEquity(buyRequest.getEquity());

@@ -65,7 +65,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtBal = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblProfitLoss = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnBuyShare1 = new javax.swing.JButton();
@@ -172,7 +172,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
 
         jLabel6.setText("Total P/L:");
 
-        jLabel7.setText("Total P/L:");
+        lblProfitLoss.setText("Total P/L:");
 
         jButton7.setText("Add Balance");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel7))
+                                    .addComponent(lblProfitLoss))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jButton4)
@@ -244,7 +244,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jLabel7))
+                        .addComponent(lblProfitLoss))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(37, 37, 37)
@@ -728,8 +728,19 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        changeScreen(jPanel5);
-        populateSellSharesTable();
+        System.out.println(myEquityHoldings.getSelectedRow());
+        if(myEquityHoldings.getSelectedRow()!=-1){
+            changeScreen(jPanel6);
+            String stockName = String.valueOf(myEquityHoldings.getValueAt(myEquityHoldings.getSelectedRow(), 0));
+            this.selectedEquity = this.business.getMarket().getEquityMarket().getEquityByName(stockName);
+            txtShrName1.setText(this.selectedEquity.getCompany().getName());
+            populateSellSharesTable();
+            for(EquityBroker equityBroker:this.business.getBrokerage().getEquityBrokersDirectory()){
+                jComboBox2.addItem(equityBroker.getName());
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Select Share to Sell");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -743,15 +754,28 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnSellShareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellShareActionPerformed
-        EquitySellRequest equitySellRequest = new EquitySellRequest();
-        equitySellRequest.setEquity(selectedEquity);
-        equitySellRequest.setQuantity(Integer.parseInt(txtQtyShare1.getText()));
-        equitySellRequest.setSeller(this.investor);
-        equitySellRequest.setId(this.business.getBrokerage().getSellRequestCount());
-        this.business.getBrokerage().setSellRequestCount(this.business.getBrokerage().getSellRequestCount()+1);
-        EquityBroker equityBroker = this.business.getBrokerage().getBrokerByName(String.valueOf(jComboBox2.getSelectedItem()));
-        equityBroker.getSellRequests().add(equitySellRequest);
-        this.investor.setBalance(this.investor.getBalance()+(Integer.parseInt(txtQtyShare1.getText())*this.selectedEquity.getPrice()));
+        EquityHoldings equityHoldingToSell = new EquityHoldings();
+        for(EquityHoldings equityHoldings:this.investor.getEquityHoldings()){
+            if(equityHoldings.getEquity()==this.selectedEquity){
+                equityHoldingToSell=equityHoldings;
+            }
+        }
+        
+        if(Integer.parseInt(txtQtyShare1.getText())<=equityHoldingToSell.getQuantity())
+        {
+            EquitySellRequest equitySellRequest = new EquitySellRequest();
+            equitySellRequest.setEquity(selectedEquity);
+            equitySellRequest.setQuantity(Integer.parseInt(txtQtyShare1.getText()));
+            equitySellRequest.setSeller(this.investor);
+            equitySellRequest.setId(this.business.getBrokerage().getSellRequestCount());
+            this.business.getBrokerage().setSellRequestCount(this.business.getBrokerage().getSellRequestCount()+1);
+            EquityBroker equityBroker = this.business.getBrokerage().getBrokerByName(String.valueOf(jComboBox2.getSelectedItem()));
+            equityBroker.getSellRequests().add(equitySellRequest);
+            this.investor.setBalance(this.investor.getBalance()+(Integer.parseInt(txtQtyShare1.getText())*this.selectedEquity.getPrice()));
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "You do not have sufficient shares");
+        }
 //        for(EquityHoldings equityHoldings:this.investor.getEquityHoldings()){
 //            if(equityHoldings.getEquity()==selectedEquity){
 //                equityHoldings.setQuantity(equityHoldings.getQuantity()+Integer.parseInt(txtQtyShare1.getText()));
@@ -796,7 +820,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        changeScreen(jPanel5);
+        changeScreen(jPanel1);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -851,7 +875,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -867,6 +890,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblCLP;
     private javax.swing.JLabel lblCLP1;
+    private javax.swing.JLabel lblProfitLoss;
     private javax.swing.JTable myEquityHoldings;
     private javax.swing.JTable tblStockListBuy;
     private javax.swing.JTable tblStockListSell;
@@ -884,16 +908,21 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private void populateEquityTable() {
         DefaultTableModel model = (DefaultTableModel) myEquityHoldings.getModel();
         model.setRowCount(0);
+        double totalInvested=0;
+        double totalValuation=0;
         for(EquityHoldings equityHoldings: this.investor.getEquityHoldings()){
             Object[] row= new Object[6];
             row[0]=equityHoldings.getEquity().getCompany().getName();
             row[1]=equityHoldings.getQuantity();
             row[2]=equityHoldings.getBuyingPrice();
             row[3]=equityHoldings.getEquity().getPrice();
+            totalInvested+=equityHoldings.getQuantity()*equityHoldings.getBuyingPrice();
             row[4]=equityHoldings.getQuantity()*equityHoldings.getBuyingPrice();
+            totalValuation+=equityHoldings.getQuantity()*equityHoldings.getEquity().getPrice();
             row[5]=equityHoldings.getQuantity()*equityHoldings.getEquity().getPrice();
             model.addRow(row);
         }
+        lblProfitLoss.setText(String.valueOf(totalValuation-totalInvested));
     }
 
     private void changeScreen(JPanel newJPanel) {

@@ -27,6 +27,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     UserAccount account;
     EcoSystem business;
     EquityMarketModerator equityMarketModerator;
+    Equity selectedEquity;
     public EquityMarketModeratorJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         this.userProcessContainer=userProcessContainer;
         this.account=account;
@@ -54,10 +55,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jtxtprice = new javax.swing.JTextField();
         jLblName = new javax.swing.JLabel();
         jTxtCompany = new javax.swing.JTextField();
-        jlblStockQty = new javax.swing.JLabel();
-        txtname = new javax.swing.JTextField();
+        txtSymbol = new javax.swing.JTextField();
         jLblprice = new javax.swing.JLabel();
-        jTxtStockqty = new javax.swing.JTextField();
         jLblmarketcap = new javax.swing.JLabel();
         jTxtmarketcap = new javax.swing.JTextField();
         jBtnupdate = new javax.swing.JButton();
@@ -113,22 +112,40 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableShares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableSharesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableShares);
 
         jLblCompany.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblCompany.setText("Company");
 
-        jLblName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLblName.setText("Name");
+        jtxtprice.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jtxtpriceInputMethodTextChanged(evt);
+            }
+        });
+        jtxtprice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtpriceActionPerformed(evt);
+            }
+        });
 
+        jLblName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLblName.setText("Symbol");
+
+        jTxtCompany.setEditable(false);
         jTxtCompany.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxtCompanyActionPerformed(evt);
             }
         });
 
-        jlblStockQty.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jlblStockQty.setText("Stock Qty");
+        txtSymbol.setEditable(false);
 
         jLblprice.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblprice.setText("Price");
@@ -136,8 +153,15 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLblmarketcap.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblmarketcap.setText("Market Cap");
 
+        jTxtmarketcap.setEditable(false);
+
         jBtnupdate.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jBtnupdate.setText("Update");
+        jBtnupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnupdateActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("View Delisting Request");
 
@@ -155,15 +179,21 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
             .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                 .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jBtnupdate)
-                        .addGap(65, 65, 65)
+                        .addGap(243, 243, 243)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1))
                     .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(jTxtmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(jBtnupdate)))
                 .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
@@ -174,31 +204,35 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                         .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                             .addGap(167, 167, 167)
                             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jlblStockQty, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLblprice, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLblName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLblCompany, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(122, 122, 122)
                             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTxtmarketcap)
-                                .addComponent(jTxtStockqty)
                                 .addComponent(jTxtCompany)
-                                .addComponent(txtname)
+                                .addComponent(txtSymbol)
                                 .addComponent(jtxtprice, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addContainerGap(434, Short.MAX_VALUE)))
         );
         MarketModeratorHomepageLayout.setVerticalGroup(
             MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnupdate)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTxtmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
+                .addComponent(jBtnupdate)
+                .addGap(60, 60, 60))
             .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                     .addContainerGap()
@@ -210,20 +244,12 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLblName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSymbol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLblprice, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jtxtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jlblStockQty, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTxtStockqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTxtmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(47, Short.MAX_VALUE)))
+                    .addContainerGap(139, Short.MAX_VALUE)))
         );
 
         add(MarketModeratorHomepage, "card2");
@@ -405,6 +431,30 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         populateListingTable();;
     }//GEN-LAST:event_jBtnapproveActionPerformed
 
+    private void tableSharesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSharesMouseClicked
+        this.selectedEquity = this.business.getMarket().getEquityMarket().getEquityByName(String.valueOf(tableShares.getValueAt(tableShares.getSelectedRow(), 0)));
+        jTxtCompany.setText(selectedEquity.getCompany().getName());
+        txtSymbol.setText(selectedEquity.getSymbol());
+        jtxtprice.setText(String.valueOf(selectedEquity.getPrice()));
+        jTxtmarketcap.setText(String.valueOf(selectedEquity.getCompany().getCaptial()));
+    }//GEN-LAST:event_tableSharesMouseClicked
+
+    private void jBtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnupdateActionPerformed
+        double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
+        this.selectedEquity.getCompany().setCaptial(marketCap);
+        this.selectedEquity.setPrice(Double.parseDouble(jtxtprice.getText()));
+        populateTableShares();
+    }//GEN-LAST:event_jBtnupdateActionPerformed
+
+    private void jtxtpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtpriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtpriceActionPerformed
+
+    private void jtxtpriceInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jtxtpriceInputMethodTextChanged
+        double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
+        jTxtmarketcap.setText(String.valueOf(marketCap));
+    }//GEN-LAST:event_jtxtpriceInputMethodTextChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DelistingRequest;
@@ -427,16 +477,14 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTxtCompany;
-    private javax.swing.JTextField jTxtStockqty;
     private javax.swing.JTextField jTxtmarketcap;
     private javax.swing.JButton jbtndecline;
     private javax.swing.JButton jbtndecline1;
-    private javax.swing.JLabel jlblStockQty;
     private javax.swing.JTextField jtxtprice;
     private javax.swing.JTable listingRequestTable;
     private javax.swing.JTable tableManagers2;
     private javax.swing.JTable tableShares;
-    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtSymbol;
     // End of variables declaration//GEN-END:variables
 
     private void populateTableShares() {
