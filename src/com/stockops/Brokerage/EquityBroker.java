@@ -60,6 +60,21 @@ public class EquityBroker extends AppUser{
     public void setSellRequests(ArrayList<EquitySellRequest> sellRequests) {
         this.sellRequests = sellRequests;
     }
-    
+    public EquityBuyRequest getEquityBuyRequestById(int id){
+        for(EquityBuyRequest equityBuyRequest: this.buyRequests){
+            if(equityBuyRequest.getId()==id){
+                return equityBuyRequest;
+            }
+        }
+        return null;
+    }
+    public EquitySellRequest getEquitySellRequestById(int id){
+        for(EquitySellRequest equitySellRequest: this.sellRequests){
+            if(equitySellRequest.getId()==id){
+                return equitySellRequest;
+            }
+        }
+        return null;
+    }
     
 }

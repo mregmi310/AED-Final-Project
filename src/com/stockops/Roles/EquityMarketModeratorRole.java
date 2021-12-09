@@ -8,7 +8,7 @@ package com.stockops.Roles;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
-import userinterfaceSEBI.MarketManagementJPanel;
+import com.stockops.UI.EquityMarket.EquityMarketModeratorJPanel;
 
 /**
  *
@@ -18,7 +18,7 @@ public class EquityMarketModeratorRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new MarketManagementJPanel(userProcessContainer, account, business);
+        return new EquityMarketModeratorJPanel(userProcessContainer, account, business);
     }
     
 }

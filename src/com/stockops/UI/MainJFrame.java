@@ -469,60 +469,70 @@ public class MainJFrame extends javax.swing.JFrame {
         this.selectedUser=new CommodityBroker();
         this.role = new CommodityBrokerRole();
         setRightPanalSignInUp(this.role, "Commodity Broker");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnCommodityBrokerActionPerformed
 
     private void btnDayTraderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDayTraderActionPerformed
         this.selectedUser=new DayTrader();
         this.role=new DayTraderRole();
         setRightPanalSignInUp(this.role, "Day Trader");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnDayTraderActionPerformed
 
     private void btnCommodityMarketModeratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommodityMarketModeratorActionPerformed
         this.selectedUser=new CommodityMarketModerator();
         this.role=new CommodityMarketModeratorRole();
         setRightPanalSignIn(this.role, "Commodity Futures Trading Commission");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnCommodityMarketModeratorActionPerformed
 
     private void btnEquityBrokerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquityBrokerActionPerformed
         this.selectedUser=new EquityBroker();
         this.role=new EquityBrokerRole();
         setRightPanalSignInUp(this.role, "Equity Broker");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnEquityBrokerActionPerformed
 
     private void btnEquityMarketModeratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquityMarketModeratorActionPerformed
         this.selectedUser=new CompanyManager();
         this.role=new EquityMarketModeratorRole();
         setRightPanalSignIn(this.role, "Securities and Exchange Board");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnEquityMarketModeratorActionPerformed
 
     private void btnBrokersCommissionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrokersCommissionAdminActionPerformed
         this.selectedUser=new BrokerageModerator();
         this.role=new BrokerageModeratorRole();
         setRightPanalSignIn(this.role, "Brokers Commmission Admin");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnBrokersCommissionAdminActionPerformed
 
     private void btnLicensingCommissionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLicensingCommissionAdminActionPerformed
         this.selectedUser=new EstablishmentsModerator();
         this.role=new EstablishmentsModeratorRole();
         setRightPanalSignIn(this.role, "Licensing Commission Admin");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLicensingCommissionAdminActionPerformed
 
     private void btnCompanyManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompanyManagerActionPerformed
         this.selectedUser=new CompanyManager();
         this.role=new CompanyManagerRole();
         setRightPanalSignInUp(this.role, "Company Manager");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnCompanyManagerActionPerformed
 
     private void btnInvestmentsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvestmentsManagerActionPerformed
         this.selectedUser=new InvestmentManager();
         this.role=new InvestmentManagerRole();
         setRightPanalSignInUp(this.role, "Investment Manager");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnInvestmentsManagerActionPerformed
 
     private void btnRetailInvestorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetailInvestorActionPerformed
         this.selectedUser=new RetailInvestor();
         this.role=new RetailInvestorRole();
         setRightPanalSignInUp(this.role, "Retail Investor");
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnRetailInvestorActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
