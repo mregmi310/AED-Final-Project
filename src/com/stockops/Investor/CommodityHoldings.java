@@ -14,7 +14,8 @@ import com.stockops.Market.Equity;
  */
 public class CommodityHoldings {
     Commodity commodity;
-    int quantity; 
+    int quantity;
+    double buyingPrice;
     public CommodityHoldings(){
         
     }
@@ -35,6 +36,15 @@ public class CommodityHoldings {
         this.quantity = quantity;
     }
 
+    public double getBuyingPrice() {
+        return buyingPrice;
+    }
+
+    public void setBuyingPrice(double buyingPrice) {
+        this.buyingPrice = buyingPrice;
+    }
+
+    
     
     
 }
