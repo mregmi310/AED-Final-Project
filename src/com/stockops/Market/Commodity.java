@@ -13,6 +13,7 @@ public class Commodity {
     private String name;
     private String symbol;
     private float price;
+    private String unit;
     public Commodity(){
         
     }

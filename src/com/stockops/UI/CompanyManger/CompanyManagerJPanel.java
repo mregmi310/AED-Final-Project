@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author knd18
  */
-public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
+public class CompanyManagerJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CompanyManagerHomePageJPanel
@@ -28,7 +28,7 @@ public class CompanyManagerHomePageJPanel extends javax.swing.JPanel {
     EcoSystem business;
     CompanyManager manager;
     Company selectedCompany;
-    public CompanyManagerHomePageJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business ) {
+    public CompanyManagerJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business ) {
         this.userProcessContainer=userProcessContainer;
         this.account=account;
         this.business=business;

@@ -16,6 +16,7 @@ public class Equity {
     private String symbol;
     private double price;
     private int stockQuantity;
+    private int availableQuantity;
     public Equity(){
         
     }
@@ -55,6 +56,14 @@ public class Equity {
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    public int getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(int availableQuantity) {
+        this.availableQuantity = availableQuantity;
     }
     
 }

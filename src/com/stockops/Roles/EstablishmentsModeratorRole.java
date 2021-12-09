@@ -6,7 +6,7 @@
 package com.stockops.Roles;
 
 import com.stockops.Business.EcoSystem;
-import com.stockops.UI.CompanyManger.CompanyManagerLiscenceRequest;
+import com.stockops.UI.CompanyManger.EstablishmentModeratorJPanel;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class EstablishmentsModeratorRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new CompanyManagerLiscenceRequest(userProcessContainer, account, business);
+        return new EstablishmentModeratorJPanel(userProcessContainer, account, business);
     }
     
 }

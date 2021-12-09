@@ -15,10 +15,14 @@ public class Brokerage {
     private ArrayList<EquityBroker> equityBrokersDirectory;
     private ArrayList<CommodityBroker> commodityBrokersDirectory;
     private BrokerageModerator brokerageModerator;
+    private int buyRequestCount;
+    private int sellRequestCount;
     
     public Brokerage(){
         equityBrokersDirectory=new ArrayList<>();
         commodityBrokersDirectory=new ArrayList<>();
+        buyRequestCount=0;
+        sellRequestCount=0;
     }
 
     public BrokerageModerator getBrokerageModerator() {
@@ -53,4 +57,21 @@ public class Brokerage {
         }
         return null;
     }
+
+    public int getBuyRequestCount() {
+        return buyRequestCount;
+    }
+
+    public void setBuyRequestCount(int buyRequestCount) {
+        this.buyRequestCount = buyRequestCount;
+    }
+
+    public int getSellRequestCount() {
+        return sellRequestCount;
+    }
+
+    public void setSellRequestCount(int sellRequestCount) {
+        this.sellRequestCount = sellRequestCount;
+    }
+    
 }

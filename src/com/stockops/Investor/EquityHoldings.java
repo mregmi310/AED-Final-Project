@@ -16,7 +16,8 @@ public class EquityHoldings {
     int quantity; 
     double buyingPrice;
     public EquityHoldings(){
-        
+        quantity=0;
+        buyingPrice=0;
     }
 
     public Equity getEquity() {

@@ -14,6 +14,7 @@ import com.stockops.Market.Equity;
  * @author mridulregmi
  */
 public class EquityBuyRequest {
+    private int id;
     private InvestorAbstract seller;
     private InvestorAbstract buyer;
     private Equity equity;
@@ -60,6 +61,14 @@ public class EquityBuyRequest {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 }

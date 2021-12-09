@@ -6,7 +6,7 @@
 package com.stockops.Roles;
 
 import com.stockops.Business.EcoSystem;
-import com.stockops.UI.Brokers.BrokerageModeratorJPanel;
+import com.stockops.UI.Brokers.EquityBrokerJPanel;
 import com.stockops.Users.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class EquityBrokerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new BrokerageModeratorJPanel(userProcessContainer, account, business); //To change body of generated methods, choose Tools | Templates.
+        return new EquityBrokerJPanel(userProcessContainer, account, business); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

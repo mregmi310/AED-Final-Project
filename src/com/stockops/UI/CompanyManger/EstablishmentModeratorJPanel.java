@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author knd18
  */
-public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
+public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CompanyManagerLiscenceRequest
@@ -25,7 +25,7 @@ public class CompanyManagerLiscenceRequest extends javax.swing.JPanel {
     UserAccount account;
     EcoSystem business;
     EstablishmentsModerator establishmentsModerator;
-    public CompanyManagerLiscenceRequest(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public EstablishmentModeratorJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         initComponents();
         this.business=business;
         this.account=account;
