@@ -7,6 +7,7 @@ package com.stockops.UI.EquityMarket;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
 import com.stockops.Establishments.CompanyManager;
+import com.stockops.Investor.EquityHoldings;
 import com.stockops.Market.ListingRequest;
 import com.stockops.Market.Equity;
 import com.stockops.Market.EquityMarketModerator;
@@ -444,12 +445,14 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         txtSymbol.setText(selectedEquity.getSymbol());
         jtxtprice.setText(String.valueOf(selectedEquity.getPrice()));
         jTxtmarketcap.setText(String.valueOf(selectedEquity.getCompany().getCaptial()));
+        
     }//GEN-LAST:event_tableSharesMouseClicked
 
     private void jBtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnupdateActionPerformed
         double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
         this.selectedEquity.getCompany().calculateAndSetMarketCap(marketCap);
         this.selectedEquity.setPrice(Double.parseDouble(jtxtprice.getText()));
+        updateAllEquityPrice();
         populateTableShares();
     }//GEN-LAST:event_jBtnupdateActionPerformed
 
@@ -529,6 +532,19 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
             row[4]=listingRequest.getCompany().getCaptial();
             row[5]=listingRequest.getStatus();
             model.addRow(row);
+        }
+    }
+    private void updateAllEquityPrice() {
+        for(Company company: this.business.getEstablishment().getEstablishmentsModerator().getCompanyList()){
+            for(EquityHoldings equityHoldings:company.getEquityHoldings()){
+                if(equityHoldings.getEquity()==this.selectedEquity){
+                    for(Equity equity:this.business.getMarket().getEquityMarket().getEquityList()){
+                        if(company==equity.getCompany()){
+                            equity.calculateAndSetPrice();
+                        }
+                    }
+                }
+            }
         }
     }
 }
