@@ -130,10 +130,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jSplitPane2.setBackground(new java.awt.Color(0, 51, 51));
         jSplitPane2.setDividerLocation(250);
 
+        rolesPanal.setBackground(new java.awt.Color(54, 33, 89));
         rolesPanal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        btnDayTrader.setBackground(new java.awt.Color(85, 65, 118));
+        btnDayTrader.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDayTrader.setForeground(new java.awt.Color(255, 255, 255));
         btnDayTrader.setText("DayTrader");
         btnDayTrader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +146,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnCommodityBroker.setBackground(new java.awt.Color(85, 65, 118));
+        btnCommodityBroker.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCommodityBroker.setForeground(new java.awt.Color(255, 255, 255));
         btnCommodityBroker.setText("Commodity Broker");
         btnCommodityBroker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +156,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnRetailInvestor.setBackground(new java.awt.Color(85, 65, 118));
+        btnRetailInvestor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnRetailInvestor.setForeground(new java.awt.Color(255, 255, 255));
         btnRetailInvestor.setText("Retail Investor");
         btnRetailInvestor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +166,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnCommodityMarketModerator.setBackground(new java.awt.Color(85, 65, 118));
+        btnCommodityMarketModerator.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCommodityMarketModerator.setForeground(new java.awt.Color(255, 255, 255));
         btnCommodityMarketModerator.setText("Commodity Market Moderator");
         btnCommodityMarketModerator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +176,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnEquityBroker.setBackground(new java.awt.Color(85, 65, 118));
+        btnEquityBroker.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEquityBroker.setForeground(new java.awt.Color(255, 255, 255));
         btnEquityBroker.setText("Equity Broker");
         btnEquityBroker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,6 +186,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnEquityMarketModerator.setBackground(new java.awt.Color(85, 65, 118));
+        btnEquityMarketModerator.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEquityMarketModerator.setForeground(new java.awt.Color(255, 255, 255));
         btnEquityMarketModerator.setText("Equity Market Moderator");
         btnEquityMarketModerator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,6 +196,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnBrokersCommissionAdmin.setBackground(new java.awt.Color(85, 65, 118));
+        btnBrokersCommissionAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBrokersCommissionAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnBrokersCommissionAdmin.setText("Brokers Commission Admin");
         btnBrokersCommissionAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +206,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnLicensingCommissionAdmin.setBackground(new java.awt.Color(85, 65, 118));
+        btnLicensingCommissionAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLicensingCommissionAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnLicensingCommissionAdmin.setText("Licensing Commision Admin");
         btnLicensingCommissionAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,6 +216,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnCompanyManager.setBackground(new java.awt.Color(85, 65, 118));
+        btnCompanyManager.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCompanyManager.setForeground(new java.awt.Color(255, 255, 255));
         btnCompanyManager.setText("Company Manager");
         btnCompanyManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +226,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnInvestmentsManager.setBackground(new java.awt.Color(85, 65, 118));
+        btnInvestmentsManager.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnInvestmentsManager.setForeground(new java.awt.Color(255, 255, 255));
         btnInvestmentsManager.setText("Investments Manager");
         btnInvestmentsManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,8 +283,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane2.setLeftComponent(rolesPanal);
 
+        container.setBackground(new java.awt.Color(255, 255, 255));
         container.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         container.setLayout(new java.awt.CardLayout());
+
+        signupSigninJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Sign Up:");
@@ -384,6 +419,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         container.add(signupSigninJPanel, "card2");
 
+        signInJPanel.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel10.setText("Sing In:");
 
@@ -450,6 +487,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         container.add(signInJPanel, "card3");
+
+        homeJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel14.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
         jLabel14.setText("Welcome To StockOps");

@@ -7,6 +7,7 @@ package com.stockops.UI.EquityMarket;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
 import com.stockops.Establishments.CompanyManager;
+import com.stockops.Investor.EquityHoldings;
 import com.stockops.Market.ListingRequest;
 import com.stockops.Market.Equity;
 import com.stockops.Market.EquityMarketModerator;
@@ -79,9 +80,12 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Listing Request");
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.CardLayout());
 
-        jLblMarketmanagement.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        MarketModeratorHomepage.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLblMarketmanagement.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement.setText("Market Management");
 
@@ -225,7 +229,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                         .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton2)
                             .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                         .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -253,6 +257,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         );
 
         add(MarketModeratorHomepage, "card2");
+
+        ListingRequestJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         listingRequestTable.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         listingRequestTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -332,6 +338,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         );
 
         add(ListingRequestJPanel, "card3");
+
+        DelistingRequest.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -437,12 +445,14 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         txtSymbol.setText(selectedEquity.getSymbol());
         jtxtprice.setText(String.valueOf(selectedEquity.getPrice()));
         jTxtmarketcap.setText(String.valueOf(selectedEquity.getCompany().getCaptial()));
+        
     }//GEN-LAST:event_tableSharesMouseClicked
 
     private void jBtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnupdateActionPerformed
         double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
         this.selectedEquity.getCompany().calculateAndSetMarketCap(marketCap);
         this.selectedEquity.setPrice(Double.parseDouble(jtxtprice.getText()));
+        updateAllEquityPrice();
         populateTableShares();
     }//GEN-LAST:event_jBtnupdateActionPerformed
 
@@ -522,6 +532,19 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
             row[4]=listingRequest.getCompany().getCaptial();
             row[5]=listingRequest.getStatus();
             model.addRow(row);
+        }
+    }
+    private void updateAllEquityPrice() {
+        for(Company company: this.business.getEstablishment().getEstablishmentsModerator().getCompanyList()){
+            for(EquityHoldings equityHoldings:company.getEquityHoldings()){
+                if(equityHoldings.getEquity()==this.selectedEquity){
+                    for(Equity equity:this.business.getMarket().getEquityMarket().getEquityList()){
+                        if(company==equity.getCompany()){
+                            equity.calculateAndSetPrice();
+                        }
+                    }
+                }
+            }
         }
     }
 }
