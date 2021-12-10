@@ -43,6 +43,8 @@ public class ComodityModarator extends javax.swing.JPanel {
 
         setLayout(new java.awt.CardLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -56,22 +58,39 @@ public class ComodityModarator extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Comodity Name");
 
+        txtComName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Symbol");
 
+        txtSymbol.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtSymbol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSymbolActionPerformed(evt);
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Price");
 
+        txtPrice.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Unit");
 
+        txtUnit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        btnModCom.setBackground(new java.awt.Color(72, 97, 91));
+        btnModCom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnModCom.setForeground(new java.awt.Color(255, 255, 255));
         btnModCom.setText("Modify Comodity");
 
+        btnComdity.setBackground(new java.awt.Color(72, 97, 91));
+        btnComdity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnComdity.setForeground(new java.awt.Color(255, 255, 255));
         btnComdity.setText("Add Comodity");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -129,7 +148,7 @@ public class ComodityModarator extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnModCom)
                     .addComponent(btnComdity))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");

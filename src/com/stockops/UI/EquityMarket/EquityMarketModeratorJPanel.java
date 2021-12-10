@@ -79,9 +79,12 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Listing Request");
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.CardLayout());
 
-        jLblMarketmanagement.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        MarketModeratorHomepage.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLblMarketmanagement.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement.setText("Market Management");
 
@@ -225,7 +228,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                         .addGroup(MarketModeratorHomepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton2)
                             .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                         .addComponent(jLblmarketcap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MarketModeratorHomepageLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -253,6 +256,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         );
 
         add(MarketModeratorHomepage, "card2");
+
+        ListingRequestJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         listingRequestTable.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         listingRequestTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -332,6 +337,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         );
 
         add(ListingRequestJPanel, "card3");
+
+        DelistingRequest.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
