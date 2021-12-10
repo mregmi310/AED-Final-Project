@@ -8,6 +8,9 @@ package com.stockops.UI.CompanyManger;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
 import com.stockops.Establishments.CompanyManager;
+import com.stockops.Establishments.InvestmentManager;
+import com.stockops.Establishments.JobRequest;
+import com.stockops.Market.Equity;
 import com.stockops.Market.ListingRequest;
 import com.stockops.Users.UserAccount;
 import javax.swing.JOptionPane;
@@ -35,6 +38,8 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         this.manager = (CompanyManager)account.getUser();
         initComponents();
         setComponent(homepage);
+        populateRegisterTable();
+        jLabel1.setText(this.manager.getName());
     }
 
     /**
@@ -47,25 +52,24 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         homepage = new javax.swing.JPanel();
-        btnListingReq = new javax.swing.JButton();
         btnNewIM = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnRegisterNewCom = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableRegisterComp = new javax.swing.JTable();
+        btnRequestListing = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         registerNew = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         txtCompanyName = new javax.swing.JTextField();
         txtAsset = new javax.swing.JTextField();
         txtLiab = new javax.swing.JTextField();
-        txtMarkCap = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableRegisterComp = new javax.swing.JTable();
-        btnRequestListing = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         requestListing = new javax.swing.JPanel();
         txtNumberOfShares = new javax.swing.JTextField();
@@ -80,22 +84,21 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jComboCompanyName = new javax.swing.JComboBox<>();
-        jComboManager = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         lblAssets = new javax.swing.JLabel();
         lblLiibli = new javax.swing.JLabel();
         lblMarkcap = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         lblExperince = new javax.swing.JLabel();
         lblsalary = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblApplications = new javax.swing.JTable();
+        listingStatusJpanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblListingStatus = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setLayout(new java.awt.CardLayout());
@@ -103,23 +106,10 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         homepage.setBackground(new java.awt.Color(255, 255, 255));
         homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnListingReq.setBackground(new java.awt.Color(72, 97, 91));
-        btnListingReq.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnListingReq.setForeground(new java.awt.Color(255, 255, 255));
-        btnListingReq.setText("Lisiting Requests");
-        btnListingReq.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
-        btnListingReq.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnListingReq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListingReqActionPerformed(evt);
-            }
-        });
-        homepage.add(btnListingReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 200, 30));
-
         btnNewIM.setBackground(new java.awt.Color(72, 97, 91));
         btnNewIM.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnNewIM.setForeground(new java.awt.Color(255, 255, 255));
-        btnNewIM.setText("Assigning New Investment Manager");
+        btnNewIM.setText("Assigning Investment Manager");
         btnNewIM.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
         btnNewIM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNewIM.setPreferredSize(new java.awt.Dimension(177, 25));
@@ -128,11 +118,11 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 btnNewIMActionPerformed(evt);
             }
         });
-        homepage.add(btnNewIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 285, 240, 30));
+        homepage.add(btnNewIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 240, 30));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
         jLabel1.setText("Welcome Company Manager ");
-        homepage.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 471, -1));
+        homepage.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 471, -1));
 
         btnRegisterNewCom.setBackground(new java.awt.Color(72, 97, 91));
         btnRegisterNewCom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -145,7 +135,39 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 btnRegisterNewComActionPerformed(evt);
             }
         });
-        homepage.add(btnRegisterNewCom, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 200, 30));
+        homepage.add(btnRegisterNewCom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 200, 30));
+
+        tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Company Name", "Assets", "Liabilities", "Market Cap", "Liscence Request", "Listing Request", "Investment Manager"
+            }
+        ));
+        jScrollPane1.setViewportView(tableRegisterComp);
+
+        homepage.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 692, 138));
+
+        btnRequestListing.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnRequestListing.setText("Request Listing");
+        btnRequestListing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestListingActionPerformed(evt);
+            }
+        });
+        homepage.add(btnRequestListing, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, 40));
+
+        jLabel21.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel21.setText("My Companies");
+        homepage.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        jButton7.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton7.setText("View Stats");
+        homepage.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 150, 40));
 
         add(homepage, "card2");
 
@@ -161,23 +183,19 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Enter the below details to register your company");
-        registerNew.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 664, -1));
+        registerNew.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 664, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Company Name");
+        jLabel4.setText("Company Name:");
         registerNew.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 148, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setText("Assets");
+        jLabel5.setText("Assets (USD):");
         registerNew.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Liabilities");
+        jLabel6.setText("Liabilities (USD):");
         registerNew.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 148, -1));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Market Cap ");
-        registerNew.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 148, -1));
 
         txtCompanyName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtCompanyName.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +203,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 txtCompanyNameActionPerformed(evt);
             }
         });
-        registerNew.add(txtCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 60, -1));
+        registerNew.add(txtCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 200, -1));
 
         txtAsset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtAsset.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +211,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 txtAssetActionPerformed(evt);
             }
         });
-        registerNew.add(txtAsset, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 60, -1));
+        registerNew.add(txtAsset, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 200, -1));
 
         txtLiab.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtLiab.addActionListener(new java.awt.event.ActionListener() {
@@ -201,15 +219,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 txtLiabActionPerformed(evt);
             }
         });
-        registerNew.add(txtLiab, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 60, -1));
-
-        txtMarkCap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtMarkCap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMarkCapActionPerformed(evt);
-            }
-        });
-        registerNew.add(txtMarkCap, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 60, -1));
+        registerNew.add(txtLiab, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 200, -1));
 
         jButton2.setBackground(new java.awt.Color(72, 97, 91));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -220,31 +230,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        registerNew.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
-
-        tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Company Name", "Assets", "Liabilities", "Market Cap", "Liscence Request", "Listing Request", "Investment Manager"
-            }
-        ));
-        jScrollPane1.setViewportView(tableRegisterComp);
-
-        registerNew.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 692, 138));
-
-        btnRequestListing.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnRequestListing.setText("Request Listing");
-        btnRequestListing.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRequestListingActionPerformed(evt);
-            }
-        });
-        registerNew.add(btnRequestListing, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, -1, 40));
+        registerNew.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 150, 40));
 
         jButton1.setBackground(new java.awt.Color(72, 97, 91));
         jButton1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -311,11 +297,11 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                             .addComponent(txtPricePerShare, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(marketSelectionBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(requestListingLayout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(jButton3))
-                    .addGroup(requestListingLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jButton5)))
+                        .addComponent(jButton5))
+                    .addGroup(requestListingLayout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(658, Short.MAX_VALUE))
         );
         requestListingLayout.setVerticalGroup(
@@ -336,51 +322,49 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel10)
                     .addComponent(txtPricePerShare, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
-                .addComponent(jButton3)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         add(requestListing, "card4");
 
         InvestmentManager.setBackground(new java.awt.Color(255, 255, 255));
+        InvestmentManager.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Select Company");
+        InvestmentManager.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 118, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("Select Manager");
+        InvestmentManager.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 118, -1));
 
         jComboCompanyName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboManager.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setText("Asset");
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setText("Liabilities");
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Market Cap");
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setText("Company Details");
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setText("Years of Experience");
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setText("Salary");
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("Investment Manager Details");
+        jComboCompanyName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboCompanyNameActionPerformed(evt);
+            }
+        });
+        InvestmentManager.add(jComboCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 168, -1, -1));
+        InvestmentManager.add(lblAssets, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 549, 50, 14));
+        InvestmentManager.add(lblLiibli, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 575, 50, 19));
+        InvestmentManager.add(lblMarkcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 603, 50, 14));
+        InvestmentManager.add(lblExperince, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 549, 50, 14));
+        InvestmentManager.add(lblsalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 575, 50, 19));
 
         jButton4.setBackground(new java.awt.Color(72, 97, 91));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("Assign Investment Mangaer");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        InvestmentManager.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 250, 50));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel19.setText("Assigning Investment Manager");
+        InvestmentManager.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 86, 697, -1));
 
         jButton6.setBackground(new java.awt.Color(72, 97, 91));
         jButton6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -390,108 +374,77 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 jButton6ActionPerformed(evt);
             }
         });
+        InvestmentManager.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 6, -1, -1));
 
-        javax.swing.GroupLayout InvestmentManagerLayout = new javax.swing.GroupLayout(InvestmentManager);
-        InvestmentManager.setLayout(InvestmentManagerLayout);
-        InvestmentManagerLayout.setHorizontalGroup(
-            InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboCompanyName, 0, 93, Short.MAX_VALUE)
-                            .addComponent(jComboManager, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel14))
-                                        .addGap(34, 34, 34)
-                                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lblAssets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblMarkcap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblLiibli, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(60, 60, 60)
-                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20)
-                                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17)
-                                            .addComponent(jLabel18))
-                                        .addGap(34, 34, 34)
-                                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lblExperince, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblsalary, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                                .addGap(112, 112, 112)
-                                .addComponent(jButton4))))
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton6)))
-                .addContainerGap(364, Short.MAX_VALUE))
-        );
-        InvestmentManagerLayout.setVerticalGroup(
-            InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addGap(39, 39, 39)
-                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jComboCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jComboManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(lblExperince, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(lblsalary, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(lblAssets, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(InvestmentManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(11, 11, 11)
-                                .addGroup(InvestmentManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(lblMarkcap, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(lblLiibli, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addContainerGap(158, Short.MAX_VALUE))
-        );
+        tblApplications.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Name", "Experience", "Salary Expected"
+            }
+        ));
+        jScrollPane3.setViewportView(tblApplications);
+
+        InvestmentManager.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 248, 672, 146));
 
         add(InvestmentManager, "card5");
+
+        listingStatusJpanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblListingStatus.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Company", "Symbol", "Stock Quantity", "Stock Price", "Listing Status"
+            }
+        ));
+        jScrollPane2.setViewportView(tblListingStatus);
+
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 30)); // NOI18N
+        jLabel7.setText("My Companies Listing Status:");
+
+        jButton9.setBackground(new java.awt.Color(72, 97, 91));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jButton9.setText("<< Back");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout listingStatusJpanelLayout = new javax.swing.GroupLayout(listingStatusJpanel);
+        listingStatusJpanel.setLayout(listingStatusJpanelLayout);
+        listingStatusJpanelLayout.setHorizontalGroup(
+            listingStatusJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listingStatusJpanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(listingStatusJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9)
+                    .addComponent(jLabel7)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        listingStatusJpanelLayout.setVerticalGroup(
+            listingStatusJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listingStatusJpanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jButton9)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(263, Short.MAX_VALUE))
+        );
+
+        add(listingStatusJpanel, "card6");
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterNewComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterNewComActionPerformed
@@ -511,26 +464,28 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLiabActionPerformed
 
-    private void txtMarkCapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarkCapActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarkCapActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Company company = new Company();
-        company.setName(txtCompanyName.getText());
-        Double assets = Double.parseDouble(txtAsset.getText());
-        Double liab = Double.parseDouble(txtLiab.getText());
-        company.setLiabilities(liab);
-        company.setAssets(assets);
-        company.setLiscenceStatus("Pending");
-        company.setListingRequestStatus("Not Initiated");
-        company.setCaptial(assets-liab);
-        company.setBalance(assets-liab);
-        company.setCompanyManager(manager);
-        txtMarkCap.setText(String.valueOf(assets-liab));
-        this.manager.getCompanyList().add(company);
-        this.business.getEstablishment().getEstablishmentsModerator().getCompanyList().add(company);
-        populateRegisterTable();
+        try{
+            Company company = new Company();
+            company.setName(txtCompanyName.getText());
+            Double assets = Double.parseDouble(txtAsset.getText());
+            Double liab = Double.parseDouble(txtLiab.getText());
+            company.setLiabilities(liab);
+            company.setAssets(assets);
+            company.setLiscenceStatus("Pending");
+            company.setListingRequestStatus("Not Initiated");
+            company.setCaptial(assets-liab);
+            company.setBalance(assets-liab);
+            company.setCompanyManager(manager);
+            this.manager.getCompanyList().add(company);
+            this.business.getEstablishment().getEstablishmentsModerator().getCompanyList().add(company);
+            populateRegisterTable();
+            JOptionPane.showMessageDialog(this, "Company "+company.getName() +" successfully registered! \n"+"    Market Cap:"+String.valueOf(assets-liab));
+            setComponent(homepage);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Assets and Liabilities Should Be Numbers!");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnRequestListingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestListingActionPerformed
@@ -555,25 +510,30 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNumberOfSharesActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int numberOfShares = Integer.parseInt(txtNumberOfShares.getText());
-        Double pricePerShare = selectedCompany.getCaptial()/numberOfShares;
-        ListingRequest listingRequest = new ListingRequest(this.selectedCompany, pricePerShare, numberOfShares);
-        this.selectedCompany.setListingRequestStatus("Pending");
-        this.business.getMarket().getEquityMarket().getEquityMarketModerator().getListingRequestList().add(listingRequest);
-        int requestCount =this.business.getMarket().getEquityMarket().getEquityMarketModerator().getRequestCount();
-        listingRequest.setRequestId(requestCount);
-        this.business.getMarket().getEquityMarket().getEquityMarketModerator().setRequestCount(requestCount+1);
+        try{
+            int numberOfShares = Integer.parseInt(txtNumberOfShares.getText());
+            Double pricePerShare = selectedCompany.getCaptial()/numberOfShares;
+            ListingRequest listingRequest = new ListingRequest(this.selectedCompany, pricePerShare, numberOfShares);
+            this.selectedCompany.setListingRequestStatus("Pending");
+            this.business.getMarket().getEquityMarket().getEquityMarketModerator().getListingRequestList().add(listingRequest);
+            int requestCount =this.business.getMarket().getEquityMarket().getEquityMarketModerator().getRequestCount();
+            listingRequest.setRequestId(requestCount);
+            this.business.getMarket().getEquityMarket().getEquityMarketModerator().setRequestCount(requestCount+1);
+            txtPricePerShare.setText(String.valueOf(pricePerShare));
+            JOptionPane.showMessageDialog(this, "Request Sent!");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Number of shares should be an integer!");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnNewIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewIMActionPerformed
-        // TODO add your handling code here:
-        setComponent(InvestmentManager);
-        
+        jComboCompanyName.removeAllItems();
+        for(Company company: this.manager.getCompanyList()){
+            jComboCompanyName.addItem(company.getName());
+        }
+        setComponent(InvestmentManager);      
     }//GEN-LAST:event_btnNewIMActionPerformed
-
-    private void btnListingReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListingReqActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnListingReqActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -584,14 +544,40 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        setComponent(homepage);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        setComponent(homepage);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jComboCompanyNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCompanyNameActionPerformed
+        populateJobRequestTable();
+    }//GEN-LAST:event_jComboCompanyNameActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try{
+            Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(String.valueOf(jComboCompanyName.getSelectedItem()));
+            InvestmentManager applicant = this.business.getEstablishment().getEstablishmentsModerator().getInvestmentManagerByName(String.valueOf(tblApplications.getValueAt(tblApplications.getSelectedRow(), 0)));
+            if(selectedCompany.getInvestmentManager()!=null){
+                selectedCompany.getInvestmentManager().setAssignedCompany(null);
+            }
+            selectedCompany.setInvestmentManager(applicant);
+            applicant.setAssignedCompany(selectedCompany);
+            JOptionPane.showMessageDialog(this, "Investment Manager Successfully Assigned");
+            selectedCompany.getJobRequest().remove(selectedCompany.getJobRequest().get(tblApplications.getSelectedRow()));
+            populateJobRequestTable();
+            populateListingTable();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Something went wrong");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel InvestmentManager;
-    private javax.swing.JButton btnListingReq;
     private javax.swing.JButton btnNewIM;
     private javax.swing.JButton btnRegisterNewCom;
     private javax.swing.JButton btnRequestListing;
@@ -602,21 +588,16 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboCompanyName;
-    private javax.swing.JComboBox<String> jComboManager;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -625,19 +606,23 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblAssets;
     private javax.swing.JLabel lblExperince;
     private javax.swing.JLabel lblLiibli;
     private javax.swing.JLabel lblMarkcap;
     private javax.swing.JLabel lblsalary;
+    private javax.swing.JPanel listingStatusJpanel;
     private javax.swing.JComboBox<String> marketSelectionBox;
     private javax.swing.JPanel registerNew;
     private javax.swing.JPanel requestListing;
     private javax.swing.JTable tableRegisterComp;
+    private javax.swing.JTable tblApplications;
+    private javax.swing.JTable tblListingStatus;
     private javax.swing.JTextField txtAsset;
     private javax.swing.JTextField txtCompanyName;
     private javax.swing.JTextField txtLiab;
-    private javax.swing.JTextField txtMarkCap;
     private javax.swing.JTextField txtNumberOfShares;
     private javax.swing.JLabel txtPricePerShare;
     // End of variables declaration//GEN-END:variables
@@ -687,6 +672,48 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
             else{
                 row[6]=company.getInvestmentManager().getName();
             }
+            model.addRow(row);
+        }
+    }
+
+    private void populateListingRequestTable() {
+        DefaultTableModel model = (DefaultTableModel)tblListingStatus.getModel();
+        model.setRowCount(0);
+        for(Company company: this.manager.getCompanyList()){
+            Object[] row=new Object[5];
+            row[0]=company.getName();
+            row[4]=company.getListingRequestStatus();
+            if(!company.getListingRequestStatus().equals("Listed")){
+                row[1]="NA";
+                row[2]="NA";
+                row[3]="NA";
+            }
+            else{
+                for(Equity equity: this.business.getMarket().getEquityMarket().getEquityList()){
+                    if(equity.getCompany()==company){
+                        row[1]=equity.getSymbol();
+                        row[2]=equity.getStockQuantity();
+                        row[3]=equity.getPrice();
+                    }
+                }
+            }
+            model.addRow(row);
+        }
+        
+    }
+
+    private void populateJobRequestTable() {
+        Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(String.valueOf(jComboCompanyName.getSelectedItem()));
+        if(selectedCompany==null){
+            selectedCompany=this.manager.getCompanyList().get(0);
+        }
+        DefaultTableModel model = (DefaultTableModel) tblApplications.getModel();
+        model.setRowCount(0);
+        for(JobRequest jobRequest: selectedCompany.getJobRequest()){
+            Object[] row= new Object[3];
+            row[0]=jobRequest.getApplicant().getName();
+            row[1]=jobRequest.getExperience();
+            row[2]=jobRequest.getSalaryRequest();
             model.addRow(row);
         }
     }

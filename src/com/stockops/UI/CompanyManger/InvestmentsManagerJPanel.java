@@ -11,6 +11,7 @@ import com.stockops.Brokerage.EquitySellRequest;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
 import com.stockops.Establishments.InvestmentManager;
+import com.stockops.Establishments.JobRequest;
 import com.stockops.Investor.EquityHoldings;
 import com.stockops.Market.Equity;
 import com.stockops.Users.UserAccount;
@@ -36,7 +37,11 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         this.account = account;
         this.investmentManager=(InvestmentManager)account.getUser();
         initComponents();
-        investmentManager.setAssignedCompany(this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName("Apple"));
+        jLabel6.setVisible(false);
+        jLabel3.setVisible(false);
+        txtSalary.setVisible(false);
+        txtExperience.setVisible(false);
+        jButton3.setVisible(false);
         if(investmentManager.getAssignedCompany()==null){
             populateJobsTable();
             changeScreen(jPanel2);
@@ -71,6 +76,11 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblJobs = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtExperience = new javax.swing.JTextField();
+        txtSalary = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblStockListBuy = new javax.swing.JTable();
@@ -201,7 +211,35 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblJobs);
 
-        jButton2.setText("Request Job");
+        jButton2.setText("Apply");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Enter Experience:");
+
+        jLabel6.setText("Enter Expected Salary:");
+
+        txtExperience.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtExperienceActionPerformed(evt);
+            }
+        });
+
+        txtSalary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSalaryActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Submit Application");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -216,8 +254,22 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                         .addGap(19, 19, 19)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jButton2)))
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSalary))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtExperience, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jButton2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(265, 265, 265)
+                        .addComponent(jButton3)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -227,9 +279,19 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtExperience, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jButton3)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         add(jPanel2, "card3");
@@ -373,7 +435,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jButton11)))
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,7 +460,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel9))
                 .addGap(4, 4, 4)
                 .addComponent(btnBuyShare1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addComponent(jButton11)
                 .addGap(94, 94, 94))
         );
@@ -486,7 +548,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jButton12)))
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,7 +573,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel15))
                 .addGap(4, 4, 4)
                 .addComponent(btnSellShare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                 .addComponent(jButton12)
                 .addGap(158, 158, 158))
         );
@@ -628,6 +690,45 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         changeScreen(jPanel1);
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try{
+            Company company=this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(String.valueOf(tblJobs.getValueAt(tblJobs.getSelectedRow(), 0)));
+            jLabel6.setVisible(true);
+            jLabel3.setVisible(true);
+            txtSalary.setVisible(true);
+            txtExperience.setVisible(true);
+            jButton3.setVisible(true);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Select an option");
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtSalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalaryActionPerformed
+
+    private void txtExperienceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExperienceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtExperienceActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try{
+            Company company=this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(String.valueOf(tblJobs.getValueAt(tblJobs.getSelectedRow(), 0)));
+            JobRequest jobRequest = new JobRequest();
+            jobRequest.setCompany(company);
+            jobRequest.setApplicant(this.investmentManager);
+            jobRequest.setExperience(Integer.parseInt(txtExperience.getText()));
+            jobRequest.setSalaryRequest(Double.parseDouble(txtSalary.getText()));
+            company.getJobRequest().add(jobRequest);
+            JOptionPane.showMessageDialog(this, "Application Placed!");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Salary and experience should be numbers");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuyShare1;
@@ -636,6 +737,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton9;
@@ -649,8 +751,10 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -669,8 +773,10 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblStockListBuy;
     private javax.swing.JLabel txtAvailableBalance;
     private javax.swing.JLabel txtAvailableBalance1;
+    private javax.swing.JTextField txtExperience;
     private javax.swing.JTextField txtQtyShare;
     private javax.swing.JTextField txtQtyShare1;
+    private javax.swing.JTextField txtSalary;
     private javax.swing.JLabel txtShrName;
     private javax.swing.JLabel txtShrName1;
     // End of variables declaration//GEN-END:variables

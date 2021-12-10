@@ -8,8 +8,10 @@ package com.stockops.UI.CompanyManger;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Establishments.Company;
 import com.stockops.Establishments.EstablishmentsModerator;
+import com.stockops.Establishments.InvestmentManager;
 import com.stockops.Roles.EstablishmentsModeratorRole;
 import com.stockops.Users.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,6 +33,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         this.account=account;
         this.establishmentsModerator=(EstablishmentsModerator)account.getUser();
         populateLiscensingTable();
+        changeScreen(homepage);
     }
 
     /**
@@ -42,15 +45,31 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        listingrequests = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRegisterComp = new javax.swing.JTable();
+        homepage = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        allCompanies = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblAllCompanies = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        managerDetails = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblInvManager = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setPreferredSize(new java.awt.Dimension(1000, 1000));
         setRequestFocusEnabled(false);
+        setLayout(new java.awt.CardLayout());
 
         jLabel1.setText("Compay Manager Liscence Request");
 
@@ -62,6 +81,11 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         });
 
         jButton2.setText("Reject");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,72 +100,291 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tableRegisterComp);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(jButton1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(152, Short.MAX_VALUE))
+        javax.swing.GroupLayout listingrequestsLayout = new javax.swing.GroupLayout(listingrequests);
+        listingrequests.setLayout(listingrequestsLayout);
+        listingrequestsLayout.setHorizontalGroup(
+            listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 994, Short.MAX_VALUE)
+            .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(listingrequestsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(listingrequestsLayout.createSequentialGroup()
+                            .addGap(46, 46, 46)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(listingrequestsLayout.createSequentialGroup()
+                            .addGap(192, 192, 192)
+                            .addComponent(jButton1)
+                            .addGap(32, 32, 32)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(169, Short.MAX_VALUE)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(710, Short.MAX_VALUE))
+        listingrequestsLayout.setVerticalGroup(
+            listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 994, Short.MAX_VALUE)
+            .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(listingrequestsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1)
+                    .addGap(39, 39, 39)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2)
+                        .addComponent(jButton1))
+                    .addContainerGap(748, Short.MAX_VALUE)))
         );
+
+        add(listingrequests, "card2");
+
+        homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Licencing Commission");
+        homepage.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 27, -1, -1));
+
+        jButton3.setText("Lisence Requests");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        homepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 133, -1, -1));
+
+        jButton4.setText("Companies and Managers Details");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        homepage.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 168, -1, -1));
+
+        jButton6.setText("Investment Managers Details");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+
+        jLabel3.setText("Home Page");
+        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 61, -1, -1));
+
+        add(homepage, "card3");
+
+        tblAllCompanies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Company Name", "Capital", "Assets", "Liabilities", "Lisence Approval", "Manager", "Investment Manager"
+            }
+        ));
+        jScrollPane2.setViewportView(tblAllCompanies);
+
+        jButton7.setText("<<Back");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout allCompaniesLayout = new javax.swing.GroupLayout(allCompanies);
+        allCompanies.setLayout(allCompaniesLayout);
+        allCompaniesLayout.setHorizontalGroup(
+            allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(allCompaniesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(allCompaniesLayout.createSequentialGroup()
+                .addComponent(jButton7)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        allCompaniesLayout.setVerticalGroup(
+            allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(allCompaniesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton7)
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(376, Short.MAX_VALUE))
+        );
+
+        add(allCompanies, "card4");
+
+        tblInvManager.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Name", "Assigned Company"
+            }
+        ));
+        jScrollPane3.setViewportView(tblInvManager);
+
+        jButton5.setText("<<Back");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout managerDetailsLayout = new javax.swing.GroupLayout(managerDetails);
+        managerDetails.setLayout(managerDetailsLayout);
+        managerDetailsLayout.setHorizontalGroup(
+            managerDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(managerDetailsLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
+            .addGroup(managerDetailsLayout.createSequentialGroup()
+                .addComponent(jButton5)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        managerDetailsLayout.setVerticalGroup(
+            managerDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(managerDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton5)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
+        );
+
+        add(managerDetails, "card5");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String selectedCompanyName=String.valueOf(tableRegisterComp.getValueAt(tableRegisterComp.getSelectedRow(), 0));
         Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(selectedCompanyName);
         selectedCompany.setLiscenceStatus("Approved");
+        JOptionPane.showMessageDialog(this, "Approved!");
         populateLiscensingTable();
+        changeScreen(homepage);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String selectedCompanyName=String.valueOf(tableRegisterComp.getValueAt(tableRegisterComp.getSelectedRow(), 0));
+        Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(selectedCompanyName);
+        selectedCompany.setLiscenceStatus("Rejected");
+        populateLiscensingTable();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        changeScreen(listingrequests);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        populateAllCompaniesTable();
+        changeScreen(allCompanies);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        populateInvestmentManagerTable();
+        changeScreen(managerDetails);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        changeScreen(homepage);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        changeScreen(homepage);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel allCompanies;
+    private javax.swing.JPanel homepage;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JPanel listingrequests;
+    private javax.swing.JPanel managerDetails;
     private javax.swing.JTable tableRegisterComp;
+    private javax.swing.JTable tblAllCompanies;
+    private javax.swing.JTable tblInvManager;
     // End of variables declaration//GEN-END:variables
 
     private void populateLiscensingTable() {
         DefaultTableModel model = (DefaultTableModel) tableRegisterComp.getModel();
         model.setRowCount(0);
         for(Company company: this.establishmentsModerator.getCompanyList()){
-            Object[] row= new Object[6];
+            if(company.getLiscenceStatus().equals("Pending")){
+                Object[] row= new Object[6];
+                row[0]=company.getName();
+                row[1]=company.getAssets();
+                row[2]=company.getLiabilities();
+                row[3]=company.getCaptial();
+                if(company.getInvestmentManager()==null){
+                    row[4]="Not Assigned";
+                }
+                else{
+                    row[4]=company.getInvestmentManager().getName();
+                }
+                row[5]=company.getLiscenceStatus();
+                model.addRow(row);
+            }
+        }
+    }
+
+    private void changeScreen(JPanel newJPanel) {
+        this.removeAll();
+        this.add(newJPanel);
+        this.revalidate();
+        this.repaint();
+    }
+
+    private void populateAllCompaniesTable() {
+        DefaultTableModel model = (DefaultTableModel) tblAllCompanies.getModel();
+        model.setRowCount(0);
+        for(Company company: this.establishmentsModerator.getCompanyList()){
+            Object[] row= new Object[7];
             row[0]=company.getName();
-            row[1]=company.getAssets();
-            row[2]=company.getLiabilities();
-            row[3]=company.getCaptial();
+            row[1]=company.getCaptial();
+            row[2]=company.getAssets();
+            row[3]=company.getLiabilities();
+            row[4]=company.getLiscenceStatus();
+            row[5]=company.getCompanyManager().getName();
             if(company.getInvestmentManager()==null){
-                row[4]="Not Assigned";
+                row[6]="Not Assigned";
             }
             else{
-                row[4]=company.getInvestmentManager().getName();
+                row[6]=company.getInvestmentManager().getName();
             }
-            row[5]=company.getLiscenceStatus();
+            model.addRow(row);
+        }
+    }
+
+    private void populateInvestmentManagerTable() {
+        DefaultTableModel model = (DefaultTableModel) tblInvManager.getModel();
+        model.setRowCount(0);
+        for(InvestmentManager investmentManager: this.establishmentsModerator.getInvestmentManagerDirectory()){
+            Object[] row = new Object[2];
+            row[0]=investmentManager.getName();
+            if(investmentManager.getAssignedCompany()==null){
+                row[1]="Not Assigned";
+            }
+            else{
+                row[1]=investmentManager.getAssignedCompany().getName();
+            }
             model.addRow(row);
         }
     }

@@ -65,5 +65,9 @@ public class Equity {
     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
+
+    public void calculateAndSetPrice() {
+        setPrice(this.company.getCaptial()/this.stockQuantity);
+    }
     
 }

@@ -76,6 +76,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnLicensingCommissionAdmin = new javax.swing.JButton();
         btnCompanyManager = new javax.swing.JButton();
         btnInvestmentsManager = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
         signupSigninJPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -105,6 +106,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         homeJPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         investmentManagerJPanel = new javax.swing.JPanel();
         txtTitle1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -236,6 +238,10 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel23.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Select Your Role");
+
         javax.swing.GroupLayout rolesPanalLayout = new javax.swing.GroupLayout(rolesPanal);
         rolesPanal.setLayout(rolesPanalLayout);
         rolesPanalLayout.setHorizontalGroup(
@@ -254,11 +260,17 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(btnCompanyManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnInvestmentsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(rolesPanalLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel23)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rolesPanalLayout.setVerticalGroup(
             rolesPanalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rolesPanalLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel23)
+                .addGap(21, 21, 21)
                 .addComponent(btnRetailInvestor, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDayTrader, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,7 +290,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCompanyManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnInvestmentsManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         jSplitPane2.setLeftComponent(rolesPanal);
@@ -375,7 +387,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(signupSigninJPanelLayout.createSequentialGroup()
                         .addGap(250, 250, 250)
                         .addComponent(txtTitle)))
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(961, Short.MAX_VALUE))
         );
         signupSigninJPanelLayout.setVerticalGroup(
             signupSigninJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,7 +426,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(355, Short.MAX_VALUE))
         );
 
         container.add(signupSigninJPanel, "card2");
@@ -458,7 +470,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel11))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
                     .addComponent(jPasswordField4))
                 .addGap(311, 311, 311))
             .addGroup(signInJPanelLayout.createSequentialGroup()
@@ -483,7 +495,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(344, Short.MAX_VALUE))
+                .addContainerGap(592, Short.MAX_VALUE))
         );
 
         container.add(signInJPanel, "card3");
@@ -493,21 +505,29 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
         jLabel14.setText("Welcome To StockOps");
 
+        jLabel24.setIcon(new javax.swing.ImageIcon("/Users/mridulregmi/Desktop/AED-Final-Project/images/stock.png")); // NOI18N
+
         javax.swing.GroupLayout homeJPanelLayout = new javax.swing.GroupLayout(homeJPanel);
         homeJPanel.setLayout(homeJPanelLayout);
         homeJPanelLayout.setHorizontalGroup(
             homeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeJPanelLayout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeJPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 1157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         homeJPanelLayout.setVerticalGroup(
             homeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homeJPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel14)
-                .addContainerGap(577, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         container.add(homeJPanel, "card4");
@@ -746,7 +766,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnInvestmentsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvestmentsManagerActionPerformed
         this.selectedUser=new InvestmentManager();
         this.role=new InvestmentManagerRole();
-        setRightPanalInvestmentManager(this.role, "Investment Manager");
+        setRightPanalSignInUp(this.role, "Investment Manager");
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnInvestmentsManagerActionPerformed
 
@@ -921,6 +941,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -972,6 +994,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void setRightPanalInvestmentManager(Role role, String investment_Manager) {
         txtTitle1.setText(investment_Manager);
-        setContainer(investmentManagerJPanel);
+        setContainer(signupSigninJPanel);
     }
 }

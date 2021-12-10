@@ -23,6 +23,7 @@ public class Company extends InvestorAbstract{
     private String listingRequestStatus;
     private CompanyManager companyManager;
     private InvestmentManager investmentManager;
+    private ArrayList<JobRequest> jobRequest;
     public Company() {
         super();
         investmentManager = null;;
@@ -117,6 +118,17 @@ public class Company extends InvestorAbstract{
         }
         double balance=marketCap-investment;
         this.setBalance(balance);
+    }
+
+    public ArrayList<JobRequest> getJobRequest() {
+        if(jobRequest==null){
+            this.setJobRequest(new ArrayList<>());
+        }
+        return jobRequest;
+    }
+
+    public void setJobRequest(ArrayList<JobRequest> jobRequest) {
+        this.jobRequest = jobRequest;
     }
     
 }

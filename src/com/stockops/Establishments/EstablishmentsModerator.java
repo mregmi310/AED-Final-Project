@@ -77,6 +77,15 @@ public class EstablishmentsModerator extends AppUser{
     public ArrayList<InvestmentManager> getInvestmentManagerDirectory() {
         return investmentManagerDirectory;
     }
+    
+    public InvestmentManager getInvestmentManagerByName(String name){
+        for(InvestmentManager investmentManager: this.investmentManagerDirectory){
+            if(investmentManager.getName().equals(name)){
+                return investmentManager;
+            }
+        }
+        return null;
+    }
 
     public void setInvestmentManagerDirectory(ArrayList<InvestmentManager> investmentManagerDirectory) {
         this.investmentManagerDirectory = investmentManagerDirectory;
