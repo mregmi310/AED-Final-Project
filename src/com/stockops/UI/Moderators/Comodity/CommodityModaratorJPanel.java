@@ -5,17 +5,31 @@
  */
 package com.stockops.UI.Moderators.Comodity;
 
+import com.stockops.Business.EcoSystem;
+import com.stockops.Market.Commodity;
+import com.stockops.Market.Equity;
+import com.stockops.Users.UserAccount;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author knd18
  */
-public class ComodityModarator extends javax.swing.JPanel {
+public class CommodityModaratorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ComodityModarator
      */
-    public ComodityModarator() {
+    UserAccount account;
+    EcoSystem business;
+    Commodity selectedCommodity;
+    public CommodityModaratorJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         initComponents();
+        this.account=account;
+        this.business=business;
+        populateCommodityListTable();
+        btnModCom.setEnabled(false);
     }
 
     /**
@@ -53,9 +67,14 @@ public class ComodityModarator extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Symbol", "Price", "Unit"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -87,11 +106,21 @@ public class ComodityModarator extends javax.swing.JPanel {
         btnModCom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnModCom.setForeground(new java.awt.Color(255, 255, 255));
         btnModCom.setText("Modify Comodity");
+        btnModCom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModComActionPerformed(evt);
+            }
+        });
 
         btnComdity.setBackground(new java.awt.Color(72, 97, 91));
         btnComdity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnComdity.setForeground(new java.awt.Color(255, 255, 255));
         btnComdity.setText("Add Comodity");
+        btnComdity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComdityActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,11 +140,11 @@ public class ComodityModarator extends javax.swing.JPanel {
                                 .addComponent(btnComdity))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(55, 55, 55)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addGap(44, 44, 44)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtComName, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
                                     .addComponent(txtSymbol)
@@ -128,7 +157,7 @@ public class ComodityModarator extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtComName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -158,6 +187,34 @@ public class ComodityModarator extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSymbolActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        this.selectedCommodity = this.business.getMarket().getCommodityMarket().getCommodityByName(String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0)));
+        txtComName.setText(selectedCommodity.getName());
+        txtSymbol.setText(selectedCommodity.getSymbol());
+        txtPrice.setText(String.valueOf(selectedCommodity.getPrice()));
+        txtUnit.setText(selectedCommodity.getUnit());
+        btnModCom.setEnabled(true);
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btnModComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModComActionPerformed
+        this.selectedCommodity.setName(txtComName.getText());
+        this.selectedCommodity.setSymbol(txtSymbol.getText());
+        this.selectedCommodity.setPrice(Float.parseFloat(txtPrice.getText()));
+        this.selectedCommodity.setUnit(txtUnit.getText());
+        populateCommodityListTable();
+        btnModCom.setEnabled(false);
+    }//GEN-LAST:event_btnModComActionPerformed
+
+    private void btnComdityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComdityActionPerformed
+        Commodity commodity = new Commodity();
+        commodity.setName(txtComName.getText());
+        commodity.setSymbol(txtSymbol.getText());
+        commodity.setPrice(Integer.valueOf(txtPrice.getText()));
+        commodity.setUnit(txtUnit.getText());
+        this.business.getMarket().getCommodityMarket().getCommodityList().add(commodity);
+        populateCommodityListTable();
+    }//GEN-LAST:event_btnComdityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComdity;
@@ -174,4 +231,17 @@ public class ComodityModarator extends javax.swing.JPanel {
     private javax.swing.JTextField txtSymbol;
     private javax.swing.JTextField txtUnit;
     // End of variables declaration//GEN-END:variables
+
+    private void populateCommodityListTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        for(Commodity commodity: this.business.getMarket().getCommodityMarket().getCommodityList()){
+            Object[] row= new Object[5];
+            row[0]=commodity.getName();
+            row[1]=commodity.getSymbol();
+            row[2]=commodity.getPrice();
+            row[3]=commodity.getUnit();
+            model.addRow(row);
+        }
+    }
 }

@@ -46,5 +46,13 @@ public class Commodity {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
     
 }

@@ -19,20 +19,22 @@ import java.util.Map;
  *
  * @author mridulregmi
  */
-public abstract class InvestorAbstract extends AppUser{
+public class InvestorAbstract extends AppUser{
     private double balance;
     private ArrayList<EquityBuyRequest> equityBuyRequests;
     private ArrayList<CommodityBuyRequest> commodityBuyRequests;
     private ArrayList<EquitySellRequest> equitySellRequests;
     private ArrayList<CommoditySellRequest> commoditySellRequests;
     private Map<Equity,Integer> holdings;
-    
+    private ArrayList<CommodityHoldings> commodityHoldings;
+    private ArrayList<EquityHoldings> equityHoldings;
     public InvestorAbstract(){
         equityBuyRequests=new ArrayList<>();
         commodityBuyRequests=new ArrayList<>();
         commoditySellRequests=new ArrayList<>();
         equitySellRequests=new ArrayList<>();
         holdings= new HashMap<>();
+        commodityHoldings=new ArrayList<>();
         balance=0;
     }
 
@@ -58,6 +60,68 @@ public abstract class InvestorAbstract extends AppUser{
 
     public void setUserId(int UserId) {
         this.UserId = UserId;
+    }
+
+    public ArrayList<EquityBuyRequest> getEquityBuyRequests() {
+        return equityBuyRequests;
+    }
+
+    public void setEquityBuyRequests(ArrayList<EquityBuyRequest> equityBuyRequests) {
+        this.equityBuyRequests = equityBuyRequests;
+    }
+
+    public ArrayList<CommodityBuyRequest> getCommodityBuyRequests() {
+        return commodityBuyRequests;
+    }
+
+    public void setCommodityBuyRequests(ArrayList<CommodityBuyRequest> commodityBuyRequests) {
+        this.commodityBuyRequests = commodityBuyRequests;
+    }
+
+    public ArrayList<EquitySellRequest> getEquitySellRequests() {
+        return equitySellRequests;
+    }
+
+    public void setEquitySellRequests(ArrayList<EquitySellRequest> equitySellRequests) {
+        this.equitySellRequests = equitySellRequests;
+    }
+
+    public ArrayList<CommoditySellRequest> getCommoditySellRequests() {
+        return commoditySellRequests;
+    }
+
+    public void setCommoditySellRequests(ArrayList<CommoditySellRequest> commoditySellRequests) {
+        this.commoditySellRequests = commoditySellRequests;
+    }
+
+    public Map<Equity, Integer> getHoldings() {
+        return holdings;
+    }
+
+    public void setHoldings(Map<Equity, Integer> holdings) {
+        this.holdings = holdings;
+    }
+
+    public ArrayList<CommodityHoldings> getCommodityHoldings() {
+        if(commodityHoldings==null){
+            setCommodityHoldings(new ArrayList<>());
+        }
+        return commodityHoldings;
+    }
+
+    public void setCommodityHoldings(ArrayList<CommodityHoldings> commodityHoldings) {
+        this.commodityHoldings = commodityHoldings;
+    }
+
+    public ArrayList<EquityHoldings> getEquityHoldings() {
+        if(equityHoldings==null){
+            setEquityHoldings(new ArrayList<>());
+        }
+        return equityHoldings;
+    }
+
+    public void setEquityHoldings(ArrayList<EquityHoldings> equityHoldings) {
+        this.equityHoldings = equityHoldings;
     }
     
     

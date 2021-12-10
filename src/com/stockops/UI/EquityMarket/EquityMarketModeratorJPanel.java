@@ -448,7 +448,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
 
     private void jBtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnupdateActionPerformed
         double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
-        this.selectedEquity.getCompany().setCaptial(marketCap);
+        this.selectedEquity.getCompany().calculateAndSetMarketCap(marketCap);
         this.selectedEquity.setPrice(Double.parseDouble(jtxtprice.getText()));
         populateTableShares();
     }//GEN-LAST:event_jBtnupdateActionPerformed

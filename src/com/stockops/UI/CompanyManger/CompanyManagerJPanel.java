@@ -525,6 +525,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         company.setLiscenceStatus("Pending");
         company.setListingRequestStatus("Not Initiated");
         company.setCaptial(assets-liab);
+        company.setBalance(assets-liab);
         company.setCompanyManager(manager);
         txtMarkCap.setText(String.valueOf(assets-liab));
         this.manager.getCompanyList().add(company);

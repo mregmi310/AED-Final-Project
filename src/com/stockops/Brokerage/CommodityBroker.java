@@ -44,5 +44,37 @@ public class CommodityBroker extends AppUser{
     public void setRating(float rating) {
         this.rating = rating;
     }
+
+    public ArrayList<CommodityBuyRequest> getBuyRequests() {
+        return buyRequests;
+    }
+
+    public void setBuyRequests(ArrayList<CommodityBuyRequest> buyRequests) {
+        this.buyRequests = buyRequests;
+    }
+
+    public ArrayList<CommoditySellRequest> getSellRequests() {
+        return sellRequests;
+    }
+
+    public void setSellRequests(ArrayList<CommoditySellRequest> sellRequests) {
+        this.sellRequests = sellRequests;
+    }
+    public CommodityBuyRequest getBuyRequestById(int id){
+        for(CommodityBuyRequest commodityBuyRequest: this.buyRequests){
+            if(commodityBuyRequest.getId()==id){
+                return commodityBuyRequest;
+            }
+        }
+        return null;
+    }
+    public CommoditySellRequest getSellRequestById(int id){
+        for(CommoditySellRequest commoditySellRequest: this.sellRequests){
+            if(commoditySellRequest.getId()==id){
+                return commoditySellRequest;
+            }
+        }
+        return null;
+    }
     
 }
