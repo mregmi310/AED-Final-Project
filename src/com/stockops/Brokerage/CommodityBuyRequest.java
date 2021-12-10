@@ -6,6 +6,7 @@
 package com.stockops.Brokerage;
 
 import com.stockops.Investor.Investor;
+import com.stockops.Investor.InvestorAbstract;
 import com.stockops.Market.Commodity;
 
 /**
@@ -13,20 +14,21 @@ import com.stockops.Market.Commodity;
  * @author mridulregmi
  */
 public class CommodityBuyRequest {
+    private int id;
     private Investor seller;
-    private Investor buyer;
+    private InvestorAbstract buyer;
     private Commodity commodity;
     private int quantity;
     public CommodityBuyRequest(){
         
     }
 
-    public CommodityBuyRequest(Investor seller, Investor buyer, Commodity commodity, int quantity) {
-        this.seller = seller;
-        this.buyer = buyer;
-        this.commodity = commodity;
-        this.quantity = quantity;
-    }
+//    public CommodityBuyRequest(Investor seller, Investor buyer, Commodity commodity, int quantity) {
+//        this.seller = seller;
+//        this.buyer = buyer;
+//        this.commodity = commodity;
+//        this.quantity = quantity;
+//    }
 
     public Investor getSeller() {
         return seller;
@@ -34,14 +36,6 @@ public class CommodityBuyRequest {
 
     public void setSeller(Investor seller) {
         this.seller = seller;
-    }
-
-    public Investor getBuyer() {
-        return buyer;
-    }
-
-    public void setBuyer(Investor buyer) {
-        this.buyer = buyer;
     }
 
     public Commodity getCommodity() {
@@ -58,6 +52,22 @@ public class CommodityBuyRequest {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public InvestorAbstract getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(InvestorAbstract buyer) {
+        this.buyer = buyer;
     }
     
 }

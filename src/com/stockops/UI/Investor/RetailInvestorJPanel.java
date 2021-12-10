@@ -5,6 +5,9 @@
  */
 package com.stockops.UI.Investor;
 
+import com.stockops.Brokerage.CommodityBroker;
+import com.stockops.Brokerage.CommodityBuyRequest;
+import com.stockops.Brokerage.CommoditySellRequest;
 import com.stockops.Brokerage.EquityBroker;
 import com.stockops.Brokerage.EquityBuyRequest;
 import com.stockops.Brokerage.EquitySellRequest;
@@ -12,6 +15,7 @@ import com.stockops.Business.EcoSystem;
 import com.stockops.Investor.CommodityHoldings;
 import com.stockops.Investor.EquityHoldings;
 import com.stockops.Investor.RetailInvestor;
+import com.stockops.Market.Commodity;
 import com.stockops.Market.Equity;
 import com.stockops.Users.UserAccount;
 import javax.swing.JOptionPane;
@@ -31,6 +35,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     UserAccount account;
     RetailInvestor investor;
     Equity selectedEquity;
+    Commodity selectedCommodity;
     public RetailInvestorJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
         this.business=business;
         this.account=account;
@@ -108,6 +113,35 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         txtAddAmount = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        commodityTable = new javax.swing.JTable();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        btnBuyComm = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        txtCommName2 = new javax.swing.JLabel();
+        txtQtyComm = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        lblCLP2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtAvailableBalance2 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        txtShrName2 = new javax.swing.JLabel();
+        txtQtyComm2 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        lblCLP3 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtAvailableBalance3 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel26 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        btnSellComm = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -158,6 +192,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jScrollPane3.setViewportView(myEquityHoldings);
 
         jButton3.setText("Sell Commodities");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Buy Shares");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +233,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +261,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                             .addComponent(jButton2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton3)))
-                    .addContainerGap(344, Short.MAX_VALUE))
+                    .addContainerGap(442, Short.MAX_VALUE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addGap(24, 24, 24)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,6 +680,290 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel2, "card7");
+
+        commodityTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Name", "Symbol", "Unit", "Price"
+            }
+        ));
+        jScrollPane5.setViewportView(commodityTable);
+
+        jButton14.setText("Back");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("Buy");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jButton14))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(jButton15)))
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jButton15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addComponent(jButton14)
+                .addGap(119, 119, 119))
+        );
+
+        add(jPanel7, "card8");
+
+        btnBuyComm.setText("Buy");
+        btnBuyComm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuyCommActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Quantity");
+
+        txtCommName2.setText("Share Name");
+
+        txtQtyComm.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtQtyCommInputMethodTextChanged(evt);
+            }
+        });
+        txtQtyComm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQtyCommKeyTyped(evt);
+            }
+        });
+
+        jLabel20.setText("Calculated Price:");
+
+        lblCLP2.setText("jLabel11");
+
+        jLabel21.setText("Available Balance:");
+
+        txtAvailableBalance2.setText("jLabel13");
+
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Select Broker:");
+
+        jButton16.setText("Go Back");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(btnBuyComm))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63))
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtCommName2)
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jLabel20)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(lblCLP2))
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jLabel21)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtAvailableBalance2)))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton16)))
+                .addContainerGap(499, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(txtCommName2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(lblCLP2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(txtAvailableBalance2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(4, 4, 4)
+                .addComponent(btnBuyComm)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addComponent(jButton16)
+                .addGap(158, 158, 158))
+        );
+
+        add(jPanel8, "card3");
+
+        jLabel23.setText("Quantity");
+
+        txtShrName2.setText("Share Name");
+
+        txtQtyComm2.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtQtyComm2InputMethodTextChanged(evt);
+            }
+        });
+        txtQtyComm2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQtyComm2KeyTyped(evt);
+            }
+        });
+
+        jLabel24.setText("Calculated Price:");
+
+        lblCLP3.setText("jLabel11");
+
+        jLabel25.setText("Available Balance:");
+
+        txtAvailableBalance3.setText("jLabel13");
+
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Select Broker:");
+
+        jButton17.setText("Go Back");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        btnSellComm.setText("Sell");
+        btnSellComm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSellCommActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(btnSellComm))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtShrName2)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jLabel23)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(lblCLP3))
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jLabel25)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtAvailableBalance3)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton17)))
+                .addContainerGap(499, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(txtShrName2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(lblCLP3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(txtAvailableBalance3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
+                .addGap(4, 4, 4)
+                .addComponent(btnSellComm)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addComponent(jButton17)
+                .addGap(158, 158, 158))
+        );
+
+        add(jPanel5, "card9");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -687,11 +1010,12 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        changeScreen(jPanel7);
+        populateCommoditiesTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println(myEquityHoldings.getSelectedRow());
+
         if(myEquityHoldings.getSelectedRow()!=-1){
             changeScreen(jPanel6);
             String stockName = String.valueOf(myEquityHoldings.getValueAt(myEquityHoldings.getSelectedRow(), 0));
@@ -791,14 +1115,127 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtQtyShareKeyPressed
 
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        changeScreen(jPanel1);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        String commodityName = String.valueOf(commodityTable.getValueAt(commodityTable.getSelectedRow(), 0));
+        this.selectedCommodity = this.business.getMarket().getCommodityMarket().getCommodityByName(commodityName);
+        changeScreen(jPanel8);
+        for(CommodityBroker commodityBroker:this.business.getBrokerage().getCommodityBrokersDirectory()){
+            jComboBox3.addItem(commodityBroker.getName());
+        }
+        txtCommName2.setText(this.selectedCommodity.getName());
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void btnBuyCommActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyCommActionPerformed
+        int qty = Integer.parseInt(String.valueOf(txtQtyComm.getText()));
+        double price = qty*selectedCommodity.getPrice();
+        if(price<this.investor.getBalance()){
+            this.investor.setBalance(this.investor.getBalance()-price);
+            CommodityBuyRequest commodityBuyRequest = new CommodityBuyRequest();
+            commodityBuyRequest.setBuyer(investor);
+            commodityBuyRequest.setCommodity(selectedCommodity);
+            commodityBuyRequest.setQuantity(qty);
+            commodityBuyRequest.setId(this.business.getBrokerage().getBuyRequestCount());
+            this.business.getBrokerage().setBuyRequestCount(this.business.getBrokerage().getSellRequestCount()+1);
+            CommodityBroker commodityBroker = this.business.getBrokerage().getCommodityBrokerByName(String.valueOf(jComboBox3.getSelectedItem()));
+            commodityBroker.getBuyRequests().add(commodityBuyRequest);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Not enough balance");
+        }
+    }//GEN-LAST:event_btnBuyCommActionPerformed
+
+    private void txtQtyCommInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtQtyCommInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtyCommInputMethodTextChanged
+
+    private void txtQtyCommKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtyCommKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtyCommKeyTyped
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        changeScreen(jPanel1);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       
+        if(tblCommodityHoldings.getSelectedRow()!=-1){
+            changeScreen(jPanel5);
+            String commodityName = String.valueOf(tblCommodityHoldings.getValueAt(tblCommodityHoldings.getSelectedRow(), 0));
+            this.selectedCommodity = this.business.getMarket().getCommodityMarket().getCommodityByName(commodityName);
+            txtShrName2.setText(commodityName);
+            for(CommodityBroker commodityBroker: this.business.getBrokerage().getCommodityBrokersDirectory()){
+                jComboBox4.addItem(commodityBroker.getName());
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Select Commodity to Sell");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtQtyComm2InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtQtyComm2InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtyComm2InputMethodTextChanged
+
+    private void txtQtyComm2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtyComm2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtyComm2KeyTyped
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        changeScreen(jPanel1);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void btnSellCommActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellCommActionPerformed
+        CommodityHoldings commodityToSell = new CommodityHoldings();
+        for(CommodityHoldings commodityHoldings:this.investor.getCommodityHoldings()){
+            if(commodityHoldings.getCommodity()==this.selectedCommodity){
+                commodityToSell=commodityHoldings;
+            }
+        }
+        
+        if(Integer.parseInt((txtQtyComm2.getText()))<=commodityToSell.getQuantity()){
+            CommoditySellRequest commoditySellRequest = new CommoditySellRequest();
+            commoditySellRequest.setCommodity(selectedCommodity);
+            commoditySellRequest.setSeller(investor);
+            commoditySellRequest.setQuantity(Integer.parseInt(txtQtyComm2.getText()));
+            commoditySellRequest.setId(this.business.getBrokerage().getSellRequestCount());
+            this.business.getBrokerage().setSellRequestCount(this.business.getBrokerage().getSellRequestCount()+1);
+            CommodityBroker commodityBroker = this.business.getBrokerage().getCommodityBrokerByName(String.valueOf(jComboBox4.getSelectedItem()));
+            commodityBroker.getSellRequests().add(commoditySellRequest);
+            this.investor.setBalance(this.investor.getBalance()+(Integer.parseInt(txtQtyComm2.getText()))*this.selectedCommodity.getPrice());
+            JOptionPane.showMessageDialog(this, "Commodity Sold");
+        }
+        else{
+            JOptionPane.showConfirmDialog(this, "You do not have sufficient "+this.selectedCommodity.getName());
+        }
+
+    }//GEN-LAST:event_btnSellCommActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuyComm;
     private javax.swing.JButton btnBuyShare1;
+    private javax.swing.JButton btnSellComm;
     private javax.swing.JButton btnSellShare;
+    private javax.swing.JTable commodityTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -808,6 +1245,8 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -818,7 +1257,15 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -829,12 +1276,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lblCLP;
     private javax.swing.JLabel lblCLP1;
+    private javax.swing.JLabel lblCLP2;
+    private javax.swing.JLabel lblCLP3;
     private javax.swing.JLabel lblCommodityPL;
     private javax.swing.JLabel lblProfitLoss;
     private javax.swing.JTable myEquityHoldings;
@@ -843,12 +1296,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAddAmount;
     private javax.swing.JLabel txtAvailableBalance;
     private javax.swing.JLabel txtAvailableBalance1;
+    private javax.swing.JLabel txtAvailableBalance2;
+    private javax.swing.JLabel txtAvailableBalance3;
     private javax.swing.JLabel txtBal;
+    private javax.swing.JLabel txtCommName2;
     private javax.swing.JLabel txtName;
+    private javax.swing.JTextField txtQtyComm;
+    private javax.swing.JTextField txtQtyComm2;
     private javax.swing.JTextField txtQtyShare;
     private javax.swing.JTextField txtQtyShare1;
     private javax.swing.JLabel txtShrName;
     private javax.swing.JLabel txtShrName1;
+    private javax.swing.JLabel txtShrName2;
     // End of variables declaration//GEN-END:variables
 
     private void populateEquityTable() {
@@ -910,5 +1369,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
         lblCommodityPL.setText(String.valueOf(totalValuation-totalInvested));
+    }
+
+    private void populateCommoditiesTable() {
+        DefaultTableModel model = (DefaultTableModel) commodityTable.getModel();
+        model.setRowCount(0);
+        for(Commodity commodity:this.business.getMarket().getCommodityMarket().getCommodityList()){
+            Object[] row=new Object[4];
+            row[0]=commodity.getName();
+            row[1]=commodity.getSymbol();
+            row[2]=commodity.getUnit();
+            row[3]=commodity.getPrice();
+            model.addRow(row);
+        }
     }
 }

@@ -6,6 +6,7 @@
 package com.stockops.Brokerage;
 
 import com.stockops.Investor.Investor;
+import com.stockops.Investor.InvestorAbstract;
 import com.stockops.Market.Commodity;
 
 /**
@@ -13,7 +14,8 @@ import com.stockops.Market.Commodity;
  * @author mridulregmi
  */
 public class CommoditySellRequest {
-    private Investor seller;
+    private int id;
+    private InvestorAbstract seller;
     private Investor buyer;
     private Commodity commodity;
     private int quantity;
@@ -21,18 +23,18 @@ public class CommoditySellRequest {
         
     }
 
-    public CommoditySellRequest(Investor seller, Investor buyer, Commodity commodity, int quantity) {
-        this.seller = seller;
-        this.buyer = buyer;
-        this.commodity = commodity;
-        this.quantity = quantity;
-    }
+//    public CommoditySellRequest(Investor seller, Investor buyer, Commodity commodity, int quantity) {
+//        this.seller = seller;
+//        this.buyer = buyer;
+//        this.commodity = commodity;
+//        this.quantity = quantity;
+//    }
 
-    public Investor getSeller() {
+    public InvestorAbstract getSeller() {
         return seller;
     }
 
-    public void setSeller(Investor seller) {
+    public void setSeller(InvestorAbstract seller) {
         this.seller = seller;
     }
 
@@ -58,6 +60,14 @@ public class CommoditySellRequest {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

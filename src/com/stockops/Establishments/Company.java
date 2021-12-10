@@ -5,7 +5,9 @@
  */
 package com.stockops.Establishments;
 
+import com.stockops.Investor.EquityHoldings;
 import com.stockops.Investor.InvestorAbstract;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,11 +25,18 @@ public class Company extends InvestorAbstract{
     private InvestmentManager investmentManager;
     public Company() {
         super();
-        investmentManager = null;
+        investmentManager = null;;
     }
 
     public double getCaptial() {
-        return captial;
+        double balance=this.getBalance();
+        double investment=0;
+        for(EquityHoldings equityHoldings:this.getEquityHoldings()){
+            investment+=(equityHoldings.getEquity().getPrice()*equityHoldings.getQuantity());
+        }
+        balance+=investment;
+        this.setCaptial(balance);
+        return this.captial;
     }
 
     public void setCaptial(double captial) {
@@ -88,6 +97,26 @@ public class Company extends InvestorAbstract{
 
     public void setListingRequestStatus(String listingRequestStatus) {
         this.listingRequestStatus = listingRequestStatus;
+    }
+    
+//    public double getCapital(){
+//        double balance=this.getBalance();
+//        double investment=0;
+//        for(EquityHoldings equityHoldings:this.getEquityHoldings()){
+//            investment+=(equityHoldings.getEquity().getPrice()*equityHoldings.getQuantity());
+//        }
+//        balance+=investment;
+//        this.setCaptial(balance);
+//        return this.captial;
+//    }
+
+    public void calculateAndSetMarketCap(double marketCap) {
+        double investment=0;
+        for(EquityHoldings equityHoldings:this.getEquityHoldings()){
+            investment+=(equityHoldings.getEquity().getPrice()*equityHoldings.getQuantity());
+        }
+        double balance=marketCap-investment;
+        this.setBalance(balance);
     }
     
 }
