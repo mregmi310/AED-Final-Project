@@ -14,29 +14,26 @@ import java.util.ArrayList;
  * @author mridulregmi
  */
 public class RetailInvestor extends InvestorAbstract{
-    ArrayList<EquityHoldings> equityHoldings;
-    ArrayList<CommodityHoldings> commodityHoldings;
+
     public RetailInvestor() {
         super();
-        equityHoldings=new ArrayList<>();
-        commodityHoldings=new ArrayList<>();
     }
 
-    public ArrayList<EquityHoldings> getEquityHoldings() {
-        return equityHoldings;
-    }
-
-    public void setEquityHoldings(ArrayList<EquityHoldings> equityHoldings) {
-        this.equityHoldings = equityHoldings;
-    }
-
-    public ArrayList<CommodityHoldings> getCommodityHoldings() {
-        return commodityHoldings;
-    }
-
-    public void setCommodityHoldings(ArrayList<CommodityHoldings> commodityHoldings) {
-        this.commodityHoldings = commodityHoldings;
-    }
+//    public ArrayList<EquityHoldings> getEquityHoldings() {
+//        return equityHoldings;
+//    }
+//
+//    public void setEquityHoldings(ArrayList<EquityHoldings> equityHoldings) {
+//        this.equityHoldings = equityHoldings;
+//    }
+//
+//    public ArrayList<CommodityHoldings> getCommodityHoldings() {
+//        return commodityHoldings;
+//    }
+//
+//    public void setCommodityHoldings(ArrayList<CommodityHoldings> commodityHoldings) {
+//        this.commodityHoldings = commodityHoldings;
+//    }
 
     
     

@@ -74,4 +74,12 @@ public class Brokerage {
         this.sellRequestCount = sellRequestCount;
     }
     
+    public CommodityBroker getCommodityBrokerByName(String name){
+        for(CommodityBroker commodityBroker:this.commodityBrokersDirectory){
+            if(commodityBroker.getName().equals(name)){
+                return commodityBroker;
+            }
+        }
+        return null;
+    }
 }

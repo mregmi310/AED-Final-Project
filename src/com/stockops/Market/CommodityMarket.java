@@ -25,6 +25,23 @@ public class CommodityMarket {
     public void setCommodityMarketModerator(CommodityMarketModerator commodityMarketModerator) {
         this.commodityMarketModerator = commodityMarketModerator;
     }
+
+    public ArrayList<Commodity> getCommodityList() {
+        return commodityList;
+    }
+
+    public void setCommodityList(ArrayList<Commodity> commodityList) {
+        this.commodityList = commodityList;
+    }
+    
+    public Commodity getCommodityByName(String name){
+        for(Commodity commodity:this.commodityList){
+            if(commodity.getName().equals(name)){
+                return commodity;
+            }
+        }
+        return null;
+    }
    
    
 }

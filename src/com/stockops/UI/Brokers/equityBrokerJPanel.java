@@ -8,7 +8,9 @@ import com.stockops.Brokerage.EquityBroker;
 import com.stockops.Brokerage.EquityBuyRequest;
 import com.stockops.Brokerage.EquitySellRequest;
 import com.stockops.Business.EcoSystem;
+import com.stockops.Establishments.Company;
 import com.stockops.Investor.EquityHoldings;
+import com.stockops.Investor.InvestorAbstract;
 import com.stockops.Investor.RetailInvestor;
 import com.stockops.Market.Equity;
 import com.stockops.Users.UserAccount;
@@ -233,8 +235,16 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
         EquityBuyRequest buyRequest = this.equityBroker.getEquityBuyRequestById(Integer.parseInt(String.valueOf(tblBuyReq.getValueAt(tblBuyReq.getSelectedRow(), 0))));
         EquityHoldings holdingToAdd = new EquityHoldings();
         Boolean addNewFlag =true;
+        InvestorAbstract buyer=new InvestorAbstract();
         if(buyRequest.getEquity().getAvailableQuantity()>buyRequest.getQuantity()){
-            for(EquityHoldings equityHoldings:((RetailInvestor)buyRequest.getBuyer()).getEquityHoldings()){
+            
+            if(buyRequest.getBuyer() instanceof RetailInvestor){
+                buyer = (RetailInvestor)buyRequest.getBuyer();
+            }
+            else if(buyRequest.getBuyer() instanceof Company){
+                buyer = (Company)buyRequest.getBuyer();
+            }
+            for(EquityHoldings equityHoldings:buyer.getEquityHoldings()){
                 if(equityHoldings.getEquity()==buyRequest.getEquity()){
                     holdingToAdd=equityHoldings;
                     addNewFlag=false;
@@ -246,7 +256,7 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
             buyRequest.getEquity().setAvailableQuantity(buyRequest.getEquity().getAvailableQuantity()-buyRequest.getQuantity());
             if(addNewFlag){
                 holdingToAdd.setEquity(buyRequest.getEquity());
-                ((RetailInvestor)buyRequest.getBuyer()).getEquityHoldings().add(holdingToAdd);
+                buyer.getEquityHoldings().add(holdingToAdd);
             }
             this.equityBroker.getBuyRequests().remove(buyRequest);
             

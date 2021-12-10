@@ -10,6 +10,7 @@ import com.stockops.Brokerage.CommodityBroker;
 import com.stockops.Brokerage.EquityBroker;
 import com.stockops.Business.EcoSystem;
 import com.stockops.DB4OUtil.DB4OUtil;
+import com.stockops.Establishments.Company;
 import com.stockops.Establishments.CompanyManager;
 import com.stockops.Establishments.EstablishmentsModerator;
 import com.stockops.Establishments.InvestmentManager;
@@ -29,6 +30,7 @@ import com.stockops.Roles.RetailInvestorRole;
 import com.stockops.Roles.Role;
 import com.stockops.Users.AppUser;
 import com.stockops.Users.UserAccount;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -103,6 +105,28 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         homeJPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        investmentManagerJPanel = new javax.swing.JPanel();
+        txtTitle1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jPasswordField5 = new javax.swing.JPasswordField();
+        jButton4 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jPasswordField6 = new javax.swing.JPasswordField();
+        jLabel20 = new javax.swing.JLabel();
+        jPasswordField7 = new javax.swing.JPasswordField();
+        jButton5 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,7 +246,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCompanyManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnInvestmentsManager, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jSplitPane2.setLeftComponent(rolesPanal);
@@ -355,7 +379,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         container.add(signupSigninJPanel, "card2");
@@ -422,7 +446,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         container.add(signInJPanel, "card3");
@@ -444,10 +468,169 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(homeJPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel14)
-                .addContainerGap(575, Short.MAX_VALUE))
+                .addContainerGap(577, Short.MAX_VALUE))
         );
 
         container.add(homeJPanel, "card4");
+
+        txtTitle1.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
+        txtTitle1.setText("PORTAL");
+
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel9.setText("Sing In:");
+
+        jLabel13.setText("Username:");
+
+        jLabel15.setText("Password:");
+
+        jButton4.setText("Sign In");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel16.setText("Sign Up:");
+
+        jLabel17.setText("Name:");
+
+        jLabel18.setText("Username:");
+
+        jLabel19.setText("Password:");
+
+        jLabel20.setText("Confirm Password:");
+
+        jButton5.setText("Sign Up");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Experience:");
+
+        jLabel22.setText("Salary:");
+
+        javax.swing.GroupLayout investmentManagerJPanelLayout = new javax.swing.GroupLayout(investmentManagerJPanel);
+        investmentManagerJPanel.setLayout(investmentManagerJPanelLayout);
+        investmentManagerJPanelLayout.setHorizontalGroup(
+            investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addComponent(jLabel20))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, investmentManagerJPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel21)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField8)
+                                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jPasswordField7, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(39, 39, 39))
+                            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel16)))
+                                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                        .addGap(96, 96, 96)
+                                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                                .addGap(9, 9, 9)
+                                                .addComponent(jLabel18))
+                                            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                                                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel13)
+                                                        .addComponent(jLabel15))
+                                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(jPasswordField5, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                                    .addComponent(jTextField6)
+                                                    .addComponent(jTextField7))))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(txtTitle1)))
+                .addGap(339, 339, 339))
+            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPasswordField6)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        investmentManagerJPanelLayout.setVerticalGroup(
+            investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(txtTitle1)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel9)
+                .addGap(20, 20, 20)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(22, 22, 22)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel16)
+                .addGap(15, 15, 15)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(jPasswordField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jPasswordField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53))
+                    .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
+                        .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        container.add(investmentManagerJPanel, "card5");
 
         jSplitPane2.setRightComponent(container);
 
@@ -524,7 +707,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnInvestmentsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvestmentsManagerActionPerformed
         this.selectedUser=new InvestmentManager();
         this.role=new InvestmentManagerRole();
-        setRightPanalSignInUp(this.role, "Investment Manager");
+        setRightPanalInvestmentManager(this.role, "Investment Manager");
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnInvestmentsManagerActionPerformed
 
@@ -595,6 +778,40 @@ public class MainJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        char[] password=jPasswordField5.getPassword();
+        String passwordString = new String(password);
+        UserAccount user=system.getUserDirectory().authenticateUser(jTextField4.getText(), passwordString);
+        if(user!=null){
+            setContainer(user.getRole().createWorkArea(container, user, system));
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Invalid Username or Password!");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        char[] password=jPasswordField6.getPassword();
+        String passwordString = new String(password);
+        char[] confirmPassword=jPasswordField6.getPassword();
+        String confirmPasswordString = new String(confirmPassword);
+        if(!passwordString.equals(confirmPasswordString)){
+            JOptionPane.showMessageDialog(this, "Passwords Do Not Match");
+        }
+        else{
+            selectedUser.setName(jTextField7.getText());
+            selectedUser.setUserId(system.getUserCount());
+            system.setUserCount(system.getUserCount()+1);
+            ((InvestmentManager)selectedUser).setExperience(Float.parseFloat(jTextField9.getText()));
+            ((InvestmentManager)selectedUser).setSalary(Double.parseDouble(jTextField1.getText()));
+            UserAccount user=this.system.getUserDirectory().createUserAccount(jTextField4.getText(), passwordString, selectedUser, role);
+            this.system.getEstablishment().getEstablishmentsModerator().getInvestmentManagerDirectory().add((InvestmentManager)selectedUser);
+            JOptionPane.showMessageDialog(this, "User Signed In Successfully");
+            setContainer(user.getRole().createWorkArea(container, user, system));
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -644,34 +861,56 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnRetailInvestor;
     private javax.swing.JPanel container;
     private javax.swing.JPanel homeJPanel;
+    private javax.swing.JPanel investmentManagerJPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JPasswordField jPasswordField4;
+    private javax.swing.JPasswordField jPasswordField5;
+    private javax.swing.JPasswordField jPasswordField6;
+    private javax.swing.JPasswordField jPasswordField7;
     private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel rolesPanal;
     private javax.swing.JPanel signInJPanel;
     private javax.swing.JPanel signupSigninJPanel;
     private javax.swing.JLabel txtTitle;
+    private javax.swing.JLabel txtTitle1;
     private javax.swing.JLabel txtTitle2;
     // End of variables declaration//GEN-END:variables
 
@@ -690,5 +929,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private void setRightPanalSignIn(Role role, String titleText) {
         txtTitle2.setText(titleText);
         setContainer(signInJPanel);
+    }
+
+    private void setRightPanalInvestmentManager(Role role, String investment_Manager) {
+        txtTitle1.setText(investment_Manager);
+        setContainer(investmentManagerJPanel);
     }
 }
