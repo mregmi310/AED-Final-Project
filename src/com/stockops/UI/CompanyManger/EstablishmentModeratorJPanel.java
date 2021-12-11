@@ -58,6 +58,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
         allCompanies = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblAllCompanies = new javax.swing.JTable();
@@ -66,6 +67,15 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblInvManager = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
+        industryStandards = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        txtSmallCap = new javax.swing.JTextField();
+        txtMediumCap = new javax.swing.JTextField();
+        txtLargeCap = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setPreferredSize(new java.awt.Dimension(1000, 1000));
@@ -165,6 +175,10 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jLabel3.setText("Home Page");
         homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
 
+        jToggleButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jToggleButton1.setText("Industry Standards");
+        homepage.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+
         add(homepage, "card3");
 
         tblAllCompanies.setModel(new javax.swing.table.DefaultTableModel(
@@ -254,6 +268,75 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         );
 
         add(managerDetails, "card5");
+
+        jLabel4.setText("Small Cap:");
+
+        jLabel5.setText("Medium Cap:");
+
+        jLabel6.setText("Large Cap:");
+
+        jButton8.setText("Back");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Set");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout industryStandardsLayout = new javax.swing.GroupLayout(industryStandards);
+        industryStandards.setLayout(industryStandardsLayout);
+        industryStandardsLayout.setHorizontalGroup(
+            industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(industryStandardsLayout.createSequentialGroup()
+                .addComponent(jButton8)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(industryStandardsLayout.createSequentialGroup()
+                .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(industryStandardsLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(25, 25, 25)
+                        .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSmallCap, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                            .addComponent(txtMediumCap)
+                            .addComponent(txtLargeCap)))
+                    .addGroup(industryStandardsLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(201, Short.MAX_VALUE))
+        );
+        industryStandardsLayout.setVerticalGroup(
+            industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(industryStandardsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton8)
+                .addGap(48, 48, 48)
+                .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtSmallCap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtMediumCap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtLargeCap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
+
+        add(industryStandards, "card6");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -298,10 +381,33 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         changeScreen(homepage);
     }//GEN-LAST:event_jBtngobackActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        changeScreen(homepage);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        double smallCap = Double.parseDouble(txtSmallCap.getText());
+        double mediumCap = Double.parseDouble(txtMediumCap.getText());
+        double largeCap = Double.parseDouble(txtLargeCap.getText());
+        if(smallCap>=mediumCap){
+            JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
+        }
+        else if(mediumCap>=largeCap){
+            JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
+        }
+        else{
+            this.establishmentsModerator.setSmallCap(smallCap);
+            this.establishmentsModerator.setMediumCap(mediumCap);
+            this.establishmentsModerator.setLargeCap(largeCap);
+            JOptionPane.showMessageDialog(this, "Market Standards Updated");
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel allCompanies;
     private javax.swing.JPanel homepage;
+    private javax.swing.JPanel industryStandards;
     private javax.swing.JButton jBtngoback;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -310,17 +416,26 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel listingrequests;
     private javax.swing.JPanel managerDetails;
     private javax.swing.JTable tableRegisterComp;
     private javax.swing.JTable tblAllCompanies;
     private javax.swing.JTable tblInvManager;
+    private javax.swing.JTextField txtLargeCap;
+    private javax.swing.JTextField txtMediumCap;
+    private javax.swing.JTextField txtSmallCap;
     // End of variables declaration//GEN-END:variables
 
     private void populateLiscensingTable() {

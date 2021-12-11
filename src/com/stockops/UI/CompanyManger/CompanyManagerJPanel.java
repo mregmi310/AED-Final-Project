@@ -73,8 +73,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         requestListing = new javax.swing.JPanel();
         txtNumberOfShares = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        marketSelectionBox = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtPricePerShare = new javax.swing.JLabel();
@@ -252,9 +250,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Select market:");
-
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Enter Number of Shares:");
 
@@ -289,13 +284,11 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                         .addGap(168, 168, 168)
                         .addGroup(requestListingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
-                        .addGroup(requestListingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNumberOfShares, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                            .addComponent(txtPricePerShare, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(marketSelectionBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(requestListingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNumberOfShares, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPricePerShare, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(requestListingLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jButton5))
@@ -309,11 +302,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
             .addGroup(requestListingLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jButton5)
-                .addGap(56, 56, 56)
-                .addGroup(requestListingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(marketSelectionBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(95, 95, 95)
                 .addGroup(requestListingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumberOfShares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
@@ -494,7 +483,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         if(selectedCompanyForListing.getLiscenceStatus().equals("Approved")){
             this.selectedCompany = selectedCompanyForListing;
             setComponent(requestListing);
-            marketSelectionBox.addItem(this.business.getMarket().getEquityMarket().getMarketName());
         }
         else{
             JOptionPane.showMessageDialog(this, "This company does not have a lisence to run a business");
@@ -541,7 +529,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        setComponent(homepage);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -603,7 +591,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -614,7 +601,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblMarkcap;
     private javax.swing.JLabel lblsalary;
     private javax.swing.JPanel listingStatusJpanel;
-    private javax.swing.JComboBox<String> marketSelectionBox;
     private javax.swing.JPanel registerNew;
     private javax.swing.JPanel requestListing;
     private javax.swing.JTable tableRegisterComp;
