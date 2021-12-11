@@ -38,24 +38,24 @@ public class CommoditiesBrokerJPanel extends javax.swing.JPanel {
         tableManagers.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         tableManagers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Username", "Company Name", "Quotated Buy Price", "Lot Size Request", "Approval Status"
+                "Username", "Company Name", "Quotated Buy Price", "Lot Size Request", "Approval Status", "Approve"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, true, true
+                false, true, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -64,8 +64,10 @@ public class CommoditiesBrokerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableManagers);
 
+        jBtnapprove.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jBtnapprove.setText("Approve");
 
+        jBtnDecline.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jBtnDecline.setText("Decline");
 
         tableManagers1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -97,8 +99,10 @@ public class CommoditiesBrokerJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tableManagers1);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Buy Request");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Sell Request");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -127,15 +131,15 @@ public class CommoditiesBrokerJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnapprove)
                     .addComponent(jBtnDecline))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
