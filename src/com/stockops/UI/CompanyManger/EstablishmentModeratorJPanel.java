@@ -51,6 +51,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRegisterComp = new javax.swing.JTable();
+        jBtngoback = new javax.swing.JButton();
         homepage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -71,21 +72,31 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         setRequestFocusEnabled(false);
         setLayout(new java.awt.CardLayout());
 
-        jLabel1.setText("Compay Manager Liscence Request");
+        listingrequests.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Compay Manager Liscence Request");
+        listingrequests.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 389, 48));
+
+        jButton1.setBackground(new java.awt.Color(85, 65, 118));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Approve");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        listingrequests.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(85, 65, 118));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Reject");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        listingrequests.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 90, -1));
 
         tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,75 +111,59 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tableRegisterComp);
 
-        javax.swing.GroupLayout listingrequestsLayout = new javax.swing.GroupLayout(listingrequests);
-        listingrequests.setLayout(listingrequestsLayout);
-        listingrequestsLayout.setHorizontalGroup(
-            listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-            .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(listingrequestsLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(listingrequestsLayout.createSequentialGroup()
-                            .addGap(46, 46, 46)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(listingrequestsLayout.createSequentialGroup()
-                            .addGap(192, 192, 192)
-                            .addComponent(jButton1)
-                            .addGap(32, 32, 32)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(169, Short.MAX_VALUE)))
-        );
-        listingrequestsLayout.setVerticalGroup(
-            listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-            .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(listingrequestsLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel1)
-                    .addGap(39, 39, 39)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(listingrequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton1))
-                    .addContainerGap(748, Short.MAX_VALUE)))
-        );
+        listingrequests.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 819, 90));
+
+        jBtngoback.setBackground(new java.awt.Color(85, 65, 118));
+        jBtngoback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtngoback.setText("Go Back");
+        jBtngoback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtngobackActionPerformed(evt);
+            }
+        });
+        listingrequests.add(jBtngoback, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         add(listingrequests, "card2");
 
         homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Licencing Commission");
-        homepage.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 27, -1, -1));
+        homepage.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(85, 65, 115));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Lisence Requests");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        homepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 133, -1, -1));
+        homepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
 
+        jButton4.setBackground(new java.awt.Color(85, 65, 115));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Companies and Managers Details");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        homepage.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 168, -1, -1));
+        homepage.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
+        jButton6.setBackground(new java.awt.Color(85, 65, 115));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Investment Managers Details");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Home Page");
-        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 61, -1, -1));
+        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
 
         add(homepage, "card3");
 
@@ -199,7 +194,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             .addGroup(allCompaniesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
             .addGroup(allCompaniesLayout.createSequentialGroup()
                 .addComponent(jButton7)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -211,7 +206,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jButton7)
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
 
         add(allCompanies, "card4");
@@ -243,7 +238,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             .addGroup(managerDetailsLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
             .addGroup(managerDetailsLayout.createSequentialGroup()
                 .addComponent(jButton5)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -255,7 +250,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jButton5)
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
 
         add(managerDetails, "card5");
@@ -299,10 +294,15 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         changeScreen(homepage);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jBtngobackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtngobackActionPerformed
+        changeScreen(homepage);
+    }//GEN-LAST:event_jBtngobackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel allCompanies;
     private javax.swing.JPanel homepage;
+    private javax.swing.JButton jBtngoback;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
