@@ -15,6 +15,7 @@ public class EquityMarket {
     private ArrayList<Equity> equityList;
     private EquityMarketModerator equityMarketModerator;
     private String marketName = "National Stock Exchange";
+    private ArrayList<String> marketList;
     public EquityMarket(){
         equityList= new ArrayList<>();
     }
@@ -50,6 +51,17 @@ public class EquityMarket {
             }
         }
         return null;
+    }
+
+    public ArrayList<String> getMarketList() {
+        if(marketList==null){
+            setMarketList(new ArrayList<>());
+        }
+        return marketList;
+    }
+
+    public void setMarketList(ArrayList<String> marketList) {
+        this.marketList = marketList;
     }
     
 }

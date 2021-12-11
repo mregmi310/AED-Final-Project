@@ -17,6 +17,9 @@ public class EstablishmentsModerator extends AppUser{
     private ArrayList<Company> companyList;
     private ArrayList<CompanyManager> companyManagerDirectory;
     private ArrayList<InvestmentManager> investmentManagerDirectory;
+    private double smallCap;
+    private double mediumCap;
+    private double largeCap;
     public EstablishmentsModerator(){
         super();
         companyList = new ArrayList<>();
@@ -89,6 +92,30 @@ public class EstablishmentsModerator extends AppUser{
 
     public void setInvestmentManagerDirectory(ArrayList<InvestmentManager> investmentManagerDirectory) {
         this.investmentManagerDirectory = investmentManagerDirectory;
+    }
+
+    public double getSmallCap() {
+        return smallCap;
+    }
+
+    public void setSmallCap(double smallCap) {
+        this.smallCap = smallCap;
+    }
+
+    public double getMediumCap() {
+        return mediumCap;
+    }
+
+    public void setMediumCap(double mediumCap) {
+        this.mediumCap = mediumCap;
+    }
+
+    public double getLargeCap() {
+        return largeCap;
+    }
+
+    public void setLargeCap(double largeCap) {
+        this.largeCap = largeCap;
     }
     
     

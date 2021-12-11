@@ -16,6 +16,7 @@ public class EquityBroker extends AppUser{
     private float rating;
     private ArrayList<EquityBuyRequest> buyRequests;
     private ArrayList<EquitySellRequest> sellRequests;
+    private String assignedMarket;
     public EquityBroker(){
         buyRequests= new ArrayList<>();
         sellRequests= new ArrayList<>();
@@ -75,6 +76,14 @@ public class EquityBroker extends AppUser{
             }
         }
         return null;
+    }
+
+    public String getAssignedMarket() {
+        return assignedMarket;
+    }
+
+    public void setAssignedMarket(String assignedMarket) {
+        this.assignedMarket = assignedMarket;
     }
     
 }
