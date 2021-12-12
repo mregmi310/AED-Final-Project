@@ -21,7 +21,7 @@ import com.stockops.Roles.BrokerageModeratorRole;
 import com.stockops.Roles.CommodityBrokerRole;
 import com.stockops.Roles.CommodityMarketModeratorRole;
 import com.stockops.Roles.CompanyManagerRole;
-import com.stockops.Roles.DayTraderRole;
+import com.stockops.Roles.MarketAnalyst;
 import com.stockops.Roles.EquityBrokerRole;
 import com.stockops.Roles.EquityMarketModeratorRole;
 import com.stockops.Roles.EstablishmentsModeratorRole;
@@ -644,7 +644,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnDayTraderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDayTraderActionPerformed
         this.selectedUser=new DayTrader();
-        this.role=new DayTraderRole();
+        this.role=new MarketAnalyst();
         setRightPanalSignInUp(this.role, "Day Trader");
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnDayTraderActionPerformed

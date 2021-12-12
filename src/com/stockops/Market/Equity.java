@@ -6,6 +6,7 @@
 package com.stockops.Market;
 
 import com.stockops.Establishments.Company;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Equity {
     private double price;
     private int stockQuantity;
     private int availableQuantity;
+    private ArrayList<Double> priceHistory;
     public Equity(){
         
     }
@@ -68,6 +70,17 @@ public class Equity {
 
     public void calculateAndSetPrice() {
         setPrice(this.company.getCaptial()/this.stockQuantity);
+    }
+
+    public ArrayList<Double> getPriceHistory() {
+        if(priceHistory==null){
+            setPriceHistory(new ArrayList<>());
+        }
+        return priceHistory;
+    }
+
+    public void setPriceHistory(ArrayList<Double> priceHistory) {
+        this.priceHistory = priceHistory;
     }
     
 }

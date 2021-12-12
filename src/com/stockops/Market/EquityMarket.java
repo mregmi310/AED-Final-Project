@@ -16,6 +16,7 @@ public class EquityMarket {
     private EquityMarketModerator equityMarketModerator;
     private String marketName = "National Stock Exchange";
     private ArrayList<String> marketList;
+    private ArrayList<Double> marketHistory;
     public EquityMarket(){
         equityList= new ArrayList<>();
     }
@@ -62,6 +63,21 @@ public class EquityMarket {
 
     public void setMarketList(ArrayList<String> marketList) {
         this.marketList = marketList;
+    }
+    
+    public void updateMarketMetrics(Double newValue){
+        if(marketHistory==null){
+            setMarketHistory(new ArrayList<>());
+        }
+        marketHistory.add(newValue);
+    }
+
+    public ArrayList<Double> getMarketHistory() {
+        return marketHistory;
+    }
+
+    public void setMarketHistory(ArrayList<Double> marketHistory) {
+        this.marketHistory = marketHistory;
     }
     
 }
