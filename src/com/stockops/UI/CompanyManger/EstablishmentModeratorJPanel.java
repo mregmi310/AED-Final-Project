@@ -391,20 +391,25 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        double smallCap = Double.parseDouble(txtSmallCap.getText());
-        double mediumCap = Double.parseDouble(txtMediumCap.getText());
-        double largeCap = Double.parseDouble(txtLargeCap.getText());
-        if(smallCap>=mediumCap){
-            JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
+        try{
+            double smallCap = Double.parseDouble(txtSmallCap.getText());
+            double mediumCap = Double.parseDouble(txtMediumCap.getText());
+            double largeCap = Double.parseDouble(txtLargeCap.getText());
+            if(smallCap>=mediumCap){
+                JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
+            }
+            else if(mediumCap>=largeCap){
+                JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
+            }
+            else{
+                this.establishmentsModerator.setSmallCap(smallCap);
+                this.establishmentsModerator.setMediumCap(mediumCap);
+                this.establishmentsModerator.setLargeCap(largeCap);
+                JOptionPane.showMessageDialog(this, "Market Standards Updated");
+            }
         }
-        else if(mediumCap>=largeCap){
-            JOptionPane.showMessageDialog(this, "Small cap cannot be larger than medium cap");
-        }
-        else{
-            this.establishmentsModerator.setSmallCap(smallCap);
-            this.establishmentsModerator.setMediumCap(mediumCap);
-            this.establishmentsModerator.setLargeCap(largeCap);
-            JOptionPane.showMessageDialog(this, "Market Standards Updated");
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Values must be numbers only!");
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
