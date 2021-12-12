@@ -60,7 +60,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         homepage = new javax.swing.JPanel();
-        txtName = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtBal = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -73,6 +72,8 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jButton10 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        txtName = new javax.swing.JLabel();
         confirmShareBuy = new javax.swing.JPanel();
         btnBuyShare1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -84,16 +85,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         txtAvailableBalance = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel32 = new javax.swing.JLabel();
         jComboBox6 = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        jButton11 = new javax.swing.JButton();
         selectShareBuy = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStockListBuy = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
         confirmShareSell = new javax.swing.JPanel();
         btnSellShare = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -105,22 +108,25 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         txtAvailableBalance1 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel27 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jButton12 = new javax.swing.JButton();
         addBalance = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         txtAddAmount = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
         selectCommodityBuy = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         commodityTable = new javax.swing.JTable();
-        jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jButton14 = new javax.swing.JButton();
         confirmCommodityBuy = new javax.swing.JPanel();
         btnBuyComm = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
@@ -132,9 +138,12 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         txtAvailableBalance2 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
-        jButton16 = new javax.swing.JButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         lblCommLbl = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jButton16 = new javax.swing.JButton();
         confirmCommoditySell = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         txtShrName2 = new javax.swing.JLabel();
@@ -145,16 +154,19 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         txtAvailableBalance3 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
         btnSellComm = new javax.swing.JButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         lblCommUnit = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jButton17 = new javax.swing.JButton();
         shares = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         myEquityHoldings = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
         jButton18 = new javax.swing.JButton();
         commodities = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -162,6 +174,8 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         tblCommodityHoldings = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jButton23 = new javax.swing.JButton();
         buyRequests = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -169,6 +183,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
         jButton21 = new javax.swing.JButton();
         sellRequests = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -177,35 +192,34 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jTable4 = new javax.swing.JTable();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
         jButton22 = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
         homepage.setBackground(new java.awt.Color(255, 255, 255));
+        homepage.setMaximumSize(new java.awt.Dimension(1300, 800));
         homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtName.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtName.setText("Name");
-        homepage.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Available Balance:");
-        homepage.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 103, -1, -1));
+        homepage.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        txtBal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtBal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtBal.setText("Available balance");
-        homepage.add(txtBal, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 103, -1, -1));
+        homepage.add(txtBal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Total P/L:");
-        homepage.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 126, -1, -1));
+        homepage.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
-        lblProfitLoss.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProfitLoss.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblProfitLoss.setText("Total P/L:");
-        homepage.add(lblProfitLoss, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 126, -1, -1));
+        homepage.add(lblProfitLoss, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
 
-        jButton7.setBackground(new java.awt.Color(153, 255, 204));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton7.setBackground(new java.awt.Color(85, 65, 118));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Add Balance");
         jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(51, 51, 51)));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +227,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jButton7ActionPerformed(evt);
             }
         });
-        homepage.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 300, 80));
+        homepage.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 200, 60));
 
         jLabel1.setText("Equity P/L:");
         homepage.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
@@ -224,9 +238,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         lblCommodityPL.setText("Commodity P/L");
         homepage.add(lblCommodityPL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
-        jButton6.setBackground(new java.awt.Color(153, 255, 204));
-        jButton6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(51, 51, 51));
+        jButton6.setBackground(new java.awt.Color(85, 65, 118));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("My Equities");
         jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(51, 51, 51)));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -234,10 +248,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jButton6ActionPerformed(evt);
             }
         });
-        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 300, 80));
+        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 200, 60));
 
-        jButton10.setBackground(new java.awt.Color(153, 255, 204));
-        jButton10.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton10.setBackground(new java.awt.Color(85, 65, 118));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("My Commodities");
         jButton10.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 255, 204), new java.awt.Color(51, 51, 51)));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -245,10 +260,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jButton10ActionPerformed(evt);
             }
         });
-        homepage.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 300, 90));
+        homepage.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 200, 60));
 
-        jButton19.setBackground(new java.awt.Color(0, 255, 204));
-        jButton19.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jButton19.setBackground(new java.awt.Color(85, 65, 118));
+        jButton19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(255, 255, 255));
         jButton19.setText("My Buy Request");
         jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 204, 204)));
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -256,11 +272,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jButton19ActionPerformed(evt);
             }
         });
-        homepage.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 300, 90));
+        homepage.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 200, 60));
 
-        jButton20.setBackground(new java.awt.Color(0, 255, 204));
-        jButton20.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(51, 51, 51));
+        jButton20.setBackground(new java.awt.Color(85, 65, 118));
+        jButton20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton20.setForeground(new java.awt.Color(255, 255, 255));
         jButton20.setText("My Sell Request");
         jButton20.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 204, 204)));
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -268,27 +284,57 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jButton20ActionPerformed(evt);
             }
         });
-        homepage.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 600, 300, 90));
+        homepage.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 580, 200, 60));
+
+        jPanel16.setBackground(new java.awt.Color(85, 65, 118));
+
+        txtName.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtName.setText("Name");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(535, 535, 535)
+                .addComponent(txtName)
+                .addContainerGap(570, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtName)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        homepage.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 70));
 
         add(homepage, "card2");
 
         confirmShareBuy.setBackground(new java.awt.Color(255, 255, 255));
         confirmShareBuy.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBuyShare1.setBackground(new java.awt.Color(85, 65, 118));
+        btnBuyShare1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBuyShare1.setForeground(new java.awt.Color(255, 255, 255));
         btnBuyShare1.setText("Buy");
         btnBuyShare1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuyShare1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(btnBuyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 99, 45));
+        confirmShareBuy.add(btnBuyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 90, 40));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Quantity");
-        confirmShareBuy.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 119, -1, -1));
+        confirmShareBuy.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
-        txtShrName.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        txtShrName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtShrName.setText("Share Name");
-        confirmShareBuy.add(txtShrName, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 78, -1, -1));
+        confirmShareBuy.add(txtShrName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
         txtQtyShare.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -302,53 +348,86 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 txtQtyShareKeyPressed(evt);
             }
         });
-        confirmShareBuy.add(txtQtyShare, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 114, 144, -1));
+        confirmShareBuy.add(txtQtyShare, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 144, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Calculated Price:");
-        confirmShareBuy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 161, -1, -1));
+        confirmShareBuy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
         confirmShareBuy.add(lblCLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 161, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Available Balance:");
-        confirmShareBuy.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 189, -1, -1));
+        confirmShareBuy.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
 
         txtAvailableBalance.setText("jLabel13");
-        confirmShareBuy.add(txtAvailableBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 189, -1, -1));
+        confirmShareBuy.add(txtAvailableBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(85, 65, 118));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 70, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Select Broker:");
-        confirmShareBuy.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+        confirmShareBuy.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, -1, -1));
 
-        jButton11.setText("Go Back");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        confirmShareBuy.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 31, -1, -1));
-
+        jToggleButton1.setBackground(new java.awt.Color(85, 65, 118));
+        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("Set");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 114, -1, -1));
+        confirmShareBuy.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, -1, -1));
 
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel32.setText("Select Market:");
-        confirmShareBuy.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 219, -1, -1));
+        confirmShareBuy.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, -1));
 
+        jComboBox6.setBackground(new java.awt.Color(85, 65, 118));
+        jComboBox6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox6ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 215, -1, -1));
+        confirmShareBuy.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 70, -1));
+
+        jPanel2.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton11.setBackground(new java.awt.Color(255, 255, 255));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton11.setText("<< Back");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton11)
+                .addContainerGap(867, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        confirmShareBuy.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 80));
 
         add(confirmShareBuy, "card3");
 
@@ -367,7 +446,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblStockListBuy);
 
-        jButton5.setBackground(new java.awt.Color(0, 255, 204));
+        jButton5.setBackground(new java.awt.Color(85, 65, 118));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buy");
         jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(51, 51, 51)));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -376,46 +457,65 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton9.setText("<<Go Back");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setText("Select Share to Buy:");
+
+        jPanel3.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton9.setBackground(new java.awt.Color(255, 255, 255));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton9.setText("<< Back");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel7.setText("Select Share to Buy:");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout selectShareBuyLayout = new javax.swing.GroupLayout(selectShareBuy);
         selectShareBuy.setLayout(selectShareBuyLayout);
         selectShareBuyLayout.setHorizontalGroup(
             selectShareBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(selectShareBuyLayout.createSequentialGroup()
                 .addGroup(selectShareBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(selectShareBuyLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(107, 107, 107)
                         .addGroup(selectShareBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(selectShareBuyLayout.createSequentialGroup()
-                                .addGap(293, 293, 293)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel7)))
                     .addGroup(selectShareBuyLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton9)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addGap(418, 418, 418)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1968, Short.MAX_VALUE))
         );
         selectShareBuyLayout.setVerticalGroup(
             selectShareBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectShareBuyLayout.createSequentialGroup()
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(45, 45, 45)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
         add(selectShareBuy, "card4");
@@ -423,19 +523,24 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         confirmShareSell.setBackground(new java.awt.Color(255, 255, 255));
         confirmShareSell.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSellShare.setBackground(new java.awt.Color(85, 65, 118));
+        btnSellShare.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSellShare.setForeground(new java.awt.Color(255, 255, 255));
         btnSellShare.setText("Sell");
         btnSellShare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSellShareActionPerformed(evt);
             }
         });
-        confirmShareSell.add(btnSellShare, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 293, 100, 40));
+        confirmShareSell.add(btnSellShare, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 100, 40));
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Quantity");
-        confirmShareSell.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 105, -1, -1));
+        confirmShareSell.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
+        txtShrName1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtShrName1.setText("Share Name");
-        confirmShareSell.add(txtShrName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 78, -1, -1));
+        confirmShareSell.add(txtShrName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         txtQtyShare1.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -449,70 +554,108 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 txtQtyShare1KeyTyped(evt);
             }
         });
-        confirmShareSell.add(txtQtyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 100, 144, -1));
+        confirmShareSell.add(txtQtyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 144, -1));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Calculated Price:");
-        confirmShareSell.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 155, -1, -1));
+        confirmShareSell.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
         confirmShareSell.add(lblCLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 155, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Available Balance:");
-        confirmShareSell.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 183, -1, -1));
+        confirmShareSell.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
         txtAvailableBalance1.setText("jLabel13");
-        confirmShareSell.add(txtAvailableBalance1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 183, -1, -1));
+        confirmShareSell.add(txtAvailableBalance1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        confirmShareSell.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 254, -1, -1));
+        confirmShareSell.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 70, -1));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Select Broker:");
-        confirmShareSell.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 258, -1, -1));
+        confirmShareSell.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
 
-        jButton12.setText("Go Back");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        confirmShareSell.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 23, -1, -1));
-
+        jToggleButton2.setBackground(new java.awt.Color(85, 65, 118));
+        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton2.setText("Set");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        confirmShareSell.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 100, -1, -1));
+        confirmShareSell.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, -1, -1));
 
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel27.setText("Select Market:");
-        confirmShareSell.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 219, -1, -1));
+        confirmShareSell.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
 
+        jComboBox5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
             }
         });
-        confirmShareSell.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 215, -1, -1));
+        confirmShareSell.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 350, 70, -1));
+
+        jPanel4.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton12.setBackground(new java.awt.Color(255, 255, 255));
+        jButton12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton12.setText("<<Back");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton12)
+                .addContainerGap(761, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        confirmShareSell.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 80));
 
         add(confirmShareSell, "card3");
 
         addBalance.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("Available Balance:");
 
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Balance");
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setText("Enter Amount (USD):");
 
+        txtAddAmount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtAddAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddAmountActionPerformed(evt);
             }
         });
 
+        jButton8.setBackground(new java.awt.Color(85, 65, 118));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Add Balance");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -520,60 +663,82 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton13.setText("Go Back");
+        jPanel5.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton13.setBackground(new java.awt.Color(255, 255, 255));
+        jButton13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton13.setText("<<Back");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout addBalanceLayout = new javax.swing.GroupLayout(addBalance);
         addBalance.setLayout(addBalanceLayout);
         addBalanceLayout.setHorizontalGroup(
             addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(addBalanceLayout.createSequentialGroup()
                 .addGroup(addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addBalanceLayout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addGap(144, 144, 144)
                         .addGroup(addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(addBalanceLayout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtAddAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addBalanceLayout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel17))))
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel16))
+                        .addGap(65, 65, 65)
+                        .addGroup(addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAddAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)))
                     .addGroup(addBalanceLayout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jButton8))
-                    .addGroup(addBalanceLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jButton13)))
-                .addContainerGap(406, Short.MAX_VALUE))
+                        .addGap(255, 255, 255)
+                        .addComponent(jButton8)))
+                .addContainerGap(2364, Short.MAX_VALUE))
         );
         addBalanceLayout.setVerticalGroup(
             addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addBalanceLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112)
                 .addGroup(addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(34, 34, 34)
                 .addGroup(addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(txtAddAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 315, Short.MAX_VALUE)
-                .addComponent(jButton13)
-                .addGap(124, 124, 124))
+                    .addComponent(txtAddAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addGap(45, 45, 45)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(373, Short.MAX_VALUE))
         );
 
         add(addBalance, "card7");
 
+        selectCommodityBuy.setBackground(new java.awt.Color(255, 255, 255));
+
+        commodityTable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         commodityTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -585,13 +750,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane5.setViewportView(commodityTable);
 
-        jButton14.setText("Back");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
+        jButton15.setBackground(new java.awt.Color(85, 65, 118));
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setText("Buy");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -599,37 +760,66 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jPanel6.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton14.setBackground(new java.awt.Color(255, 255, 255));
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton14.setText("<< Back");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout selectCommodityBuyLayout = new javax.swing.GroupLayout(selectCommodityBuy);
         selectCommodityBuy.setLayout(selectCommodityBuyLayout);
         selectCommodityBuyLayout.setHorizontalGroup(
             selectCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(selectCommodityBuyLayout.createSequentialGroup()
                 .addGroup(selectCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(selectCommodityBuyLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(67, 67, 67)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(selectCommodityBuyLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton14))
-                    .addGroup(selectCommodityBuyLayout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(jButton15)))
-                .addContainerGap(136, Short.MAX_VALUE))
+                        .addGap(325, 325, 325)
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(2145, Short.MAX_VALUE))
         );
         selectCommodityBuyLayout.setVerticalGroup(
             selectCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectCommodityBuyLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton15)
-                .addGap(112, 112, 112)
-                .addComponent(jButton14)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(369, Short.MAX_VALUE))
         );
 
         add(selectCommodityBuy, "card8");
 
+        confirmCommodityBuy.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnBuyComm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBuyComm.setForeground(new java.awt.Color(255, 255, 255));
         btnBuyComm.setText("Buy");
         btnBuyComm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -637,9 +827,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("Quantity");
 
-        txtCommName2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        txtCommName2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtCommName2.setText("Share Name");
 
         txtQtyComm.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -655,27 +846,28 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setText("Calculated Price:");
 
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setText("Available Balance:");
 
         txtAvailableBalance2.setText("jLabel13");
 
+        jComboBox3.setBackground(new java.awt.Color(85, 65, 118));
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
             }
         });
 
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setText("Select Broker:");
 
-        jButton16.setText("Go Back");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-
+        jToggleButton3.setBackground(new java.awt.Color(85, 65, 118));
+        jToggleButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton3.setText("Set");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -683,7 +875,62 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblCommLbl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCommLbl.setText("unit");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 741, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel9.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton16.setBackground(new java.awt.Color(255, 255, 255));
+        jButton16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton16.setText("<< Back");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jButton16)
+                .addContainerGap(711, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout confirmCommodityBuyLayout = new javax.swing.GroupLayout(confirmCommodityBuy);
         confirmCommodityBuy.setLayout(confirmCommodityBuyLayout);
@@ -692,73 +939,81 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(btnBuyComm))
-                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63))
-                            .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtCommName2)
-                                .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                    .addComponent(jLabel19)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                    .addComponent(jLabel20)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblCLP2))
-                                .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                    .addComponent(jLabel21)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtAvailableBalance2))))
-                        .addComponent(lblCommLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton3))
+                                .addGap(255, 255, 255)
+                                .addComponent(lblCLP2)
+                                .addGap(318, 318, 318))
+                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton16)))
-                .addContainerGap(393, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addComponent(txtCommName2))
+                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addGap(91, 91, 91)
+                                .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblCommLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jToggleButton3))
+                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                .addGap(162, 162, 162)
+                                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAvailableBalance2)))
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22)))
+                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(btnBuyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1281, Short.MAX_VALUE))
         );
         confirmCommodityBuyLayout.setVerticalGroup(
             confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addComponent(txtCommName2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(lblCLP2)
+                .addGap(14, 14, 14)
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3)
-                    .addComponent(lblCommLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(lblCLP2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lblCommLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton3))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel20)
+                .addGap(31, 31, 31)
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(txtAvailableBalance2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22))
-                .addGap(4, 4, 4)
-                .addComponent(btnBuyComm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
-                .addComponent(jButton16)
-                .addGap(158, 158, 158))
+                .addGap(31, 31, 31)
+                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(btnBuyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(315, Short.MAX_VALUE))
         );
 
         add(confirmCommodityBuy, "card3");
 
+        confirmCommoditySell.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setText("Quantity");
 
-        txtShrName2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        txtShrName2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtShrName2.setText("Share Name");
 
         txtQtyComm2.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -774,29 +1029,30 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel24.setText("Calculated Price:");
 
         lblCLP3.setText("jLabel11");
 
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel25.setText("Available Balance:");
 
         txtAvailableBalance3.setText("jLabel13");
 
+        jComboBox4.setBackground(new java.awt.Color(85, 65, 118));
+        jComboBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
             }
         });
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel26.setText("Select Broker:");
 
-        jButton17.setText("Go Back");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
-            }
-        });
-
+        btnSellComm.setBackground(new java.awt.Color(85, 65, 118));
+        btnSellComm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSellComm.setForeground(new java.awt.Color(255, 255, 255));
         btnSellComm.setText("Sell");
         btnSellComm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -804,6 +1060,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jToggleButton4.setBackground(new java.awt.Color(85, 65, 118));
+        jToggleButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton4.setText("Set");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -811,7 +1070,47 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblCommUnit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblCommUnit.setText("unit");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1428, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel11.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton17.setBackground(new java.awt.Color(255, 255, 255));
+        jButton17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton17.setText("<< Back");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jButton17)
+                .addContainerGap(1299, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout confirmCommoditySellLayout = new javax.swing.GroupLayout(confirmCommoditySell);
         confirmCommoditySell.setLayout(confirmCommoditySellLayout);
@@ -820,76 +1119,80 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             .addGroup(confirmCommoditySellLayout.createSequentialGroup()
                 .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(btnSellComm))
+                        .addGap(207, 207, 207)
+                        .addComponent(btnSellComm, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(142, 142, 142)
+                        .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel23))
+                        .addGap(56, 56, 56)
+                        .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAvailableBalance3)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCLP3)
                             .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63))
-                            .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtShrName2)
-                                .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                                    .addComponent(jLabel23)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                                    .addComponent(jLabel24)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblCLP3))
-                                .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                                    .addComponent(jLabel25)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtAvailableBalance3))))
-                        .addComponent(lblCommUnit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton4))
+                                .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(lblCommUnit)
+                                .addGap(41, 41, 41)
+                                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton17)))
-                .addContainerGap(393, Short.MAX_VALUE))
+                        .addGap(117, 117, 117)
+                        .addComponent(txtShrName2))
+                    .addGroup(confirmCommoditySellLayout.createSequentialGroup()
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         confirmCommoditySellLayout.setVerticalGroup(
             confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addComponent(txtShrName2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(41, 41, 41)
                 .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton4)
-                    .addComponent(lblCommUnit))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCommUnit)
+                    .addComponent(jToggleButton4))
+                .addGap(31, 31, 31)
                 .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(lblCLP3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lblCLP3)
+                    .addComponent(jLabel24))
+                .addGap(28, 28, 28)
                 .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(txtAvailableBalance3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtAvailableBalance3)
+                    .addComponent(jLabel25))
+                .addGap(30, 30, 30)
                 .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addGap(4, 4, 4)
-                .addComponent(btnSellComm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
-                .addComponent(jButton17)
-                .addGap(158, 158, 158))
+                .addGap(39, 39, 39)
+                .addComponent(btnSellComm, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(279, Short.MAX_VALUE))
         );
 
         add(confirmCommoditySell, "card9");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        shares.setBackground(new java.awt.Color(255, 255, 255));
+        shares.setPreferredSize(new java.awt.Dimension(1300, 700));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("My Holdings:");
 
         myEquityHoldings.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         myEquityHoldings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -901,8 +1204,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(myEquityHoldings);
 
-        jButton4.setBackground(new java.awt.Color(72, 97, 91));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(85, 65, 118));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Buy Shares");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -910,8 +1214,9 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(72, 97, 91));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(85, 65, 118));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sell Shares");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -919,6 +1224,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jPanel12.setBackground(new java.awt.Color(85, 65, 118));
+        jPanel12.setPreferredSize(new java.awt.Dimension(1300, 80));
+
+        jButton18.setBackground(new java.awt.Color(255, 255, 255));
+        jButton18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton18.setText("<<Back");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -926,58 +1236,69 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout sharesLayout = new javax.swing.GroupLayout(shares);
         shares.setLayout(sharesLayout);
         sharesLayout.setHorizontalGroup(
             sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(sharesLayout.createSequentialGroup()
                 .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sharesLayout.createSequentialGroup()
-                        .addGap(0, 116, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sharesLayout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(jButton4)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButton1))
+                    .addGroup(sharesLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
                         .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(sharesLayout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton4))
-                            .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(sharesLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sharesLayout.createSequentialGroup()
-                                    .addGap(26, 26, 26)
-                                    .addComponent(jLabel2))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
         sharesLayout.setVerticalGroup(
             sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sharesLayout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jLabel2)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(145, 145, 145))
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         add(shares, "card10");
 
-        commodities.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        commodities.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("My commodities:");
-        commodities.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 91, -1, -1));
 
         tblCommodityHoldings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -989,25 +1310,87 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblCommodityHoldings);
 
-        commodities.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 126, 729, 145));
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(85, 65, 118));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buy Commodities");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        commodities.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 289, -1, 43));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(85, 65, 118));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Sell Commodities");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        commodities.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 289, -1, 43));
+
+        jPanel13.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton23.setBackground(new java.awt.Color(255, 255, 255));
+        jButton23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton23.setText("<< Back");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jButton23)
+                .addContainerGap(817, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton23)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout commoditiesLayout = new javax.swing.GroupLayout(commodities);
+        commodities.setLayout(commoditiesLayout);
+        commoditiesLayout.setHorizontalGroup(
+            commoditiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commoditiesLayout.createSequentialGroup()
+                .addGroup(commoditiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(commoditiesLayout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jButton3)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButton2))
+                    .addGroup(commoditiesLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(commoditiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addContainerGap(1931, Short.MAX_VALUE))
+        );
+        commoditiesLayout.setVerticalGroup(
+            commoditiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(commoditiesLayout.createSequentialGroup()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jLabel3)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(commoditiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(288, 288, 288))
+        );
 
         add(commodities, "card11");
 
@@ -1015,6 +1398,12 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1031,6 +1420,12 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -1039,50 +1434,67 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane6.setViewportView(jTable2);
 
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Equity Buy Requests:");
 
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel29.setText("Commodity Buy Request:");
 
-        jButton21.setText("back");
+        jPanel14.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton21.setBackground(new java.awt.Color(255, 255, 255));
+        jButton21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton21.setText("<< Back");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout buyRequestsLayout = new javax.swing.GroupLayout(buyRequests);
         buyRequests.setLayout(buyRequestsLayout);
         buyRequestsLayout.setHorizontalGroup(
             buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(buyRequestsLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
                 .addGroup(buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(buyRequestsLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addGroup(buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28)))
-                    .addGroup(buyRequestsLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(buyRequestsLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(2046, Short.MAX_VALUE))
         );
         buyRequestsLayout.setVerticalGroup(
             buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buyRequestsLayout.createSequentialGroup()
-                .addComponent(jButton21)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel28)
-                .addGap(10, 10, 10)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         add(buyRequests, "card12");
@@ -1095,6 +1507,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -1103,10 +1519,14 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane7.setViewportView(jTable3);
 
-        sellRequests.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 86, 639, 154));
+        sellRequests.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 639, 140));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1118,21 +1538,45 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane8.setViewportView(jTable4);
 
-        sellRequests.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 274, 639, 169));
+        sellRequests.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 639, 160));
 
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel30.setText("Equity Sell Requests:");
-        sellRequests.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 58, -1, -1));
+        sellRequests.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel31.setText("Commodity Sell Request:");
-        sellRequests.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 246, -1, -1));
+        sellRequests.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
 
-        jButton22.setText("Back");
+        jPanel15.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton22.setBackground(new java.awt.Color(255, 255, 255));
+        jButton22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton22.setText("<<Back");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
             }
         });
-        sellRequests.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton22)
+                .addContainerGap(1021, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        sellRequests.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 80));
 
         add(sellRequests, "card12");
     }// </editor-fold>//GEN-END:initComponents
@@ -1485,6 +1929,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jComboBox6ActionPerformed
 
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        changeScreen(homepage);
+    }//GEN-LAST:event_jButton23ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addBalance;
@@ -1515,6 +1964,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1560,6 +2010,21 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
