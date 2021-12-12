@@ -177,6 +177,11 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
 
         jToggleButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jToggleButton1.setText("Industry Standards");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
         homepage.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         add(homepage, "card3");
@@ -402,6 +407,10 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Market Standards Updated");
         }
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        changeScreen(industryStandards);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
