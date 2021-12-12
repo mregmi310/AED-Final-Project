@@ -328,13 +328,12 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         jLabel12.setText("Select Manager");
         InvestmentManager.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 118, -1));
 
-        jComboCompanyName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboCompanyName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboCompanyNameActionPerformed(evt);
             }
         });
-        InvestmentManager.add(jComboCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 168, -1, -1));
+        InvestmentManager.add(jComboCompanyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 168, 90, -1));
         InvestmentManager.add(lblAssets, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 549, 50, 14));
         InvestmentManager.add(lblLiibli, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 575, 50, 19));
         InvestmentManager.add(lblMarkcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 603, 50, 14));
@@ -363,7 +362,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 jButton6ActionPerformed(evt);
             }
         });
-        InvestmentManager.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 6, -1, -1));
+        InvestmentManager.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         tblApplications.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

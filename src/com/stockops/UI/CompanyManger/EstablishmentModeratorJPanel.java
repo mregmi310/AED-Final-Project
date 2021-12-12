@@ -82,11 +82,13 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         setRequestFocusEnabled(false);
         setLayout(new java.awt.CardLayout());
 
+        listingrequests.setBackground(new java.awt.Color(255, 255, 255));
         listingrequests.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Compay Manager Liscence Request");
-        listingrequests.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 389, 48));
+        listingrequests.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 930, 48));
 
         jButton1.setBackground(new java.awt.Color(85, 65, 118));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -96,7 +98,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        listingrequests.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
+        listingrequests.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(85, 65, 118));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -106,7 +108,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        listingrequests.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 90, -1));
+        listingrequests.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 90, -1));
 
         tableRegisterComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,20 +123,21 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tableRegisterComp);
 
-        listingrequests.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 819, 90));
+        listingrequests.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 819, 90));
 
         jBtngoback.setBackground(new java.awt.Color(85, 65, 118));
         jBtngoback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBtngoback.setText("Go Back");
+        jBtngoback.setText("<< Back");
         jBtngoback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtngobackActionPerformed(evt);
             }
         });
-        listingrequests.add(jBtngoback, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+        listingrequests.add(jBtngoback, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         add(listingrequests, "card2");
 
+        homepage.setBackground(new java.awt.Color(255, 255, 255));
         homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -173,13 +176,15 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Home Page");
-        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
+        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
-        jToggleButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jToggleButton1.setText("Industry Standards");
         homepage.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         add(homepage, "card3");
+
+        allCompanies.setBackground(new java.awt.Color(255, 255, 255));
 
         tblAllCompanies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -194,6 +199,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblAllCompanies);
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton7.setText("<<Back");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,24 +212,28 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         allCompaniesLayout.setHorizontalGroup(
             allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(allCompaniesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
-            .addGroup(allCompaniesLayout.createSequentialGroup()
-                .addComponent(jButton7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(allCompaniesLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(allCompaniesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton7)))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         allCompaniesLayout.setVerticalGroup(
             allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(allCompaniesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addComponent(jButton7)
-                .addGap(54, 54, 54)
+                .addGap(35, 35, 35)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
 
         add(allCompanies, "card4");
+
+        managerDetails.setBackground(new java.awt.Color(255, 255, 255));
 
         tblInvManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -238,6 +248,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(tblInvManager);
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("<<Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,24 +275,31 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jButton5)
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
 
         add(managerDetails, "card5");
 
+        industryStandards.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Small Cap:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Medium Cap:");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Large Cap:");
 
-        jButton8.setText("Back");
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton8.setText("<< Back");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton9.setText("Set");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,10 +312,10 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         industryStandardsLayout.setHorizontalGroup(
             industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(industryStandardsLayout.createSequentialGroup()
-                .addComponent(jButton8)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(industryStandardsLayout.createSequentialGroup()
                 .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(industryStandardsLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton8))
                     .addGroup(industryStandardsLayout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,14 +323,13 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
                         .addGap(25, 25, 25)
-                        .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSmallCap, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                            .addComponent(txtMediumCap)
-                            .addComponent(txtLargeCap)))
-                    .addGroup(industryStandardsLayout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(201, Short.MAX_VALUE))
+                        .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtSmallCap, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                .addComponent(txtMediumCap)
+                                .addComponent(txtLargeCap)))))
+                .addContainerGap(817, Short.MAX_VALUE))
         );
         industryStandardsLayout.setVerticalGroup(
             industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,9 +348,9 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtLargeCap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton9)
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
         add(industryStandards, "card6");

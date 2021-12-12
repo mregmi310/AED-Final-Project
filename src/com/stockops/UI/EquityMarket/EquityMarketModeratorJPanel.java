@@ -99,12 +99,13 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         MarketModeratorHomepage.setBackground(new java.awt.Color(255, 255, 255));
         MarketModeratorHomepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLblMarketmanagement.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLblMarketmanagement.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement.setText("Securities and Exchange Board");
-        MarketModeratorHomepage.add(jLblMarketmanagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 6, 384, 31));
+        MarketModeratorHomepage.add(jLblMarketmanagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 6, 910, 31));
 
         jButton1.setBackground(new java.awt.Color(72, 97, 91));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("View Delisting Request");
         jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
@@ -113,9 +114,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        MarketModeratorHomepage.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 173, 38));
+        MarketModeratorHomepage.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 173, 38));
 
         jButton2.setBackground(new java.awt.Color(72, 97, 91));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Listing Request");
         jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
@@ -124,9 +126,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        MarketModeratorHomepage.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 180, 38));
+        MarketModeratorHomepage.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 180, 38));
 
         jButton3.setBackground(new java.awt.Color(72, 97, 91));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Market Management");
         jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
@@ -135,11 +138,11 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        MarketModeratorHomepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 167, 38));
+        MarketModeratorHomepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 167, 38));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel5.setText("Dashboard");
-        MarketModeratorHomepage.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+        MarketModeratorHomepage.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
 
         add(MarketModeratorHomepage, "card2");
 

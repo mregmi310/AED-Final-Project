@@ -70,6 +70,8 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.CardLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("jLabel1");
 
         commodityTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -85,6 +87,7 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(commodityTable);
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Sell Requests");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +95,7 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Buy Requests");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,17 +110,15 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(170, 170, 170)
                         .addComponent(jButton3)
                         .addGap(47, 47, 47)
                         .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(724, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 931, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +131,7 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(408, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");
@@ -147,6 +149,7 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(sellRequestTable);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Process Sell Request");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,9 +157,11 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Sell Request:");
 
-        jButton5.setText("Back");
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setText("<< Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -173,12 +178,10 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                         .addGap(121, 121, 121)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(201, 201, 201)
                                 .addComponent(jButton1))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jButton5)))
@@ -189,10 +192,10 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jButton5)
-                .addGap(43, 43, 43)
-                .addComponent(jLabel3)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))
@@ -217,8 +220,10 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(buyRequestTable);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Buy Request:");
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Process Buy Request");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,7 +231,8 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton6.setText("Back");
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setText("<< Back");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -243,13 +249,13 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                         .addGap(110, 110, 110)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(153, 153, 153)
-                                .addComponent(jButton2))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jButton6)))
+                        .addComponent(jButton6))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(jButton2)))
                 .addContainerGap(664, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -257,13 +263,13 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jButton6)
-                .addGap(140, 140, 140)
+                .addGap(83, 83, 83)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         add(jPanel3, "card4");

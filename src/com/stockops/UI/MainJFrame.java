@@ -307,8 +307,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel12.setText("Password:");
 
-        txtTitle2.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
+        txtTitle2.setBackground(new java.awt.Color(85, 65, 118));
+        txtTitle2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        txtTitle2.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTitle2.setText("PORTAL");
+        txtTitle2.setFocusable(false);
+        txtTitle2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jButton3.setText("Sign In");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -321,10 +326,6 @@ public class MainJFrame extends javax.swing.JFrame {
         signInJPanel.setLayout(signInJPanelLayout);
         signInJPanelLayout.setHorizontalGroup(
             signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signInJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTitle2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(signInJPanelLayout.createSequentialGroup()
                 .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
@@ -337,20 +338,20 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel11))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
                     .addComponent(jPasswordField4))
                 .addGap(311, 311, 311))
             .addGroup(signInJPanelLayout.createSequentialGroup()
                 .addGap(254, 254, 254)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(txtTitle2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         signInJPanelLayout.setVerticalGroup(
             signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signInJPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addComponent(txtTitle2)
-                .addGap(53, 53, 53)
+                .addGap(87, 87, 87)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -362,37 +363,35 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(604, Short.MAX_VALUE))
+                .addContainerGap(611, Short.MAX_VALUE))
         );
 
         container.add(signInJPanel, "card3");
 
         homeJPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel14.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
+        jLabel14.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Welcome To StockOps");
+        jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout homeJPanelLayout = new javax.swing.GroupLayout(homeJPanel);
         homeJPanel.setLayout(homeJPanelLayout);
         homeJPanelLayout.setHorizontalGroup(
             homeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(homeJPanelLayout.createSequentialGroup()
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 1157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         homeJPanelLayout.setVerticalGroup(
             homeJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homeJPanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         container.add(homeJPanel, "card4");

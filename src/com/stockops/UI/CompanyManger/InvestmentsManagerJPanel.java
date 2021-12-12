@@ -134,12 +134,14 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Name");
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel2.setText("Assigned Company");
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 204));
+        jButton1.setBackground(new java.awt.Color(255, 102, 102));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Sell Shares");
         jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 204, 204)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +163,8 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(myEquityHoldings);
 
-        jButton4.setBackground(new java.awt.Color(0, 255, 204));
+        jButton4.setBackground(new java.awt.Color(102, 255, 102));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Buy Shares");
         jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 204, 204)));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +173,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Buy Requests");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +181,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton7.setText("Sell Requests");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,23 +205,21 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jButton6)
                         .addGap(100, 100, 100)
                         .addComponent(jButton7)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,7 +231,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jButton7))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");
@@ -252,6 +255,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblJobs);
 
         jButton2.setBackground(new java.awt.Color(0, 255, 204));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Apply");
         jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 255, 204)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -277,6 +281,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(0, 255, 204));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Submit Application");
         jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 204, 204)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -309,24 +314,23 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel16)
                             .addComponent(jLabel17)))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(77, 77, 77)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel18))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtExperience, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                                .addComponent(txtSalary))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtExperience, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                            .addComponent(txtSalary)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,8 +346,8 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -354,8 +358,8 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel6)
                     .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         add(jPanel2, "card3");
@@ -411,7 +415,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(274, 274, 274)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,7 +516,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton11)))
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -632,7 +636,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jButton12)))
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,9 +658,9 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel14)
                     .addComponent(txtAvailableBalance1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSellShare, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(312, Short.MAX_VALUE))
@@ -701,7 +705,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                     .addGroup(buyRequests2Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         buyRequests2Layout.setVerticalGroup(
             buyRequests2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -925,15 +929,11 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuyShare1;
     private javax.swing.JButton btnSellShare;
-    private javax.swing.JPanel buyRequests;
-    private javax.swing.JPanel buyRequests1;
     private javax.swing.JPanel buyRequests2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton3;
@@ -955,8 +955,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
@@ -974,12 +972,8 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
     private javax.swing.JLabel lblCLP;
