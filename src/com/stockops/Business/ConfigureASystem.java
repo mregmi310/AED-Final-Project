@@ -9,6 +9,7 @@ import com.stockops.Brokerage.Brokerage;
 import com.stockops.Brokerage.BrokerageModerator;
 import com.stockops.Establishments.Establishment;
 import com.stockops.Establishments.EstablishmentsModerator;
+import com.stockops.Investor.DayTrader;
 import com.stockops.Investor.Investor;
 import com.stockops.Market.CommodityMarket;
 import com.stockops.Market.CommodityMarketModerator;
@@ -19,6 +20,7 @@ import com.stockops.Roles.BrokerageModeratorRole;
 import com.stockops.Roles.CommodityMarketModeratorRole;
 import com.stockops.Roles.EquityMarketModeratorRole;
 import com.stockops.Roles.EstablishmentsModeratorRole;
+import com.stockops.Roles.MarketAnalyst;
 
 
 /**
@@ -82,12 +84,17 @@ public class ConfigureASystem {
         Establishment establishment = new Establishment();
         
         EstablishmentsModerator establishmentsModerator = new EstablishmentsModerator();
-        establishmentsModerator.setName("Lisencing Commission");
+        establishmentsModerator.setName("Establishments Moderator");
         establishmentsModerator.setUserId(getUserCount(system));
         system.getUserDirectory().createUserAccount("llc", "llc", establishmentsModerator, new EstablishmentsModeratorRole());
         
         establishment.setEstablishmentsModerator(establishmentsModerator);
         establishmentsModerator.setEstablishment(establishment);
+        
+        DayTrader marketAnalyst = new DayTrader();
+        marketAnalyst.setName("Market Analyst");
+        marketAnalyst.setUserId(getUserCount(system));
+        system.getUserDirectory().createUserAccount("analyst", "analyst", marketAnalyst, new MarketAnalyst());
         
         system.getMarket().getEquityMarket().getMarketList().add("National Stock Exchange");
         system.getMarket().getEquityMarket().getMarketList().add("Bombay Stock Exchange");
