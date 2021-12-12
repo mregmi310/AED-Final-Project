@@ -113,6 +113,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jComboBox5 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
         addBalance = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -144,6 +145,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jButton16 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
         confirmCommoditySell = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         txtShrName2 = new javax.swing.JLabel();
@@ -435,13 +437,13 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
 
         tblStockListBuy.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Stock Name", "Current Price", "Market Cap", "P/E ratio"
+                "Stock Name", "Current Price", "Market Cap"
             }
         ));
         jScrollPane1.setViewportView(tblStockListBuy);
@@ -559,14 +561,14 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Calculated Price:");
         confirmShareSell.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
-        confirmShareSell.add(lblCLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 155, -1, -1));
+        confirmShareSell.add(lblCLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 50, 20));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Available Balance:");
         confirmShareSell.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
         txtAvailableBalance1.setText("jLabel13");
-        confirmShareSell.add(txtAvailableBalance1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        confirmShareSell.add(txtAvailableBalance1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -574,7 +576,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        confirmShareSell.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 70, -1));
+        confirmShareSell.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 210, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Select Broker:");
@@ -601,9 +603,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jComboBox5ActionPerformed(evt);
             }
         });
-        confirmShareSell.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 350, 70, -1));
+        confirmShareSell.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 350, 210, -1));
 
         jPanel4.setBackground(new java.awt.Color(85, 65, 118));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1300, 80));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
         jButton12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -614,6 +617,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel33.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Buy Details");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -621,14 +628,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton12)
-                .addContainerGap(761, Short.MAX_VALUE))
+                .addGap(256, 256, 256)
+                .addComponent(jLabel33)
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33)
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         confirmShareSell.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 80));
@@ -882,7 +893,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 741, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -900,6 +911,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel35.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Buy Details");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -907,14 +922,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jButton16)
-                .addContainerGap(711, Short.MAX_VALUE))
+                .addGap(223, 223, 223)
+                .addComponent(jLabel35)
+                .addContainerGap(920, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -940,21 +959,14 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                .addGap(255, 255, 255)
-                                .addComponent(lblCLP2)
-                                .addGap(318, 318, 318))
-                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(txtCommName2))
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
                             .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addGap(91, 91, 91)
@@ -963,17 +975,23 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                                 .addComponent(lblCommLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
                                 .addComponent(jToggleButton3))
-                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
-                                .addGap(162, 162, 162)
-                                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAvailableBalance2)))
                             .addComponent(jLabel21)
-                            .addComponent(jLabel22)))
+                            .addComponent(jLabel22)
+                            .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtAvailableBalance2)
+                                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addComponent(lblCLP2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(btnBuyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1281, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         confirmCommodityBuyLayout.setVerticalGroup(
             confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -983,27 +1001,28 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addComponent(txtCommName2)
-                .addGap(18, 18, 18)
-                .addComponent(lblCLP2)
-                .addGap(14, 14, 14)
+                .addGap(32, 32, 32)
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(txtQtyComm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCommLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton3))
                 .addGap(28, 28, 28)
-                .addComponent(jLabel20)
-                .addGap(31, 31, 31)
-                .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(txtAvailableBalance2))
-                .addGap(31, 31, 31)
                 .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(btnBuyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(315, Short.MAX_VALUE))
+                    .addGroup(confirmCommodityBuyLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(31, 31, 31)
+                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(txtAvailableBalance2))
+                        .addGap(31, 31, 31)
+                        .addGroup(confirmCommodityBuyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(btnBuyComm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCLP2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         add(confirmCommodityBuy, "card3");
@@ -1248,7 +1267,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1257,7 +1276,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         shares.setLayout(sharesLayout);
         sharesLayout.setHorizontalGroup(
             sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 2865, Short.MAX_VALUE)
             .addGroup(sharesLayout.createSequentialGroup()
                 .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sharesLayout.createSequentialGroup()
@@ -1793,10 +1812,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        changeScreen(homepage);
-    }//GEN-LAST:event_jButton16ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        
         if(tblCommodityHoldings.getSelectedRow()!=-1){
@@ -1934,6 +1949,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         changeScreen(homepage);
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        changeScreen(homepage);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addBalance;
@@ -2004,6 +2023,8 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2104,11 +2125,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblStockListBuy.getModel();
         model.setRowCount(0);
         for(Equity equity: this.business.getMarket().getEquityMarket().getEquityList()){
-            Object[] row= new Object[4];
+            Object[] row= new Object[3];
             row[0]=equity.getCompany().getName();
             row[1]=equity.getPrice();
             row[2]=equity.getCompany().getCaptial();
-            row[3]="hello";
             model.addRow(row);
         }
     }
