@@ -305,7 +305,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Password:");
 
-        txtTitle2.setFont(new java.awt.Font("Myanmar MN", 0, 36)); // NOI18N
+        txtTitle2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         txtTitle2.setText("PORTAL");
 
         jButton3.setBackground(new java.awt.Color(85, 65, 118));
@@ -322,31 +322,31 @@ public class MainJFrame extends javax.swing.JFrame {
         signInJPanel.setLayout(signInJPanelLayout);
         signInJPanelLayout.setHorizontalGroup(
             signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signInJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTitle2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(signInJPanelLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addGap(18, 18, 18)
-                .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                    .addComponent(jPasswordField4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(signInJPanelLayout.createSequentialGroup()
-                .addGap(272, 272, 272)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(809, Short.MAX_VALUE))
+                .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(signInJPanelLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                            .addComponent(jPasswordField4)))
+                    .addGroup(signInJPanelLayout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(signInJPanelLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(txtTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 848, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         signInJPanelLayout.setVerticalGroup(
             signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signInJPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
                 .addComponent(txtTitle2)
-                .addGap(90, 90, 90)
+                .addGap(96, 96, 96)
                 .addGroup(signInJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -356,7 +356,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addGap(37, 37, 37)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(576, Short.MAX_VALUE))
+                .addContainerGap(584, Short.MAX_VALUE))
         );
 
         container.add(signInJPanel, "card3");
@@ -365,6 +365,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel14.setText("Welcome To StockOps");
+
+        jLabel24.setIcon(new javax.swing.ImageIcon("/Users/mridulregmi/Downloads/stock.png")); // NOI18N
 
         javax.swing.GroupLayout homeJPanelLayout = new javax.swing.GroupLayout(homeJPanel);
         homeJPanel.setLayout(homeJPanelLayout);
@@ -484,8 +486,8 @@ public class MainJFrame extends javax.swing.JFrame {
                                     .addComponent(jPasswordField7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(investmentManagerJPanelLayout.createSequentialGroup()
                         .addGap(235, 235, 235)
-                        .addComponent(txtTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(739, Short.MAX_VALUE))
+                        .addComponent(txtTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
         investmentManagerJPanelLayout.setVerticalGroup(
             investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,7 +522,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
-                    .addComponent(jPasswordField6, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                    .addComponent(jPasswordField6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(investmentManagerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -587,7 +589,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         txtTitle.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         txtTitle.setText("PORTAL");
-        signupSigninJPanel.add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 20, 210, -1));
+        signupSigninJPanel.add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 670, -1));
 
         jlblnoaccount.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jlblnoaccount.setText("Don't have account?");
