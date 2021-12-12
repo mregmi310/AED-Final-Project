@@ -436,7 +436,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private void jBtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnupdateActionPerformed
         double marketCap = Double.parseDouble(jtxtprice.getText())*this.selectedEquity.getStockQuantity();
         this.selectedEquity.getCompany().calculateAndSetMarketCap(marketCap);
+        this.selectedEquity.getPriceHistory().add(this.selectedEquity.getPrice());
         this.selectedEquity.setPrice(Double.parseDouble(jtxtprice.getText()));
+        double marketIndex = calculateMarketIndex();
+        this.business.getMarket().getEquityMarket().updateMarketMetrics(marketIndex);
         updateAllEquityPrice();
         populateTableShares();
     }//GEN-LAST:event_jBtnupdateActionPerformed
@@ -567,5 +570,24 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 }
             }
         }
+    }
+    public double calculateMarketIndex(){
+        double marketIndex=0;
+        int indexWeightage=0;
+        for(Equity equity:this.business.getMarket().getEquityMarket().getEquityList()){
+            if(equity.getCompany().getCaptial()<this.business.getEstablishment().getEstablishmentsModerator().getSmallCap()){
+                marketIndex+=equity.getPrice();
+                indexWeightage+=1;
+            }
+            else if(equity.getCompany().getCaptial()<this.business.getEstablishment().getEstablishmentsModerator().getMediumCap()){
+                marketIndex+=(equity.getPrice()*2);
+                indexWeightage+=2;
+            }
+            else{
+                marketIndex+=(equity.getPrice()*3);
+                indexWeightage+=3;
+            }
+        }
+        return marketIndex/indexWeightage;
     }
 }
