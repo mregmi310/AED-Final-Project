@@ -621,7 +621,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnDayTraderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDayTraderActionPerformed
         this.selectedUser=new DayTrader();
         this.role=new MarketAnalyst();
-        setRightPanalSignInUp(this.role, "Day Trader");
+        setRightPanalSignIn(this.role, "Market Analyst");
+//        setRightPanalSignInUp(this.role, "Market Analyst");
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnDayTraderActionPerformed
 
