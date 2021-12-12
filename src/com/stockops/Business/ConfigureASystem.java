@@ -89,6 +89,10 @@ public class ConfigureASystem {
         establishment.setEstablishmentsModerator(establishmentsModerator);
         establishmentsModerator.setEstablishment(establishment);
         
+        system.getMarket().getEquityMarket().getMarketList().add("National Stock Exchange");
+        system.getMarket().getEquityMarket().getMarketList().add("Bombay Stock Exchange");
+        
+        
         system.setEstablishment(establishment);
         
         return system;

@@ -86,6 +86,8 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel32 = new javax.swing.JLabel();
+        jComboBox6 = new javax.swing.JComboBox<>();
         selectShareBuy = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblStockListBuy = new javax.swing.JTable();
@@ -279,7 +281,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 btnBuyShare1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(btnBuyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 271, 99, 45));
+        confirmShareBuy.add(btnBuyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 99, 45));
 
         jLabel8.setText("Quantity");
         confirmShareBuy.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 119, -1, -1));
@@ -304,8 +306,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
 
         jLabel10.setText("Calculated Price:");
         confirmShareBuy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 161, -1, -1));
-
-        lblCLP.setText("jLabel11");
         confirmShareBuy.add(lblCLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 161, -1, -1));
 
         jLabel12.setText("Available Balance:");
@@ -319,10 +319,10 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 217, -1, -1));
+        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
 
         jLabel9.setText("Select Broker:");
-        confirmShareBuy.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 221, -1, -1));
+        confirmShareBuy.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
 
         jButton11.setText("Go Back");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -339,6 +339,16 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             }
         });
         confirmShareBuy.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 114, -1, -1));
+
+        jLabel32.setText("Select Market:");
+        confirmShareBuy.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 219, -1, -1));
+
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+        confirmShareBuy.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 215, -1, -1));
 
         add(confirmShareBuy, "card3");
 
@@ -443,8 +453,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
 
         jLabel13.setText("Calculated Price:");
         confirmShareSell.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 155, -1, -1));
-
-        lblCLP1.setText("jLabel11");
         confirmShareSell.add(lblCLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 155, -1, -1));
 
         jLabel14.setText("Available Balance:");
@@ -1060,7 +1068,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                     .addGroup(buyRequestsLayout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         buyRequestsLayout.setVerticalGroup(
             buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1138,9 +1146,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         String stockName = String.valueOf(tblStockListBuy.getValueAt(tblStockListBuy.getSelectedRow(), 0));
         this.selectedEquity = this.business.getMarket().getEquityMarket().getEquityByName(stockName);
         changeScreen(confirmShareBuy);
-        for(EquityBroker equityBroker:this.business.getBrokerage().getEquityBrokersDirectory()){
-            jComboBox1.addItem(equityBroker.getName());
+        for(String market: this.business.getMarket().getEquityMarket().getMarketList()){
+            jComboBox6.addItem(market);
         }
+        for(EquityBroker equityBroker:this.business.getBrokerage().getEquityBrokersDirectory()){
+            String selectedMarket=String.valueOf(jComboBox6.getSelectedItem());
+            if(equityBroker.getAssignedMarket().equals(selectedMarket)){
+                jComboBox1.addItem(equityBroker.getName());
+            }
+        }
+//        for(EquityBroker equityBroker:this.business.getBrokerage().getEquityBrokersDirectory()){
+//            jComboBox1.addItem(equityBroker.getName());
+//        }
         txtShrName.setText(this.selectedEquity.getCompany().getName());
         
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1164,6 +1181,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             equityBroker.getBuyRequests().add(equityBuyRequest);
             setAvailableBalance(String.valueOf(this.investor.getBalance()));
             this.investor.getEquityBuyRequests().add(equityBuyRequest);
+            JOptionPane.showMessageDialog(this, "Buy Request Placed Successfully!");
         }
         else{
             JOptionPane.showMessageDialog(this, "Not enough balance");
@@ -1221,6 +1239,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             this.investor.setBalance(this.investor.getBalance()+(Integer.parseInt(txtQtyShare1.getText())*this.selectedEquity.getPrice()));
             setAvailableBalance(String.valueOf(this.investor.getBalance()));
             this.investor.getEquitySellRequests().add(equitySellRequest);
+            JOptionPane.showMessageDialog(this, "Sell Request Placed Successfully!");
         }
         else{
             JOptionPane.showMessageDialog(this, "You do not have sufficient shares");
@@ -1274,19 +1293,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void txtQtyShare1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtyShare1KeyTyped
-        try{lblCLP1.setText(String.valueOf(this.selectedEquity.getPrice()*Integer.valueOf(txtQtyShare1.getText())));}
-        catch(Exception e){
-            lblCLP1.setText("Please Enter Valid Quantity");
-        }
+
     }//GEN-LAST:event_txtQtyShare1KeyTyped
 
     private void txtQtyShareKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtyShareKeyPressed
-        try{
-            lblCLP.setText(String.valueOf(this.selectedEquity.getPrice()*Integer.valueOf(txtQtyShare.getText())));
-        }
-        catch(Exception e){
-            lblCLP.setText("Please enter valid quantity");
-        }
+
     }//GEN-LAST:event_txtQtyShareKeyPressed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -1319,6 +1330,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
             commodityBroker.getBuyRequests().add(commodityBuyRequest);
             setAvailableBalance(String.valueOf(this.investor.getBalance()));
             this.investor.getCommodityBuyRequests().add(commodityBuyRequest);
+            JOptionPane.showMessageDialog(this, "Buy Request Placed Successfully!");
         }
         else{
             JOptionPane.showMessageDialog(this, "Not enough balance");
@@ -1461,6 +1473,18 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         changeScreen(homepage);
     }//GEN-LAST:event_jButton22ActionPerformed
 
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        jComboBox1.removeAllItems();
+        for(EquityBroker broker:this.business.getBrokerage().getEquityBrokersDirectory()){
+            if(broker.getAssignedMarket()!=null){
+                String selectedMarket=String.valueOf(jComboBox6.getSelectedItem());
+                if(broker.getAssignedMarket().equals(selectedMarket)){
+                    jComboBox1.addItem(broker.getName());
+                }
+            }
+        }
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addBalance;
@@ -1503,6 +1527,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1528,6 +1553,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
