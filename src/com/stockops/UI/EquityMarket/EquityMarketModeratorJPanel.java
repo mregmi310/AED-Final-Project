@@ -50,19 +50,21 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         MarketModeratorHomepage = new javax.swing.JPanel();
-        jLblMarketmanagement = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLblMarketmanagement = new javax.swing.JLabel();
         ListingRequestJPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listingRequestTable = new javax.swing.JTable();
         jBtnapprove = new javax.swing.JButton();
         jbtndecline = new javax.swing.JButton();
-        jLblMarketmanagement1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
+        jLblMarketmanagement1 = new javax.swing.JLabel();
         DelistingRequest = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableManagers2 = new javax.swing.JTable();
@@ -70,6 +72,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jBtnapprove1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLblMarketmanagement2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         MarketManagementJPanel = new javax.swing.JPanel();
@@ -82,9 +85,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jTxtmarketcap = new javax.swing.JTextField();
         jtxtprice = new javax.swing.JTextField();
         jTxtCompany = new javax.swing.JTextField();
-        jLblMarketmanagement3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLblMarketmanagement3 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -97,12 +101,8 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         MarketModeratorHomepage.setBackground(new java.awt.Color(255, 255, 255));
         MarketModeratorHomepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLblMarketmanagement.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblMarketmanagement.setText("Securities and Exchange Board");
-        MarketModeratorHomepage.add(jLblMarketmanagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 6, 384, 31));
-
         jButton2.setBackground(new java.awt.Color(72, 97, 91));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Listing Request");
         jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
@@ -111,9 +111,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        MarketModeratorHomepage.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 180, 38));
+        MarketModeratorHomepage.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 180, 38));
 
-        jButton3.setBackground(new java.awt.Color(72, 97, 91));
+        jButton3.setBackground(new java.awt.Color(85, 65, 118));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Market Management");
         jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
@@ -122,11 +123,22 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        MarketModeratorHomepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 167, 38));
+        MarketModeratorHomepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 167, 38));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel5.setText("Dashboard");
-        MarketModeratorHomepage.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+        MarketModeratorHomepage.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 40));
+
+        jPanel1.setBackground(new java.awt.Color(85, 65, 118));
+
+        jLblMarketmanagement.setBackground(new java.awt.Color(85, 65, 118));
+        jLblMarketmanagement.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLblMarketmanagement.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblMarketmanagement.setText("Securities and Exchange Board");
+        jPanel1.add(jLblMarketmanagement);
+
+        MarketModeratorHomepage.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 80));
 
         add(MarketModeratorHomepage, "card2");
 
@@ -162,53 +174,80 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(listingRequestTable);
 
-        ListingRequestJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 759, 192));
+        ListingRequestJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 759, 190));
 
+        jBtnapprove.setBackground(new java.awt.Color(85, 65, 118));
         jBtnapprove.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jBtnapprove.setForeground(new java.awt.Color(255, 255, 255));
         jBtnapprove.setText("Approve");
         jBtnapprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnapproveActionPerformed(evt);
             }
         });
-        ListingRequestJPanel.add(jBtnapprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 130, 50));
+        ListingRequestJPanel.add(jBtnapprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 100, 40));
 
+        jbtndecline.setBackground(new java.awt.Color(85, 65, 118));
         jbtndecline.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jbtndecline.setForeground(new java.awt.Color(255, 255, 255));
         jbtndecline.setText("Decline");
         jbtndecline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtndeclineActionPerformed(evt);
             }
         });
-        ListingRequestJPanel.add(jbtndecline, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 120, 50));
+        ListingRequestJPanel.add(jbtndecline, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 110, 40));
 
-        jLblMarketmanagement1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLblMarketmanagement1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLblMarketmanagement1.setText("Securities and Exchange Board");
-        ListingRequestJPanel.add(jLblMarketmanagement1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 384, 31));
-
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel6.setText("Listing Requests");
-        ListingRequestJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
+        ListingRequestJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 330, 30));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Requests List:");
-        ListingRequestJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+        ListingRequestJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(72, 97, 91));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(85, 65, 118));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("<< Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        ListingRequestJPanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLblMarketmanagement1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLblMarketmanagement1.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMarketmanagement1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLblMarketmanagement1.setText("Securities and Exchange Board");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton4)
+                .addGap(150, 150, 150)
+                .addComponent(jLblMarketmanagement1)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLblMarketmanagement1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
+        );
+
+        ListingRequestJPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 80));
 
         add(ListingRequestJPanel, "card3");
 
         DelistingRequest.setBackground(new java.awt.Color(255, 255, 255));
-        DelistingRequest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tableManagers2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         tableManagers2.setModel(new javax.swing.table.DefaultTableModel(
@@ -239,38 +278,102 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(tableManagers2);
 
-        DelistingRequest.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 759, 192));
-
-        jbtndecline1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jbtndecline1.setBackground(new java.awt.Color(85, 65, 118));
+        jbtndecline1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jbtndecline1.setForeground(new java.awt.Color(255, 255, 255));
         jbtndecline1.setText("Decline");
-        DelistingRequest.add(jbtndecline1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 102, 63));
 
-        jBtnapprove1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jBtnapprove1.setBackground(new java.awt.Color(85, 65, 118));
+        jBtnapprove1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnapprove1.setForeground(new java.awt.Color(255, 255, 255));
         jBtnapprove1.setText("Approve");
-        DelistingRequest.add(jBtnapprove1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 108, 63));
 
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel8.setText("Requests List:");
-        DelistingRequest.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Delisting Requests");
-        DelistingRequest.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
 
-        jLblMarketmanagement2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jPanel4.setBackground(new java.awt.Color(85, 65, 118));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLblMarketmanagement2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLblMarketmanagement2.setForeground(new java.awt.Color(255, 255, 255));
         jLblMarketmanagement2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement2.setText("Securities and Exchange Board");
-        DelistingRequest.add(jLblMarketmanagement2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 384, 31));
 
         jButton5.setBackground(new java.awt.Color(72, 97, 91));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("<< Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        DelistingRequest.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLblMarketmanagement2)
+                .addGap(171, 171, 171))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addComponent(jLblMarketmanagement2))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout DelistingRequestLayout = new javax.swing.GroupLayout(DelistingRequest);
+        DelistingRequest.setLayout(DelistingRequestLayout);
+        DelistingRequestLayout.setHorizontalGroup(
+            DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(DelistingRequestLayout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jBtnapprove1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96)
+                .addComponent(jbtndecline1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DelistingRequestLayout.createSequentialGroup()
+                .addGap(0, 86, Short.MAX_VALUE)
+                .addGroup(DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DelistingRequestLayout.createSequentialGroup()
+                            .addComponent(jLabel9)
+                            .addGap(355, 355, 355))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DelistingRequestLayout.createSequentialGroup()
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(138, 138, 138)))))
+        );
+        DelistingRequestLayout.setVerticalGroup(
+            DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DelistingRequestLayout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(DelistingRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtndecline1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnapprove1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         add(DelistingRequest, "card4");
 
@@ -311,31 +414,33 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableShares);
 
-        MarketManagementJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 759, 192));
+        MarketManagementJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 759, 192));
 
         jLblCompany.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblCompany.setText("Company");
-        MarketManagementJPanel.add(jLblCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 95, 22));
+        MarketManagementJPanel.add(jLblCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 95, 22));
 
         jLblprice.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblprice.setText("Price");
-        MarketManagementJPanel.add(jLblprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 95, 34));
+        MarketManagementJPanel.add(jLblprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 95, 34));
 
         jLblmarketcap.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblmarketcap.setText("Market Cap");
-        MarketManagementJPanel.add(jLblmarketcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 95, 34));
+        MarketManagementJPanel.add(jLblmarketcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, 95, 34));
 
-        jBtnupdate.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jBtnupdate.setBackground(new java.awt.Color(85, 65, 118));
+        jBtnupdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBtnupdate.setForeground(new java.awt.Color(255, 255, 255));
         jBtnupdate.setText("Update");
         jBtnupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnupdateActionPerformed(evt);
             }
         });
-        MarketManagementJPanel.add(jBtnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 170, 70));
+        MarketManagementJPanel.add(jBtnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 700, 130, 50));
 
         jTxtmarketcap.setEditable(false);
-        MarketManagementJPanel.add(jTxtmarketcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 180, -1));
+        MarketManagementJPanel.add(jTxtmarketcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, 180, 40));
 
         jtxtprice.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -349,7 +454,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jtxtpriceActionPerformed(evt);
             }
         });
-        MarketManagementJPanel.add(jtxtprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 180, -1));
+        MarketManagementJPanel.add(jtxtprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 180, 40));
 
         jTxtCompany.setEditable(false);
         jTxtCompany.addActionListener(new java.awt.event.ActionListener() {
@@ -357,30 +462,56 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
                 jTxtCompanyActionPerformed(evt);
             }
         });
-        MarketManagementJPanel.add(jTxtCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 180, -1));
+        MarketManagementJPanel.add(jTxtCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 180, 40));
 
-        jLblMarketmanagement3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Market Management");
+        MarketManagementJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setText("Listed Companies:");
+        MarketManagementJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(85, 65, 118));
+
+        jLblMarketmanagement3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLblMarketmanagement3.setForeground(new java.awt.Color(255, 255, 255));
         jLblMarketmanagement3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement3.setText("Securities and Exchange Board");
-        MarketManagementJPanel.add(jLblMarketmanagement3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 384, 31));
 
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel10.setText("Market Management");
-        MarketManagementJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel4.setText("Listed Companies:");
-        MarketManagementJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-
-        jButton6.setBackground(new java.awt.Color(72, 97, 91));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jButton6.setBackground(new java.awt.Color(85, 65, 118));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("<< Back");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        MarketManagementJPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton6)
+                .addGap(84, 84, 84)
+                .addComponent(jLblMarketmanagement3)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLblMarketmanagement3)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        MarketManagementJPanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 80));
 
         add(MarketManagementJPanel, "card5");
     }// </editor-fold>//GEN-END:initComponents
@@ -498,6 +629,10 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLblMarketmanagement3;
     private javax.swing.JLabel jLblmarketcap;
     private javax.swing.JLabel jLblprice;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
