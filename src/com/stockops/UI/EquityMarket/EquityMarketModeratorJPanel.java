@@ -12,6 +12,7 @@ import com.stockops.Market.ListingRequest;
 import com.stockops.Market.Equity;
 import com.stockops.Market.EquityMarketModerator;
 import com.stockops.Users.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -50,7 +51,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         MarketModeratorHomepage = new javax.swing.JPanel();
         jLblMarketmanagement = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -76,13 +76,11 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableShares = new javax.swing.JTable();
         jLblCompany = new javax.swing.JLabel();
-        jLblName = new javax.swing.JLabel();
         jLblprice = new javax.swing.JLabel();
         jLblmarketcap = new javax.swing.JLabel();
         jBtnupdate = new javax.swing.JButton();
         jTxtmarketcap = new javax.swing.JTextField();
         jtxtprice = new javax.swing.JTextField();
-        txtSymbol = new javax.swing.JTextField();
         jTxtCompany = new javax.swing.JTextField();
         jLblMarketmanagement3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -103,17 +101,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLblMarketmanagement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblMarketmanagement.setText("Securities and Exchange Board");
         MarketModeratorHomepage.add(jLblMarketmanagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 6, 384, 31));
-
-        jButton1.setBackground(new java.awt.Color(72, 97, 91));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("View Delisting Request");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        MarketModeratorHomepage.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 173, 38));
 
         jButton2.setBackground(new java.awt.Color(72, 97, 91));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,6 +175,11 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
 
         jbtndecline.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jbtndecline.setText("Decline");
+        jbtndecline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtndeclineActionPerformed(evt);
+            }
+        });
         ListingRequestJPanel.add(jbtndecline, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 120, 50));
 
         jLblMarketmanagement1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -288,24 +280,24 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         tableShares.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         tableShares.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Company Name", "Symbol", "Price Per Share", "Stock Qty", "Market Cap", "Assets", "Liabilities"
+                "Company Name", "Price Per Share", "Stock Qty", "Market Cap", "Assets", "Liabilities"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, true, false, true, true
+                false, false, true, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -324,10 +316,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         jLblCompany.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblCompany.setText("Company");
         MarketManagementJPanel.add(jLblCompany, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 95, 22));
-
-        jLblName.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLblName.setText("Symbol");
-        MarketManagementJPanel.add(jLblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 95, 34));
 
         jLblprice.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLblprice.setText("Price");
@@ -362,9 +350,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
             }
         });
         MarketManagementJPanel.add(jtxtprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 180, -1));
-
-        txtSymbol.setEditable(false);
-        MarketManagementJPanel.add(txtSymbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 180, -1));
 
         jTxtCompany.setEditable(false);
         jTxtCompany.addActionListener(new java.awt.event.ActionListener() {
@@ -421,13 +406,14 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         equity.setStockQuantity(selectedRequest.getTotalShares());
         equity.setAvailableQuantity(selectedRequest.getTotalShares());
         this.business.getMarket().getEquityMarket().getEquityList().add(equity);
-        populateListingTable();;
+        this.equityMarketModerator.getListingRequestList().remove(selectedRequest);
+        JOptionPane.showMessageDialog(this, "Listing Request Approved!");
+        populateListingTable();
     }//GEN-LAST:event_jBtnapproveActionPerformed
 
     private void tableSharesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSharesMouseClicked
         this.selectedEquity = this.business.getMarket().getEquityMarket().getEquityByName(String.valueOf(tableShares.getValueAt(tableShares.getSelectedRow(), 0)));
         jTxtCompany.setText(selectedEquity.getCompany().getName());
-        txtSymbol.setText(selectedEquity.getSymbol());
         jtxtprice.setText(String.valueOf(selectedEquity.getPrice()));
         jTxtmarketcap.setText(String.valueOf(selectedEquity.getCompany().getCaptial()));
         
@@ -442,6 +428,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         this.business.getMarket().getEquityMarket().updateMarketMetrics(marketIndex);
         updateAllEquityPrice();
         populateTableShares();
+        JOptionPane.showMessageDialog(this, "Updated!");
     }//GEN-LAST:event_jBtnupdateActionPerformed
 
     private void jtxtpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtpriceActionPerformed
@@ -472,9 +459,15 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         updateJPanel(MarketModeratorHomepage);
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        updateJPanel(DelistingRequest);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jbtndeclineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtndeclineActionPerformed
+        String selectedCompanyName=String.valueOf(listingRequestTable.getValueAt(listingRequestTable.getSelectedRow(), 1));
+        Company selectedCompany = this.business.getEstablishment().getEstablishmentsModerator().getCompanyByName(selectedCompanyName);
+        selectedCompany.setListingRequestStatus("Rejected");
+        ListingRequest selectedRequest = this.equityMarketModerator.getListingRequestById(Integer.parseInt(String.valueOf(listingRequestTable.getValueAt(listingRequestTable.getSelectedRow(), 0))));
+        selectedRequest.setStatus("Reject");
+        JOptionPane.showMessageDialog(this, "Listing Request Rejected Successfully!");
+        populateListingTable();
+    }//GEN-LAST:event_jbtndeclineActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -485,7 +478,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jBtnapprove;
     private javax.swing.JButton jBtnapprove1;
     private javax.swing.JButton jBtnupdate;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -504,7 +496,6 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLblMarketmanagement1;
     private javax.swing.JLabel jLblMarketmanagement2;
     private javax.swing.JLabel jLblMarketmanagement3;
-    private javax.swing.JLabel jLblName;
     private javax.swing.JLabel jLblmarketcap;
     private javax.swing.JLabel jLblprice;
     private javax.swing.JScrollPane jScrollPane1;
@@ -518,21 +509,19 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JTable listingRequestTable;
     private javax.swing.JTable tableManagers2;
     private javax.swing.JTable tableShares;
-    private javax.swing.JTextField txtSymbol;
     // End of variables declaration//GEN-END:variables
 
     private void populateTableShares() {
         DefaultTableModel model = (DefaultTableModel) tableShares.getModel();
         model.setRowCount(0);
         for(Equity equity: this.business.getMarket().getEquityMarket().getEquityList()){
-            Object[] row= new Object[7];
+            Object[] row= new Object[6];
             row[0]=equity.getCompany().getName();
-            row[1]=equity.getSymbol();
-            row[2]=equity.getPrice();
-            row[3]=equity.getStockQuantity();
-            row[4]=equity.getCompany().getCaptial();
-            row[5]=equity.getCompany().getAssets();
-            row[6]=equity.getCompany().getLiabilities();
+            row[1]=equity.getPrice();
+            row[2]=equity.getStockQuantity();
+            row[3]=equity.getCompany().getCaptial();
+            row[4]=equity.getCompany().getAssets();
+            row[5]=equity.getCompany().getLiabilities();
             model.addRow(row);
         }
     }

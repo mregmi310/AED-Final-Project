@@ -59,7 +59,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         tableRegisterComp = new javax.swing.JTable();
         btnRequestListing = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
         registerNew = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -162,10 +161,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         jLabel21.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel21.setText("My Companies");
         homepage.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
-
-        jButton7.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jButton7.setText("View Stats");
-        homepage.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 150, 40));
 
         add(homepage, "card2");
 
@@ -386,13 +381,13 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
 
         tblListingStatus.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Company", "Symbol", "Stock Quantity", "Stock Price", "Listing Status"
+                "Company", "Stock Quantity", "Stock Price", "Listing Status"
             }
         ));
         jScrollPane2.setViewportView(tblListingStatus);
@@ -576,7 +571,6 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboCompanyName;
     private javax.swing.JLabel jLabel1;
@@ -666,20 +660,18 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)tblListingStatus.getModel();
         model.setRowCount(0);
         for(Company company: this.manager.getCompanyList()){
-            Object[] row=new Object[5];
+            Object[] row=new Object[4];
             row[0]=company.getName();
-            row[4]=company.getListingRequestStatus();
+            row[3]=company.getListingRequestStatus();
             if(!company.getListingRequestStatus().equals("Listed")){
                 row[1]="NA";
                 row[2]="NA";
-                row[3]="NA";
             }
             else{
                 for(Equity equity: this.business.getMarket().getEquityMarket().getEquityList()){
                     if(equity.getCompany()==company){
                         row[1]=equity.getSymbol();
-                        row[2]=equity.getStockQuantity();
-                        row[3]=equity.getPrice();
+                        row[2]=equity.getPrice();
                     }
                 }
             }

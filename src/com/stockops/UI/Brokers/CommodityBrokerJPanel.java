@@ -10,10 +10,12 @@ import com.stockops.Brokerage.CommodityBuyRequest;
 import com.stockops.Brokerage.CommoditySellRequest;
 import com.stockops.Business.EcoSystem;
 import com.stockops.Investor.CommodityHoldings;
+import com.stockops.Investor.InvestorAbstract;
 import com.stockops.Investor.RetailInvestor;
 import com.stockops.Market.Commodity;
 import com.stockops.Users.AppUser;
 import com.stockops.Users.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -61,12 +63,14 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         buyRequestTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -163,6 +167,13 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton7.setText("Reject Sell Request");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -175,13 +186,15 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(59, 59, 59)
                                 .addComponent(jLabel3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(201, 201, 201)
-                                .addComponent(jButton1))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jButton5)))
+                        .addComponent(jButton5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButton1)
+                        .addGap(132, 132, 132)
+                        .addComponent(jButton7)))
                 .addContainerGap(653, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -191,15 +204,13 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                 .addComponent(jButton5)
                 .addGap(43, 43, 43)
                 .addComponent(jLabel3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
-                .addGap(393, 393, 393))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton7))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         add(jPanel2, "card3");
@@ -233,6 +244,13 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton8.setText("Reject Buy Request");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -246,7 +264,9 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(153, 153, 153)
-                                .addComponent(jButton2))))
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton8))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jButton6)))
@@ -262,7 +282,9 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton8))
                 .addContainerGap(309, Short.MAX_VALUE))
         );
 
@@ -324,6 +346,26 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
         changePage(jPanel1);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        CommoditySellRequest sellRequest = this.commodityBroker.getSellRequestById(Integer.parseInt(String.valueOf(sellRequestTable.getValueAt(sellRequestTable.getSelectedRow(), 0))));
+        InvestorAbstract seller = sellRequest.getSeller();
+        seller.setBalance(seller.getBalance()+(sellRequest.getQuantity()*sellRequest.getCommodity().getPrice()));
+        sellRequest.getSeller().getCommoditySellRequests().remove(sellRequest);
+        this.commodityBroker.getSellRequests().remove(sellRequest);
+        JOptionPane.showMessageDialog(this, "Request Rejected and Deleted!");
+        populateSellRequestTable();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        CommodityBuyRequest buyRequest = this.commodityBroker.getBuyRequestById(Integer.parseInt(String.valueOf(buyRequestTable.getValueAt(buyRequestTable.getSelectedRow(), 0))));
+        InvestorAbstract buyer=buyRequest.getBuyer();
+        buyer.setBalance(buyer.getBalance()+(buyRequest.getQuantity()*buyRequest.getCommodity().getPrice()));
+        buyRequest.getBuyer().getCommodityBuyRequests().remove(buyRequest);
+        this.commodityBroker.getBuyRequests().remove(buyRequest);
+        JOptionPane.showMessageDialog(this, "Request Rejected and Deleted!");
+        populateBuyRequestTable();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable buyRequestTable;
@@ -334,6 +376,8 @@ public class CommodityBrokerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -31,6 +31,8 @@ import com.stockops.Roles.Role;
 import com.stockops.Users.AppUser;
 import com.stockops.Users.UserAccount;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -140,7 +142,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnDayTrader.setBackground(new java.awt.Color(85, 65, 118));
         btnDayTrader.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDayTrader.setForeground(new java.awt.Color(255, 255, 255));
-        btnDayTrader.setText("DayTrader");
+        btnDayTrader.setText("Market Analyst");
         btnDayTrader.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDayTraderActionPerformed(evt);
@@ -756,34 +758,52 @@ public class MainJFrame extends javax.swing.JFrame {
         String passwordString = new String(password);
         char[] confirmPassword=jPasswordField3.getPassword();
         String confirmPasswordString = new String(confirmPassword);
-        if(!passwordString.equals(confirmPasswordString)){
-            JOptionPane.showMessageDialog(this, "Passwords Do Not Match");
-        }
-        else{
-            selectedUser.setName(jTextField3.getText());
-            selectedUser.setUserId(system.getUserCount());
-            system.setUserCount(system.getUserCount()+1);
-            UserAccount user=this.system.getUserDirectory().createUserAccount(jTextField4.getText(), passwordString, selectedUser, role);
-            if(role instanceof CommodityBrokerRole){
-                this.system.getBrokerage().getCommodityBrokersDirectory().add((CommodityBroker)selectedUser);
-            }
-            else if(role instanceof EquityBrokerRole){
-                this.system.getBrokerage().getEquityBrokersDirectory().add((EquityBroker)selectedUser);
-            }
-            else if(role instanceof RetailInvestorRole){
-                this.system.getInvestor().getRetailInvestorDirectory().add((RetailInvestor)selectedUser);
-            }
-            else if(role instanceof InvestmentManagerRole){
-                this.system.getEstablishment().getEstablishmentsModerator().getInvestmentManagerDirectory().add((InvestmentManager)selectedUser);
-            }
-            else if(role instanceof CompanyManagerRole){
-                this.system.getEstablishment().getEstablishmentsModerator().getCompanyManagerDirectory().add((CompanyManager)selectedUser);
+        String username=jTextField4.getText();
+        if(validPassword(passwordString)){
+            if(!passwordString.equals(confirmPasswordString)){
+                JOptionPane.showMessageDialog(this, "Passwords Do Not Match");
             }
             else{
-                this.system.getInvestor().getDayTraderDirectory().add((DayTrader)selectedUser);
+                selectedUser.setName(jTextField3.getText());
+                selectedUser.setUserId(system.getUserCount());
+                system.setUserCount(system.getUserCount()+1);
+                if(this.system.getUserDirectory().checkIfUsernameIsUnique(username)){
+                    UserAccount user=this.system.getUserDirectory().createUserAccount(username, passwordString, selectedUser, role);
+                    if(role instanceof CommodityBrokerRole){
+                        this.system.getBrokerage().getCommodityBrokersDirectory().add((CommodityBroker)selectedUser);
+                    }
+                    else if(role instanceof EquityBrokerRole){
+                        this.system.getBrokerage().getEquityBrokersDirectory().add((EquityBroker)selectedUser);
+                    }
+                    else if(role instanceof RetailInvestorRole){
+                        this.system.getInvestor().getRetailInvestorDirectory().add((RetailInvestor)selectedUser);
+                    }
+                    else if(role instanceof InvestmentManagerRole){
+                        this.system.getEstablishment().getEstablishmentsModerator().getInvestmentManagerDirectory().add((InvestmentManager)selectedUser);
+                    }
+                    else if(role instanceof CompanyManagerRole){
+                        this.system.getEstablishment().getEstablishmentsModerator().getCompanyManagerDirectory().add((CompanyManager)selectedUser);
+                    }
+                    else{
+                        this.system.getInvestor().getDayTraderDirectory().add((DayTrader)selectedUser);
+                    }
+                    JOptionPane.showMessageDialog(this, "User Signed In Successfully");
+                    setContainer(user.getRole().createWorkArea(container, user, system));
+                    jTextField2.setText("");
+                    jPasswordField1.setText("");
+                    jPasswordField2.setText("");
+                    jPasswordField3.setText("");
+                    jTextField4.setText("");
+                    jTextField3.setText("");
+                    jTextField5.setText("");
+                    jPasswordField5.setText("");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "User Name Already Taken");
+                }
             }
-            JOptionPane.showMessageDialog(this, "User Signed In Successfully");
-            setContainer(user.getRole().createWorkArea(container, user, system));
+        }else{
+            JOptionPane.showMessageDialog(this, "Password too weak!");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -922,5 +942,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private void setRightPanalInvestmentManager(Role role, String investment_Manager) {
         txtTitle1.setText(investment_Manager);
         setContainer(signupSigninJPanel);
+    }
+    
+    
+    private Boolean validPassword(String password1) {
+        String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password1);
+        return matcher.matches();
     }
 }
