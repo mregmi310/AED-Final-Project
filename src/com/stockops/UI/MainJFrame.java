@@ -209,7 +209,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnLicensingCommissionAdmin.setBackground(new java.awt.Color(85, 65, 118));
         btnLicensingCommissionAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLicensingCommissionAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLicensingCommissionAdmin.setText("Licensing Commision Admin");
+        btnLicensingCommissionAdmin.setText("Establishment Moderator");
         btnLicensingCommissionAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLicensingCommissionAdminActionPerformed(evt);
