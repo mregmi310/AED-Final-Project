@@ -26,7 +26,7 @@
     <Container class="javax.swing.JPanel" name="panelLineChart">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="430" y="10" width="350" height="210"/>
+          <AbsoluteConstraints x="520" y="10" width="450" height="210"/>
         </Constraint>
       </Constraints>
 
@@ -101,7 +101,7 @@
     <Container class="javax.swing.JPanel" name="panelPieChart">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="10" width="360" height="210"/>
+          <AbsoluteConstraints x="30" y="10" width="470" height="210"/>
         </Constraint>
       </Constraints>
 

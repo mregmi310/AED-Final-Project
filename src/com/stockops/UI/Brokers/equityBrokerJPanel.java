@@ -32,21 +32,21 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     EquityBroker equityBroker;
     EquitySellRequest equitySellRequest;
     EquityBuyRequest equityBuyRequest;
+
     public EquityBrokerJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        this.business=business;
-        this.account=account;
-        this.equityBroker=(EquityBroker)account.getUser();
+        this.business = business;
+        this.account = account;
+        this.equityBroker = (EquityBroker) account.getUser();
         initComponents();
-        if(this.equityBroker.getAssignedMarket()==null){
+        if (this.equityBroker.getAssignedMarket() == null) {
             changeScreen(marketNotAssigned);
             jLabel11.setText(this.equityBroker.getName());
-        }
-        else{
+        } else {
             changeScreen(homepage);
             jLabel1.setText(this.equityBroker.getName());
             jLabel5.setText(this.equityBroker.getAssignedMarket());
-            jLabel9.setText(this.equityBroker.getAssignedMarket());
-            jLabel10.setText(this.equityBroker.getAssignedMarket());
+            jLabel9.setText(this.equityBroker.getName());
+            jLabel10.setText(this.equityBroker.getName());
             populateBuyRequestTable();
             populateSellRequestTable();
             populateSharesTable();
@@ -168,24 +168,24 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(413, 413, 413)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(172, 172, 172))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout homepageLayout = new javax.swing.GroupLayout(homepage);
         homepage.setLayout(homepageLayout);
         homepageLayout.setHorizontalGroup(
             homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
             .addGroup(homepageLayout.createSequentialGroup()
                 .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(homepageLayout.createSequentialGroup()
@@ -200,7 +200,7 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
                     .addGroup(homepageLayout.createSequentialGroup()
                         .addGap(416, 416, 416)
                         .addComponent(jLabel5)))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         homepageLayout.setVerticalGroup(
             homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,9 +297,9 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jToggleButton1)
-                .addGap(314, 314, 314)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,8 +327,8 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
                         .addComponent(btnBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(123, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
         );
         buyRequestsLayout.setVerticalGroup(
             buyRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,9 +421,9 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
-                .addGap(314, 314, 314)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(153, 153, 153)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,8 +451,8 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
                         .addComponent(btnSell)
                         .addGap(43, 43, 43)
                         .addComponent(jButton5)))
-                .addContainerGap(110, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
         );
         sellRequestLayout.setVerticalGroup(
             sellRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,17 +490,17 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(413, 413, 413)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(291, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel11)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout marketNotAssignedLayout = new javax.swing.GroupLayout(marketNotAssigned);
@@ -515,8 +515,8 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
                     .addGroup(marketNotAssignedLayout.createSequentialGroup()
                         .addGap(254, 254, 254)
                         .addComponent(jLabel7)))
-                .addContainerGap(210, Short.MAX_VALUE))
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
         );
         marketNotAssignedLayout.setVerticalGroup(
             marketNotAssignedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,35 +535,33 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
         EquityBuyRequest buyRequest = this.equityBroker.getEquityBuyRequestById(Integer.parseInt(String.valueOf(tblBuyReq.getValueAt(tblBuyReq.getSelectedRow(), 0))));
         EquityHoldings holdingToAdd = new EquityHoldings();
-        Boolean addNewFlag =true;
-        InvestorAbstract buyer=new InvestorAbstract();
-        if(buyRequest.getEquity().getAvailableQuantity()>buyRequest.getQuantity()){
-            
-            if(buyRequest.getBuyer() instanceof RetailInvestor){
-                buyer = (RetailInvestor)buyRequest.getBuyer();
+        Boolean addNewFlag = true;
+        InvestorAbstract buyer = new InvestorAbstract();
+        if (buyRequest.getEquity().getAvailableQuantity() > buyRequest.getQuantity()) {
+
+            if (buyRequest.getBuyer() instanceof RetailInvestor) {
+                buyer = (RetailInvestor) buyRequest.getBuyer();
+            } else if (buyRequest.getBuyer() instanceof Company) {
+                buyer = (Company) buyRequest.getBuyer();
             }
-            else if(buyRequest.getBuyer() instanceof Company){
-                buyer = (Company)buyRequest.getBuyer();
-            }
-            for(EquityHoldings equityHoldings:buyer.getEquityHoldings()){
-                if(equityHoldings.getEquity()==buyRequest.getEquity()){
-                    holdingToAdd=equityHoldings;
-                    addNewFlag=false;
+            for (EquityHoldings equityHoldings : buyer.getEquityHoldings()) {
+                if (equityHoldings.getEquity() == buyRequest.getEquity()) {
+                    holdingToAdd = equityHoldings;
+                    addNewFlag = false;
                 }
             }
-            double price = ((holdingToAdd.getBuyingPrice()*holdingToAdd.getQuantity())+(buyRequest.getQuantity()*buyRequest.getEquity().getPrice()))/(holdingToAdd.getQuantity()+buyRequest.getQuantity());
-            holdingToAdd.setQuantity(holdingToAdd.getQuantity()+buyRequest.getQuantity());
+            double price = ((holdingToAdd.getBuyingPrice() * holdingToAdd.getQuantity()) + (buyRequest.getQuantity() * buyRequest.getEquity().getPrice())) / (holdingToAdd.getQuantity() + buyRequest.getQuantity());
+            holdingToAdd.setQuantity(holdingToAdd.getQuantity() + buyRequest.getQuantity());
             holdingToAdd.setBuyingPrice(price);
-            buyRequest.getEquity().setAvailableQuantity(buyRequest.getEquity().getAvailableQuantity()-buyRequest.getQuantity());
-            if(addNewFlag){
+            buyRequest.getEquity().setAvailableQuantity(buyRequest.getEquity().getAvailableQuantity() - buyRequest.getQuantity());
+            if (addNewFlag) {
                 holdingToAdd.setEquity(buyRequest.getEquity());
                 buyer.getEquityHoldings().add(holdingToAdd);
             }
             buyRequest.getBuyer().getEquityBuyRequests().remove(buyRequest);
             this.equityBroker.getBuyRequests().remove(buyRequest);
-            
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(this, "Allotment quantity requested too high");
         }
         populateSharesTable();
@@ -586,25 +584,39 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_tblBuyReqMouseClicked
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
+
         EquitySellRequest sellRequest = this.equityBroker.getEquitySellRequestById(Integer.parseInt(String.valueOf(tblSellRequests.getValueAt(tblSellRequests.getSelectedRow(), 0))));
         EquityHoldings holdingToSell = new EquityHoldings();
-        for(EquityHoldings equityHoldings:((RetailInvestor)sellRequest.getSeller()).getEquityHoldings()){
-            if(equityHoldings.getEquity()==sellRequest.getEquity()){
-                holdingToSell=equityHoldings;
+        if (sellRequest.getSeller() instanceof RetailInvestor) {
+            for (EquityHoldings equityHoldings : ((RetailInvestor) sellRequest.getSeller()).getEquityHoldings()) {
+                if (equityHoldings.getEquity() == sellRequest.getEquity()) {
+                    holdingToSell = equityHoldings;
+                }
+            }
+            holdingToSell.setQuantity(holdingToSell.getQuantity() - sellRequest.getQuantity());
+            if (holdingToSell.getQuantity() == 0) {
+                ((RetailInvestor) sellRequest.getSeller()).getEquityHoldings().remove(holdingToSell);
+            }
+        } else {
+            for (EquityHoldings equityHoldings : ((Company) sellRequest.getSeller()).getEquityHoldings()) {
+                if (equityHoldings.getEquity() == sellRequest.getEquity()) {
+                    holdingToSell = equityHoldings;
+                }
+            }
+            holdingToSell.setQuantity(holdingToSell.getQuantity() - sellRequest.getQuantity());
+            if (holdingToSell.getQuantity() == 0) {
+                ((Company) sellRequest.getSeller()).getEquityHoldings().remove(holdingToSell);
             }
         }
-        holdingToSell.setQuantity(holdingToSell.getQuantity() - sellRequest.getQuantity());
-        if(holdingToSell.getQuantity()==0){
-            ((RetailInvestor)sellRequest.getSeller()).getEquityHoldings().remove(holdingToSell);
-        }
-        sellRequest.getEquity().setAvailableQuantity(sellRequest.getEquity().getAvailableQuantity()+sellRequest.getQuantity());
+        sellRequest.getEquity().setAvailableQuantity(sellRequest.getEquity().getAvailableQuantity() + sellRequest.getQuantity());
         sellRequest.getSeller().getEquitySellRequests().remove(sellRequest);
         this.equityBroker.getSellRequests().remove(sellRequest);
-        
         populateSharesTable();
         populateBuyRequestTable();
         populateSellRequestTable();
         JOptionPane.showMessageDialog(this, "Request Processed!");
+
+
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -624,10 +636,10 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+
         EquityBuyRequest buyRequest = this.equityBroker.getEquityBuyRequestById(Integer.parseInt(String.valueOf(tblBuyReq.getValueAt(tblBuyReq.getSelectedRow(), 0))));
-        InvestorAbstract buyer=buyRequest.getBuyer();
-        buyer.setBalance(buyer.getBalance()+(buyRequest.getQuantity()*buyRequest.getEquity().getPrice()));
+        InvestorAbstract buyer = buyRequest.getBuyer();
+        buyer.setBalance(buyer.getBalance() + (buyRequest.getQuantity() * buyRequest.getEquity().getPrice()));
         buyRequest.getBuyer().getEquityBuyRequests().remove(buyRequest);
         this.equityBroker.getBuyRequests().remove(buyRequest);
         JOptionPane.showMessageDialog(this, "Request Rejected and Deleted!");
@@ -637,7 +649,7 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         EquitySellRequest sellRequest = this.equityBroker.getEquitySellRequestById(Integer.parseInt(String.valueOf(tblSellRequests.getValueAt(tblSellRequests.getSelectedRow(), 0))));
         InvestorAbstract seller = sellRequest.getSeller();
-        seller.setBalance(seller.getBalance()+(sellRequest.getQuantity()*sellRequest.getEquity().getPrice()));
+        seller.setBalance(seller.getBalance() + (sellRequest.getQuantity() * sellRequest.getEquity().getPrice()));
         sellRequest.getSeller().getEquitySellRequests().remove(sellRequest);
         this.equityBroker.getSellRequests().remove(sellRequest);
         JOptionPane.showMessageDialog(this, "Request Rejected and Deleted!");
@@ -683,14 +695,14 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     private void populateBuyRequestTable() {
         DefaultTableModel model = (DefaultTableModel) tblBuyReq.getModel();
         model.setRowCount(0);
-        for(EquityBuyRequest equityBuyRequest: this.equityBroker.getBuyRequests()){
-            Object[] row= new Object[6];
-            row[0]=equityBuyRequest.getId();
-            row[1]=equityBuyRequest.getBuyer().getName();
-            row[2]=equityBuyRequest.getEquity().getCompany().getName();
-            row[3]=equityBuyRequest.getEquity().getPrice();
-            row[4]=equityBuyRequest.getQuantity();
-            row[5]="pending";
+        for (EquityBuyRequest equityBuyRequest : this.equityBroker.getBuyRequests()) {
+            Object[] row = new Object[6];
+            row[0] = equityBuyRequest.getId();
+            row[1] = equityBuyRequest.getBuyer().getName();
+            row[2] = equityBuyRequest.getEquity().getCompany().getName();
+            row[3] = equityBuyRequest.getEquity().getPrice();
+            row[4] = equityBuyRequest.getQuantity();
+            row[5] = "pending";
             model.addRow(row);
         }
     }
@@ -698,27 +710,27 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
     private void populateSellRequestTable() {
         DefaultTableModel model = (DefaultTableModel) tblSellRequests.getModel();
         model.setRowCount(0);
-        for(EquitySellRequest equitySellRequest: this.equityBroker.getSellRequests()){
-            Object[] row= new Object[6];
-            row[0]=equitySellRequest.getId();
-            row[1]=equitySellRequest.getSeller().getName();
-            row[2]=equitySellRequest.getEquity().getCompany().getName();
-            row[3]=equitySellRequest.getEquity().getPrice();
-            row[4]=equitySellRequest.getQuantity();
-            row[5]="pending";
+        for (EquitySellRequest equitySellRequest : this.equityBroker.getSellRequests()) {
+            Object[] row = new Object[6];
+            row[0] = equitySellRequest.getId();
+            row[1] = equitySellRequest.getSeller().getName();
+            row[2] = equitySellRequest.getEquity().getCompany().getName();
+            row[3] = equitySellRequest.getEquity().getPrice();
+            row[4] = equitySellRequest.getQuantity();
+            row[5] = "pending";
             model.addRow(row);
         }
     }
-    
-    private void populateSharesTable(){
+
+    private void populateSharesTable() {
         DefaultTableModel model = (DefaultTableModel) tableShares.getModel();
         model.setRowCount(0);
-        for(Equity equity: this.business.getMarket().getEquityMarket().getEquityList()){
-            Object[] row= new Object[4];
-            row[0]=equity.getCompany().getName();
-            row[1]=equity.getPrice();
-            row[2]=equity.getStockQuantity();
-            row[3]=equity.getAvailableQuantity();
+        for (Equity equity : this.business.getMarket().getEquityMarket().getEquityList()) {
+            Object[] row = new Object[4];
+            row[0] = equity.getCompany().getName();
+            row[1] = equity.getPrice();
+            row[2] = equity.getStockQuantity();
+            row[3] = equity.getAvailableQuantity();
             model.addRow(row);
         }
     }
