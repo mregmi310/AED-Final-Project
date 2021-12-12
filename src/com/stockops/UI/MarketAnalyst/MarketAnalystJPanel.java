@@ -117,7 +117,7 @@ public class MarketAnalystJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelLineChart.setLayout(new java.awt.BorderLayout());
-        add(panelLineChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 350, 210));
+        add(panelLineChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 450, 210));
 
         jButton1.setText("Generate Report");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +143,7 @@ public class MarketAnalystJPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 480, 520));
 
         panelPieChart.setLayout(new java.awt.BorderLayout());
-        add(panelPieChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 360, 210));
+        add(panelPieChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 470, 210));
 
         panelBarChart.setLayout(new java.awt.BorderLayout());
         add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 450, 250));

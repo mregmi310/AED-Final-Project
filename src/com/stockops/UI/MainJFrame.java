@@ -659,7 +659,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLicensingCommissionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLicensingCommissionAdminActionPerformed
         this.selectedUser=new EstablishmentsModerator();
         this.role=new EstablishmentsModeratorRole();
-        setRightPanalSignIn(this.role, "Licensing Commission Admin");
+        setRightPanalSignIn(this.role, "Establishments Moderator");
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLicensingCommissionAdminActionPerformed
 
