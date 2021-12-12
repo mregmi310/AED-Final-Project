@@ -178,12 +178,14 @@ public class MarketAnalystJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblAllCompanies.getModel();
         model.setRowCount(0);
         for(Company company: this.business.getEstablishment().getEstablishmentsModerator().getCompanyList()){
-            Object[] row= new Object[4];
-            row[0]=company.getName();
-            row[1]=company.getCaptial();
-            row[2]=company.getAssets();
-            row[3]=company.getLiabilities();
-            model.addRow(row);
+            if(company.getListingRequestStatus().equals("Listed")){
+                Object[] row= new Object[4];
+                row[0]=company.getName();
+                row[1]=company.getCaptial();
+                row[2]=company.getAssets();
+                row[3]=company.getLiabilities();
+                model.addRow(row);
+            }
         }
     }
 
@@ -233,7 +235,7 @@ public class MarketAnalystJPanel extends javax.swing.JPanel {
         }        
         
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("Stock trend","timeline","price", 
+        JFreeChart linechart = ChartFactory.createLineChart("Market trend","timeline","price", 
                 dataset, PlotOrientation.VERTICAL, false,true,false);
         
         //create plot object
@@ -261,7 +263,7 @@ public class MarketAnalystJPanel extends javax.swing.JPanel {
         }        
         
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("Stock trend","timeline","price", 
+        JFreeChart linechart = ChartFactory.createLineChart("Sensitivity Index","timeline","price", 
                 dataset, PlotOrientation.VERTICAL, false,true,false);
         
         //create plot object

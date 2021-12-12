@@ -216,7 +216,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                         .addComponent(jButton6)
                         .addGap(100, 100, 100)
                         .addComponent(jButton7)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -697,9 +697,9 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel20)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSellShare, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(262, Short.MAX_VALUE))
@@ -838,6 +838,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
             equityBroker.getBuyRequests().add(equityBuyRequest);
             this.investmentManager.getAssignedCompany().getEquityBuyRequests().add(equityBuyRequest);
             JOptionPane.showMessageDialog(this, "Buy Request Sent!");
+            setAvailableBalance(this.investmentManager.getAssignedCompany().getBalance());
         }
         else{
             JOptionPane.showMessageDialog(this, "Not enough balance");
@@ -937,8 +938,19 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
             jobRequest.setApplicant(this.investmentManager);
             jobRequest.setExperience(Integer.parseInt(txtExperience.getText()));
             jobRequest.setSalaryRequest(Double.parseDouble(txtSalary.getText()));
-            company.getJobRequest().add(jobRequest);
-            JOptionPane.showMessageDialog(this, "Application Placed!");
+            Boolean uniqueRequest=true;
+            for(JobRequest jobReq: company.getJobRequest()){
+                if(jobReq.getApplicant()==this.investmentManager){
+                    uniqueRequest=false;
+                }
+            }
+            if(!uniqueRequest){
+                JOptionPane.showMessageDialog(this, "Cannot Apply For Same Company Twice!");
+            }
+            else{
+                company.getJobRequest().add(jobRequest);
+                JOptionPane.showMessageDialog(this, "Application Placed!");
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Salary and experience should be numbers");
@@ -976,16 +988,12 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuyShare1;
     private javax.swing.JButton btnSellShare;
-    private javax.swing.JPanel buyRequests;
-    private javax.swing.JPanel buyRequests1;
     private javax.swing.JPanel buyRequests2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton3;
@@ -1013,8 +1021,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
@@ -1032,12 +1038,8 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
     private javax.swing.JLabel lblCLP;
