@@ -355,7 +355,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Calculated Price:");
         confirmShareBuy.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
-        confirmShareBuy.add(lblCLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 161, -1, -1));
+        confirmShareBuy.add(lblCLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 70, 10));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Available Balance:");
@@ -371,7 +371,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 70, -1));
+        confirmShareBuy.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 150, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Select Broker:");
@@ -399,7 +399,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                 jComboBox6ActionPerformed(evt);
             }
         });
-        confirmShareBuy.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 70, -1));
+        confirmShareBuy.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 150, -1));
 
         jPanel2.setBackground(new java.awt.Color(85, 65, 118));
 
@@ -1056,8 +1056,6 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel24.setText("Calculated Price:");
 
-        lblCLP3.setText("jLabel11");
-
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel25.setText("Available Balance:");
 
@@ -1155,10 +1153,11 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
                         .addGap(56, 56, 56)
                         .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAvailableBalance3)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCLP3)
                             .addGroup(confirmCommoditySellLayout.createSequentialGroup()
-                                .addComponent(txtQtyComm2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(confirmCommoditySellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtQtyComm2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                                 .addGap(41, 41, 41)
                                 .addComponent(lblCommUnit)
                                 .addGap(41, 41, 41)
@@ -1281,7 +1280,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
         shares.setLayout(sharesLayout);
         sharesLayout.setHorizontalGroup(
             sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 2865, Short.MAX_VALUE)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(sharesLayout.createSequentialGroup()
                 .addGroup(sharesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sharesLayout.createSequentialGroup()
@@ -2175,6 +2174,7 @@ public class RetailInvestorJPanel extends javax.swing.JPanel {
     private void setAvailableBalance(String availableBalance) {
         txtBal.setText(availableBalance);
         txtAvailableBalance.setText(availableBalance);
+        txtAvailableBalance1.setText(availableBalance);
         txtAvailableBalance2.setText(availableBalance);
         txtAvailableBalance3.setText(availableBalance);
         jLabel17.setText(availableBalance);

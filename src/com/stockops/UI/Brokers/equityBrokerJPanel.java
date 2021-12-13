@@ -584,6 +584,7 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
             populateBuyRequestTable();
             populateSellRequestTable();
             JOptionPane.showMessageDialog(this, "Request Processed!");
+
         } else {
             JOptionPane.showMessageDialog(this, "Allotment quantity requested too high");
         }

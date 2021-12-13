@@ -763,7 +763,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
@@ -1060,29 +1059,32 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void btnSellShareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellShareActionPerformed
-        EquityHoldings equityHoldingToSell = new EquityHoldings();
-        for (EquityHoldings equityHoldings : this.investmentManager.getAssignedCompany().getEquityHoldings()) {
-            if (equityHoldings.getEquity() == this.selectedEquity) {
-                equityHoldingToSell = equityHoldings;
+        try{
+            EquityHoldings equityHoldingToSell = new EquityHoldings();
+            for (EquityHoldings equityHoldings : this.investmentManager.getAssignedCompany().getEquityHoldings()) {
+                if (equityHoldings.getEquity() == this.selectedEquity) {
+                    equityHoldingToSell = equityHoldings;
+                }
+            }
+            if (Integer.parseInt(txtQtyShare1.getText()) <= equityHoldingToSell.getQuantity()) {
+                EquitySellRequest equitySellRequest = new EquitySellRequest();
+                equitySellRequest.setEquity(selectedEquity);
+                equitySellRequest.setQuantity(Integer.parseInt(txtQtyShare1.getText()));
+                equitySellRequest.setSeller(this.investmentManager.getAssignedCompany());
+                equitySellRequest.setId(this.business.getBrokerage().getSellRequestCount());
+                this.business.getBrokerage().setSellRequestCount(this.business.getBrokerage().getSellRequestCount() + 1);
+                EquityBroker equityBroker = this.business.getBrokerage().getBrokerByName(String.valueOf(jComboBox2.getSelectedItem()));
+                equityBroker.getSellRequests().add(equitySellRequest);
+                this.investmentManager.getAssignedCompany().setBalance(this.investmentManager.getAssignedCompany().getBalance() + (Integer.parseInt(txtQtyShare1.getText()) * this.selectedEquity.getPrice()));
+                setAvailableBalance(this.investmentManager.getAssignedCompany().getBalance());
+                this.investmentManager.getAssignedCompany().getEquitySellRequests().add(equitySellRequest);
+                JOptionPane.showMessageDialog(this, "Sell Request Sent!");
+            } else {
+                JOptionPane.showMessageDialog(this, "You do not have sufficient shares");
             }
         }
-        System.out.println(txtQtyShare1.getText());
-        System.out.println(equityHoldingToSell.getQuantity());
-        if (Integer.parseInt(txtQtyShare1.getText()) <= equityHoldingToSell.getQuantity()) {
-            EquitySellRequest equitySellRequest = new EquitySellRequest();
-            equitySellRequest.setEquity(selectedEquity);
-            equitySellRequest.setQuantity(Integer.parseInt(txtQtyShare1.getText()));
-            equitySellRequest.setSeller(this.investmentManager.getAssignedCompany());
-            equitySellRequest.setId(this.business.getBrokerage().getSellRequestCount());
-            this.business.getBrokerage().setSellRequestCount(this.business.getBrokerage().getSellRequestCount() + 1);
-            EquityBroker equityBroker = this.business.getBrokerage().getBrokerByName(String.valueOf(jComboBox2.getSelectedItem()));
-            equityBroker.getSellRequests().add(equitySellRequest);
-            this.investmentManager.getAssignedCompany().setBalance(this.investmentManager.getAssignedCompany().getBalance() + (Integer.parseInt(txtQtyShare1.getText()) * this.selectedEquity.getPrice()));
-            setAvailableBalance(this.investmentManager.getAssignedCompany().getBalance());
-            this.investmentManager.getAssignedCompany().getEquitySellRequests().add(equitySellRequest);
-            JOptionPane.showMessageDialog(this, "Sell Request Sent!");
-        } else {
-            JOptionPane.showMessageDialog(this, "You do not have sufficient shares");
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Oops something went wrong!");
         }
     }//GEN-LAST:event_btnSellShareActionPerformed
 
@@ -1190,10 +1192,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        populateStockListTable();
-        for (String market : this.business.getMarket().getEquityMarket().getMarketList()) {
-            jComboBox4.addItem(market);
-        }
+        jComboBox2.removeAllItems();
         for (EquityBroker equityBroker : this.business.getBrokerage().getEquityBrokersDirectory()) {
             String selectedMarket = String.valueOf(jComboBox4.getSelectedItem());
             if (equityBroker.getAssignedMarket().equals(selectedMarket)) {
