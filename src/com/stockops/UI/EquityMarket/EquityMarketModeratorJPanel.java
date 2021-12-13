@@ -566,6 +566,7 @@ public class EquityMarketModeratorJPanel extends javax.swing.JPanel {
         this.business.getMarket().getEquityMarket().updateMarketMetrics(marketIndex);
         updateAllEquityPrice();
         populateTableShares();
+        jTxtmarketcap.setText(String.valueOf(selectedEquity.getCompany().getCaptial()));
         JOptionPane.showMessageDialog(this, "Updated!");
     }//GEN-LAST:event_jBtnupdateActionPerformed
 

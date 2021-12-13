@@ -50,6 +50,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
             jLabel7.setText(this.investmentManager.getName());
         } else {
             populateHoldingsTable();
+            setAvailableBalance(this.investmentManager.getAssignedCompany().getBalance());
             jLabel1.setText(this.investmentManager.getName());
             jLabel2.setText(this.investmentManager.getAssignedCompany().getName());
             changeScreen(jPanel1);
@@ -126,7 +127,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -675,6 +675,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         add(jPanel3, "card3");
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSellShare.setBackground(new java.awt.Color(85, 65, 118));
         btnSellShare.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -686,12 +687,15 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 btnSellShareActionPerformed(evt);
             }
         });
+        jPanel6.add(btnSellShare, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 367, 93, 37));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Quantity");
+        jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
         txtShrName1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         txtShrName1.setText("Share Name");
+        jPanel6.add(txtShrName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 91, -1, -1));
 
         txtQtyShare1.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
@@ -705,26 +709,34 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 txtQtyShare1KeyTyped(evt);
             }
         });
+        jPanel6.add(txtQtyShare1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 144, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Calculated Price:");
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        jPanel6.add(lblCLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 250, 20));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Available Balance:");
+        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 232, -1, -1));
 
         txtAvailableBalance1.setText("jLabel13");
+        jPanel6.add(txtAvailableBalance1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 233, -1, -1));
 
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
+        jPanel6.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 300, 150, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Select Broker:");
+        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 303, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setText("Select Market");
+        jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 264, -1, -1));
 
         jButton8.setText("Set");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -732,6 +744,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 jButton8ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(85, 65, 118));
         jPanel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -763,88 +776,14 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1306, -1));
+
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(txtShrName1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(jLabel11)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtQtyShare1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jButton8))
-                                .addComponent(jLabel13)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(jLabel14)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtAvailableBalance1))
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jLabel20))
-                                    .addGap(37, 37, 37)
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox4, 0, 118, Short.MAX_VALUE)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(lblCLP1))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel22)
-                        .addContainerGap(838, Short.MAX_VALUE))))
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 1306, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(btnSellShare, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(txtShrName1)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCLP1)
-                    .addComponent(jLabel22))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtQtyShare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtAvailableBalance1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(btnSellShare, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
-        );
+        jPanel6.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 261, 150, -1));
 
         add(jPanel6, "card3");
 
@@ -985,12 +924,12 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         for(String marketName:this.business.getMarket().getEquityMarket().getMarketList()){
             jComboBox4.addItem(marketName);
         }
-        for (EquityBroker equityBroker : this.business.getBrokerage().getEquityBrokersDirectory()) {
-            String selectedMarket = String.valueOf(jComboBox4.getSelectedItem());
-            if (equityBroker.getAssignedMarket().equals(selectedMarket)) {
-                jComboBox2.addItem(equityBroker.getName());
-            }
-        }
+//        for (EquityBroker equityBroker : this.business.getBrokerage().getEquityBrokersDirectory()) {
+//            String selectedMarket = String.valueOf(jComboBox4.getSelectedItem());
+//            if (equityBroker.getAssignedMarket().equals(selectedMarket)) {
+//                jComboBox2.addItem(equityBroker.getName());
+//            }
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1006,12 +945,12 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
         for (String market : this.business.getMarket().getEquityMarket().getMarketList()) {
             jComboBox3.addItem(market);
         }
-        for (EquityBroker equityBroker : this.business.getBrokerage().getEquityBrokersDirectory()) {
-            String selectedMarket = String.valueOf(jComboBox3.getSelectedItem());
-            if (equityBroker.getAssignedMarket().equals(selectedMarket)) {
-                jComboBox1.addItem(equityBroker.getName());
-            }
-        }
+//        for (EquityBroker equityBroker : this.business.getBrokerage().getEquityBrokersDirectory()) {
+//            String selectedMarket = String.valueOf(jComboBox3.getSelectedItem());
+//            if (equityBroker.getAssignedMarket().equals(selectedMarket)) {
+//                jComboBox1.addItem(equityBroker.getName());
+//            }
+//        }
         txtShrName.setText(this.selectedEquity.getCompany().getName());
         setAvailableBalance(this.investmentManager.getAssignedCompany().getBalance());
 
@@ -1177,7 +1116,7 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jLabel22.setText(String.valueOf(this.selectedEquity.getPrice() * Integer.valueOf(txtQtyShare1.getText())));
+        lblCLP1.setText(String.valueOf(this.selectedEquity.getPrice() * Integer.valueOf(txtQtyShare1.getText())));
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -1238,7 +1177,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
@@ -1343,7 +1281,6 @@ public class InvestmentsManagerJPanel extends javax.swing.JPanel {
     private void setAvailableBalance(double balance) {
         txtAvailableBalance.setText(String.valueOf(balance));
         txtAvailableBalance1.setText(String.valueOf(balance));
-        jLabel13.setText(String.valueOf(balance));
     }
 
     private void populateBuyRequestsTable() {
