@@ -53,6 +53,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jBtngoback = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         homepage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -154,7 +155,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jBtngoback)
                 .addGap(218, 218, 218)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,55 +166,65 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                     .addComponent(jBtngoback)))
         );
 
-        listingrequests.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 50));
+        listingrequests.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 50));
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/stockops/UI/CompanyManger/eastab.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        listingrequests.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 530, 450));
 
         add(listingrequests, "card2");
 
         homepage.setBackground(new java.awt.Color(255, 255, 255));
         homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Licencing Commission");
-        homepage.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        homepage.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 90, 290, -1));
 
         jButton3.setBackground(new java.awt.Color(85, 65, 115));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Lisence Requests");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        homepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+        homepage.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(85, 65, 115));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Companies and Managers Details");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        homepage.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        homepage.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
         jButton6.setBackground(new java.awt.Color(85, 65, 115));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Investment Managers Details");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        homepage.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
 
+        jToggleButton1.setBackground(new java.awt.Color(85, 65, 115));
         jToggleButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("Industry Standards");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        homepage.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+        homepage.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(85, 65, 118));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,7 +239,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(396, Short.MAX_VALUE)
+                .addContainerGap(496, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(330, 330, 330))
         );
@@ -237,7 +248,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        homepage.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 60));
+        homepage.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 60));
 
         add(homepage, "card3");
 
@@ -293,8 +304,8 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             .addGroup(allCompaniesLayout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(295, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1183, Short.MAX_VALUE)
+                .addContainerGap(302, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
         );
         allCompaniesLayout.setVerticalGroup(
             allCompaniesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +313,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
 
         add(allCompanies, "card4");
@@ -365,7 +376,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             .addGroup(managerDetailsLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addContainerGap(373, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         managerDetailsLayout.setVerticalGroup(
@@ -374,7 +385,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
 
         add(managerDetails, "card5");
@@ -407,6 +418,8 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("jLabel8");
         jLabel8.setPreferredSize(new java.awt.Dimension(1000, 80));
@@ -434,7 +447,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
         industryStandards.setLayout(industryStandardsLayout);
         industryStandardsLayout.setHorizontalGroup(
             industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
             .addGroup(industryStandardsLayout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addGroup(industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,7 +461,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                         .addComponent(txtSmallCap, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                         .addComponent(txtMediumCap)
                         .addComponent(txtLargeCap)))
-                .addGap(0, 201, Short.MAX_VALUE))
+                .addGap(0, 854, Short.MAX_VALUE))
         );
         industryStandardsLayout.setVerticalGroup(
             industryStandardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,7 +481,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
                     .addComponent(txtLargeCap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jButton9)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(515, Short.MAX_VALUE))
         );
 
         add(industryStandards, "card6");
@@ -570,6 +583,7 @@ public class EstablishmentModeratorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
