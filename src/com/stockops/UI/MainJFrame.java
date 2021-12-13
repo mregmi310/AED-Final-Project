@@ -688,7 +688,7 @@ public class MainJFrame extends javax.swing.JFrame {
         char[] password=jPasswordField4.getPassword();
         String passwordString = new String(password);
         UserAccount user=system.getUserDirectory().authenticateUser(jTextField5.getText(), passwordString);
-        if(user!=null){
+        if(user!=null && (user.getRole().getClass()==this.role.getClass())){
             setContainer(user.getRole().createWorkArea(container, user, system));
         }
         else{
@@ -700,7 +700,7 @@ public class MainJFrame extends javax.swing.JFrame {
         char[] password=jPasswordField5.getPassword();
         String passwordString = new String(password);
         UserAccount user=system.getUserDirectory().authenticateUser(jTextField4.getText(), passwordString);
-        if(user!=null){
+        if(user!=null && user.getRole()==this.role){
             setContainer(user.getRole().createWorkArea(container, user, system));
         }
         else{
@@ -788,7 +788,7 @@ public class MainJFrame extends javax.swing.JFrame {
         char[] password=jPasswordField1.getPassword();
         String passwordString = new String(password);
         UserAccount user=system.getUserDirectory().authenticateUser(jTextField2.getText(), passwordString);
-        if(user!=null){
+        if(user!=null && (user.getRole().getClass()==this.role.getClass())){
             setContainer(user.getRole().createWorkArea(container, user, system));
         }
         else{

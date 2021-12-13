@@ -560,14 +560,15 @@ public class EquityBrokerJPanel extends javax.swing.JPanel {
             }
             buyRequest.getBuyer().getEquityBuyRequests().remove(buyRequest);
             this.equityBroker.getBuyRequests().remove(buyRequest);
+            populateSharesTable();
+            populateBuyRequestTable();
+            populateSellRequestTable();
+            JOptionPane.showMessageDialog(this, "Request Processed!");
 
         } else {
             JOptionPane.showMessageDialog(this, "Allotment quantity requested too high");
         }
-        populateSharesTable();
-        populateBuyRequestTable();
-        populateSellRequestTable();
-        JOptionPane.showMessageDialog(this, "Request Processed!");
+        
     }//GEN-LAST:event_btnBuyActionPerformed
 
     private void tblSellRequestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSellRequestsMouseClicked
