@@ -54,10 +54,14 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
         txtUnit = new javax.swing.JTextField();
         btnModCom = new javax.swing.JButton();
         btnComdity = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -78,13 +82,18 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 98, 472, 122));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Comodity Name");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 269, -1, -1));
 
         txtComName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtComName, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 277, 63, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Symbol");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 330, -1, -1));
 
         txtSymbol.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtSymbol.addActionListener(new java.awt.event.ActionListener() {
@@ -92,16 +101,21 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
                 txtSymbolActionPerformed(evt);
             }
         });
+        jPanel1.add(txtSymbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 321, 63, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Price");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 378, 70, -1));
 
         txtPrice.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 373, 63, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Unit");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 427, 41, -1));
 
         txtUnit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 422, 63, -1));
 
         btnModCom.setBackground(new java.awt.Color(85, 65, 118));
         btnModCom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -112,6 +126,7 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
                 btnModComActionPerformed(evt);
             }
         });
+        jPanel1.add(btnModCom, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 504, -1, -1));
 
         btnComdity.setBackground(new java.awt.Color(85, 65, 118));
         btnComdity.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -156,18 +171,18 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addContainerGap(455, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
+                .addContainerGap(122, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(txtComName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,6 +204,13 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
                     .addComponent(btnModCom))
                 .addGap(42, 42, 42))
         );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/stockops/UI/Moderators/Comodity/como.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 490, 270));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -233,7 +255,10 @@ public class CommodityModaratorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtComName;

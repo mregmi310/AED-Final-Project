@@ -102,6 +102,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1000, 1000));
         setLayout(new java.awt.CardLayout());
@@ -191,7 +192,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(106, 106, 106)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(532, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +205,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        registerNew.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, -1));
+        registerNew.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         add(registerNew, "card3");
 
@@ -297,7 +298,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                     .addComponent(txtPricePerShare, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
 
         add(requestListing, "card4");
@@ -473,7 +474,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(426, Short.MAX_VALUE))
         );
 
         add(listingStatusJpanel, "card6");
@@ -567,6 +568,13 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
         );
 
         homepage.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/stockops/UI/CompanyManger/commannnn.jpg"))); // NOI18N
+        jLabel13.setText("jLabel13");
+        jLabel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(85, 65, 118), 3, true));
+        jLabel13.setPreferredSize(new java.awt.Dimension(400, 400));
+        homepage.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 670, 370));
 
         add(homepage, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -734,6 +742,7 @@ public class CompanyManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
