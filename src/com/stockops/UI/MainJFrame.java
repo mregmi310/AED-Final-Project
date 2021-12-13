@@ -364,6 +364,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel14.setText("Welcome To StockOps");
 
+        jLabel24.setIcon(new javax.swing.ImageIcon("/Users/mridulregmi/Desktop/AED-Final-Project/images/stock.png")); // NOI18N
+
         javax.swing.GroupLayout homeJPanelLayout = new javax.swing.GroupLayout(homeJPanel);
         homeJPanel.setLayout(homeJPanelLayout);
         homeJPanelLayout.setHorizontalGroup(
